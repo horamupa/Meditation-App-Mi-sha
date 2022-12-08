@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */; };
-		8D8A7F4E2941BC960072A582 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4D2941BC960072A582 /* ContentView.swift */; };
+		8D8A7F4E2941BC960072A582 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4D2941BC960072A582 /* HomeView.swift */; };
 		8D8A7F502941BC970072A582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4F2941BC970072A582 /* Assets.xcassets */; };
 		8D8A7F532941BC970072A582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A7F522941BC970072A582 /* Preview Assets.xcassets */; };
+		8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F592941BE180072A582 /* AudioView.swift */; };
+		8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5B2941C0640072A582 /* AudioModel.swift */; };
+		8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */; };
+		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
+		8D8A7F632941C58F0072A582 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F622941C58F0072A582 /* Color.swift */; };
+		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D8A7F482941BC960072A582 /* Mi-sha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi-sha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mi_shaApp.swift; sourceTree = "<group>"; };
-		8D8A7F4D2941BC960072A582 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8D8A7F4D2941BC960072A582 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D8A7F4F2941BC970072A582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8A7F522941BC970072A582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D8A7F592941BE180072A582 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
+		8D8A7F5B2941C0640072A582 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
+		8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
+		8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		8D8A7F622941C58F0072A582 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
-				8D8A7F4D2941BC960072A582 /* ContentView.swift */,
+				8D8A7F5F2941C1DE0072A582 /* Extensions */,
+				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
+				8D8A7F592941BE180072A582 /* AudioView.swift */,
+				8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */,
+				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
+				8D8A7F642941C6C60072A582 /* Components */,
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
 				8D8A7F512941BC970072A582 /* Preview Content */,
 			);
@@ -65,6 +82,23 @@
 				8D8A7F522941BC970072A582 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D8A7F5F2941C1DE0072A582 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */,
+				8D8A7F622941C58F0072A582 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D8A7F642941C6C60072A582 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A7F652941C6D70072A582 /* CardView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8A7F4E2941BC960072A582 /* ContentView.swift in Sources */,
+				8D8A7F4E2941BC960072A582 /* HomeView.swift in Sources */,
+				8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */,
+				8D8A7F632941C58F0072A582 /* Color.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
+				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
+				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
+				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
+				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

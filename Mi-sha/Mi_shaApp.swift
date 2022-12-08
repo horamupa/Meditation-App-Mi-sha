@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Mi_shaApp: App {
+    @StateObject var vm = AudioViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(vm)
         }
     }
 }
