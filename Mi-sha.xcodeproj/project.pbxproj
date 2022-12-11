@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D4684872946164D00B751AC /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4684862946164D00B751AC /* DateFormatter.swift */; };
+		8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66C66F2941CF8C00B37756 /* PlayerView.swift */; };
+		8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */; };
 		8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */; };
 		8D8A7F4E2941BC960072A582 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4D2941BC960072A582 /* HomeView.swift */; };
 		8D8A7F502941BC970072A582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4F2941BC970072A582 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D4684862946164D00B751AC /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		8D66C66F2941CF8C00B37756 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlButton.swift; sourceTree = "<group>"; };
 		8D8A7F482941BC960072A582 /* Mi-sha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi-sha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mi_shaApp.swift; sourceTree = "<group>"; };
 		8D8A7F4D2941BC960072A582 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -44,6 +50,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D4684852946125900B751AC /* AudioCard */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A7F592941BE180072A582 /* AudioView.swift */,
+				8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */,
+				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
+			);
+			path = AudioCard;
+			sourceTree = "<group>";
+		};
+		8D66C66E2941CF8100B37756 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				8D66C66F2941CF8C00B37756 /* PlayerView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		8D8A7F3F2941BC960072A582 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +87,11 @@
 		8D8A7F4A2941BC960072A582 /* Mi-sha */ = {
 			isa = PBXGroup;
 			children = (
-				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
 				8D8A7F5F2941C1DE0072A582 /* Extensions */,
+				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
 				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
-				8D8A7F592941BE180072A582 /* AudioView.swift */,
-				8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */,
-				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
+				8D4684852946125900B751AC /* AudioCard */,
+				8D66C66E2941CF8100B37756 /* Player */,
 				8D8A7F642941C6C60072A582 /* Components */,
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
 				8D8A7F512941BC970072A582 /* Preview Content */,
@@ -89,6 +112,7 @@
 			children = (
 				8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */,
 				8D8A7F622941C58F0072A582 /* Color.swift */,
+				8D4684862946164D00B751AC /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -97,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8A7F652941C6D70072A582 /* CardView.swift */,
+				8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,7 +200,10 @@
 				8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */,
 				8D8A7F632941C58F0072A582 /* Color.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
+				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
+				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
+				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
 				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,
@@ -315,6 +343,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +373,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
