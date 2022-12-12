@@ -18,10 +18,12 @@
 		8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5B2941C0640072A582 /* AudioModel.swift */; };
 		8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */; };
 		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
-		8D8A7F632941C58F0072A582 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F622941C58F0072A582 /* Color.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
 		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
 		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
+		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
+		8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A729477AA600BAF218 /* SettingsView.swift */; };
+		8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19AC29477B9300BAF218 /* XmarkButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +39,13 @@
 		8D8A7F5B2941C0640072A582 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
-		8D8A7F622941C58F0072A582 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
 		8DEB19A32947421C00BAF218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8DEB19A4294760C200BAF218 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		8DEB19A729477AA600BAF218 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8DEB19AC29477B9300BAF218 /* XmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +64,6 @@
 			children = (
 				8D8A7F592941BE180072A582 /* AudioView.swift */,
 				8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */,
-				8D66C66E2941CF8100B37756 /* Player */,
-				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
 			);
 			path = AudioCard;
 			sourceTree = "<group>";
@@ -94,11 +96,11 @@
 			isa = PBXGroup;
 			children = (
 				8DEB19A32947421C00BAF218 /* Info.plist */,
+				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
 				8DEB199E29473A6700BAF218 /* Utilities */,
 				8D8A7F5F2941C1DE0072A582 /* Extensions */,
-				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
-				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
-				8D4684852946125900B751AC /* AudioCard */,
+				8DEB19AA29477AC500BAF218 /* Models */,
+				8DEB19A629477A7F00BAF218 /* Core */,
 				8D8A7F642941C6C60072A582 /* Components */,
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
 				8DEB19A12947419E00BAF218 /* 1.mp3 */,
@@ -119,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */,
-				8D8A7F622941C58F0072A582 /* Color.swift */,
+				8DEB19A4294760C200BAF218 /* Color.swift */,
 				8D4684862946164D00B751AC /* DateFormatter.swift */,
 			);
 			path = Extensions;
@@ -130,6 +132,7 @@
 			children = (
 				8D8A7F652941C6D70072A582 /* CardView.swift */,
 				8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */,
+				8DEB19AC29477B9300BAF218 /* XmarkButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -140,6 +143,41 @@
 				8DEB199F29473A7A00BAF218 /* AudioManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8DEB19A629477A7F00BAF218 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8DEB19AB29477AED00BAF218 /* HomeScreen */,
+				8D4684852946125900B751AC /* AudioCard */,
+				8D66C66E2941CF8100B37756 /* Player */,
+				8DEB19A929477AAC00BAF218 /* Settings */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8DEB19A929477AAC00BAF218 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8DEB19A729477AA600BAF218 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8DEB19AA29477AC500BAF218 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DEB19AB29477AED00BAF218 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,12 +253,14 @@
 			files = (
 				8D8A7F4E2941BC960072A582 /* HomeView.swift in Sources */,
 				8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */,
-				8D8A7F632941C58F0072A582 /* Color.swift in Sources */,
+				8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
+				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
+				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,

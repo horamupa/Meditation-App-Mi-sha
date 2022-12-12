@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @EnvironmentObject var vm: AudioViewModel
     @EnvironmentObject var audioManager: AudioManager
+    @State var isSettings: Bool = false
+    
     
     var body: some View {
         ZStack {
@@ -27,8 +29,23 @@ struct HomeView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        isSettings.toggle()
+                    } label: {
+                        Image(systemName: "text.justifyleft")
+                            .foregroundColor(.white)
+                    }
+
+                }
+            }
             .padding()
         }
+        .sheet(isPresented: $isSettings, content: {
+            SettingsView()
+            
+        })
         .ignoresSafeArea()
     }
 }
