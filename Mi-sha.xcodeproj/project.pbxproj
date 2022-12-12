@@ -21,6 +21,7 @@
 		8D8A7F632941C58F0072A582 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F622941C58F0072A582 /* Color.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
 		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
+		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		8D8A7F622941C58F0072A582 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
+		8DEB19A32947421C00BAF218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			children = (
 				8D8A7F592941BE180072A582 /* AudioView.swift */,
 				8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */,
+				8D66C66E2941CF8100B37756 /* Player */,
 				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
 			);
 			path = AudioCard;
@@ -89,13 +93,15 @@
 		8D8A7F4A2941BC960072A582 /* Mi-sha */ = {
 			isa = PBXGroup;
 			children = (
+				8DEB19A32947421C00BAF218 /* Info.plist */,
+				8DEB199E29473A6700BAF218 /* Utilities */,
 				8D8A7F5F2941C1DE0072A582 /* Extensions */,
 				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
 				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
 				8D4684852946125900B751AC /* AudioCard */,
-				8D66C66E2941CF8100B37756 /* Player */,
 				8D8A7F642941C6C60072A582 /* Components */,
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
+				8DEB19A12947419E00BAF218 /* 1.mp3 */,
 				8D8A7F512941BC970072A582 /* Preview Content */,
 			);
 			path = "Mi-sha";
@@ -112,7 +118,6 @@
 		8D8A7F5F2941C1DE0072A582 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8DEB199E29473A6700BAF218 /* Utilities */,
 				8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */,
 				8D8A7F622941C58F0072A582 /* Color.swift */,
 				8D4684862946164D00B751AC /* DateFormatter.swift */,
@@ -195,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */,
 				8D8A7F532941BC970072A582 /* Preview Assets.xcassets in Resources */,
 				8D8A7F502941BC970072A582 /* Assets.xcassets in Resources */,
 			);
@@ -350,6 +356,7 @@
 				DEVELOPMENT_TEAM = 79GHQ256TM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mi-sha/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,6 +387,7 @@
 				DEVELOPMENT_TEAM = 79GHQ256TM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mi-sha/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

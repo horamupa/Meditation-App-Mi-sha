@@ -17,10 +17,11 @@ struct HomeView: View {
             VStack {
                 HStack {
                     ForEach(vm.meditationList) { item in
-                        CardView(model: item)
-                            .onTapGesture {
-                                AudioView(model: item)
-                            }
+                        NavigationLink {
+                            AudioView(model: item)
+                        } label: {
+                            CardView(model: item)
+                        }
                     }
                 }
             }
