@@ -20,6 +20,7 @@
 		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
 		8D8A7F632941C58F0072A582 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F622941C58F0072A582 /* Color.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
+		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		8D8A7F622941C58F0072A582 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		8D8A7F5F2941C1DE0072A582 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8DEB199E29473A6700BAF218 /* Utilities */,
 				8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */,
 				8D8A7F622941C58F0072A582 /* Color.swift */,
 				8D4684862946164D00B751AC /* DateFormatter.swift */,
@@ -124,6 +127,14 @@
 				8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8DEB199E29473A6700BAF218 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8DEB199F29473A7A00BAF218 /* AudioManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
+				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
