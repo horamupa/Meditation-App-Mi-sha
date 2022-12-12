@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var vm: AudioViewModel
+    @EnvironmentObject var audioManager: AudioManager
     
     var body: some View {
         ZStack {
@@ -19,6 +20,7 @@ struct HomeView: View {
                     ForEach(vm.meditationList) { item in
                         NavigationLink {
                             AudioView(model: item)
+                                .environmentObject(audioManager)
                         } label: {
                             CardView(model: item)
                         }
@@ -35,5 +37,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(dev.vm)
+            .environmentObject(AudioManager())
     }
 }

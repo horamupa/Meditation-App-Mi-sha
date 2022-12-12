@@ -8,12 +8,15 @@
 import SwiftUI
 import AVKit
 
-class AudioManager {
+class AudioManager: ObservableObject {
     
-    static var share = AudioManager()
-    var player: AVAudioPlayer?
-    
-    private init() { }
+    @Published var player: AVAudioPlayer?
+    @Published private var isPlaying: Bool = false {
+        didSet {
+            print("isPlaying", isPlaying)
+        }
+    }
+    @Published var isLoop = false
     
     func startPlayer(name: String) {
         guard
@@ -23,8 +26,44 @@ class AudioManager {
             return
         }
         do {
+            //разрешает играть есть в беззвучном режиме.
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
             player = try AVAudioPlayer(contentsOf: url)
-        } catch let error { print("Can't create player from url \(error.localizedDescription)") }
+        } catch let error {
+            print("Can't create player from url \(error.localizedDescription)")
+        }
         player?.play()
+        isPlaying = true
+    }
+    
+    func playPause() {
+        guard let player = player else {
+            print("Instance of audio player not found")
+            return
+        }
+        if player.isPlaying {
+            player.pause()
+            isPlaying = false
+        } else {
+            player.play()
+            isPlaying = true
+        }
+    }
+    
+    func stop() {
+        guard let player = player else {
+            return
+        }
+        if player.isPlaying {
+            player.stop()
+        }
+    }
+    
+    // player looping if number of loops = -1
+    func toggleLoop() {
+        guard let player = player else { return }
+        player.numberOfLoops = player.numberOfLoops == 0 ? -1 : 0
+        isLoop = player.numberOfLoops != 0
     }
 }

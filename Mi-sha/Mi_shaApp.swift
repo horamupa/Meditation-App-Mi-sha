@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct Mi_shaApp: App {
     @StateObject var vm = AudioViewModel()
+    @StateObject var audioManager = AudioManager()
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 HomeView()
                     .environmentObject(vm)
+                    .environmentObject(audioManager)
             }
         }
     }

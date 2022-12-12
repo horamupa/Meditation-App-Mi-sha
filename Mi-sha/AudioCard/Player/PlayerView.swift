@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PlayerView: View {
+    @EnvironmentObject var audioManager: AudioManager
     var model: AudioModel
     
     @State private var value: Double = 0.0
     @State var isPause: Bool = false
+    @State private var isEditing: Bool = false
     @Environment(\.dismiss) var dismiss
+    
+    let timer = Timer
+        .publish(every: 0.5, on: .main, in: .common)
+        .autoconnect()
     
     var body: some View {
         ZStack {
@@ -33,6 +40,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .onTapGesture {
+                        audioManager.stop()
                         dismiss()
                     }
                 Text(model.name)
@@ -43,37 +51,54 @@ struct PlayerView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                 Spacer()
-                VStack(spacing: 5) {
-                    Slider(value: $value, in: 0...60)
+                if let player = audioManager.player {
+                    VStack(spacing: 5) {
+                        Slider(value: $value, in: 0...player.duration) { editing in
+                            //return rewind slider to audio
+                            isEditing = editing
+                            if !editing {
+                                player.currentTime = value
+                            }
+                        }
                         .accentColor(.white)
-                    HStack {
-                        Text("0:00")
-                        Spacer()
-                        Text("1:00")
+                        HStack {
+                            Text(DateComponentsFormatter.positional.string(from: player.currentTime) ?? "0:00")
+                            Spacer()
+                            Text(DateComponentsFormatter.positional.string(from: player.duration) ?? "0:00")
+                        }
+                        .font(.caption)
+                        HStack {
+                            Spacer()
+                            PlayerControlButton(systemName: "gobackward.10") {
+                                player.currentTime -= 10
+                            }
+                            Spacer()
+                            PlayerControlButton(systemName: isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
+                                isPause.toggle()
+                                audioManager.playPause()
+                            }
+                            Spacer()
+                            PlayerControlButton(systemName: "goforward.10") {
+                                player.currentTime += 10
+                            }
+                            Spacer()
+                        }
                     }
-                    .font(.caption)
-                    HStack {
-                        Spacer()
-                        PlayerControlButton(systemName: "gobackward.10") {
-                            
-                        }
-                        Spacer()
-                        PlayerControlButton(systemName: isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
-                            isPause.toggle()
-                        }
-                        Spacer()
-                        PlayerControlButton(systemName: "goforward.10") {
-                            
-                        }
-                        Spacer()
-                    }
+                    .foregroundColor(.white)
                 }
-                .foregroundColor(.white)
             }
             .padding(.horizontal, 20)
         }
         .onAppear {
-            AudioManager.share.startPlayer(name: model.id)
+            audioManager.startPlayer(name: model.id)
+        }
+        .onReceive(timer) { _ in
+            guard
+                let player = audioManager.player, !isEditing
+            else {
+                print("no audioplayer in manager")
+                return }
+            value = player.currentTime
         }
     }
 }
@@ -82,5 +107,6 @@ struct PlayerVie_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView(model: dev.model)
             .environmentObject(dev.vm)
+            .environmentObject(AudioManager())
     }
 }
