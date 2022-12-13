@@ -24,6 +24,7 @@
 		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
 		8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A729477AA600BAF218 /* SettingsView.swift */; };
 		8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19AC29477B9300BAF218 /* XmarkButton.swift */; };
+		8DEB19AF2947941500BAF218 /* carouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19AE2947941500BAF218 /* carouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8DEB19A4294760C200BAF218 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8DEB19A729477AA600BAF218 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8DEB19AC29477B9300BAF218 /* XmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkButton.swift; sourceTree = "<group>"; };
+		8DEB19AE2947941500BAF218 /* carouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				8D8A7F652941C6D70072A582 /* CardView.swift */,
 				8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */,
 				8DEB19AC29477B9300BAF218 /* XmarkButton.swift */,
+				8DEB19AE2947941500BAF218 /* carouselView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
+				8DEB19AF2947941500BAF218 /* carouselView.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
