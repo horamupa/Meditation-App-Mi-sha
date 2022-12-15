@@ -17,45 +17,64 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            Color.theme.black
+//            Color.theme.black
+            Color.theme.white
                 .ignoresSafeArea()
-            VStack {
-                //                LazyHStack {
-                //                    ForEach(vm.meditationList) { item in
-                //                        NavigationLink {
-                //                            AudioView(model: item)
-                //                                .environmentObject(audioManager)
-                //                        } label: {
-                //                            CardView(model: item)
-                //                        }
-                //                    }
-                //                }
-                Text("Best Meditation ever")
-                    .foregroundColor(.red)
-                    .font(.title)
-                carouselView(spacing: 30, index: $currentIndex, items: vm.meditationList) { meditation in
-                    GeometryReader { proxy in
-                        let size = proxy.size
-                        
-                        Image(meditation.image ?? "stones")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: size.width)
-                            .cornerRadius(10)
+            VStack(alignment: .leading) {
+  
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Good")
+                        Text("Morning")
                     }
+                    .foregroundColor(Color.theme.black)
+                    .font(.meditation(.bold, size: 40))
+//                    .font(.labGrotesque(.bold, size: 40))
+                    
+                    Spacer()
+                    
+                    Image(systemName: "text.justify.left")
+                        .font(.system(size: 30, weight: .bold))
+                        .frame(width: 50, height: 80, alignment: .topTrailing)
                 }
-                .padding(.vertical, 80)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        isSettings.toggle()
-                    } label: {
-                        Image(systemName: "text.justifyleft")
-                            .foregroundColor(.white)
+                .frame(maxHeight: .infinity, alignment: .topLeading)
+                
+                Text("Have a great day!")
+                    .font(.labGrotesque(.regular, size: 18))
+                
+                Rectangle()
+                    .frame(height: 250)
+                    .foregroundColor(Color.theme.orange)
+                    .cornerRadius(25)
+                    .overlay(alignment: .bottomTrailing) {
+                        Image(systemName: "play.circle")
+                            .scaleEffect(2.5)
+                            .foregroundColor(Color.theme.white)
+                            .frame(width: 50, height: 50)
+                            .padding()
                     }
+                
+                    Text("Explore yourself")
+                    .font(.labGrotesque(.medium, size: 20))
+                   
+                HStack {
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+                        .foregroundColor(Color.theme.blue)
+                        .cornerRadius(25)
+                    
+                    Spacer()
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+                        .foregroundColor(Color.theme.purple)
+                        .cornerRadius(25)
                 }
+                .frame(maxWidth: .infinity)
+
             }
+            .padding(30)
+            .foregroundColor(Color.theme.black)
+            .navigationBarHidden(true)
         }
        
         .sheet(isPresented: $isSettings, content: {
@@ -67,9 +86,11 @@ struct HomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .environmentObject(dev.vm)
-            .environmentObject(AudioManager())
+        NavigationView {
+            HomeView()
+                .environmentObject(dev.vm)
+                .environmentObject(AudioManager())
+        }
     }
 }
 

@@ -24,7 +24,14 @@
 		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
 		8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A729477AA600BAF218 /* SettingsView.swift */; };
 		8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19AC29477B9300BAF218 /* XmarkButton.swift */; };
-		8DEB19AF2947941500BAF218 /* carouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19AE2947941500BAF218 /* carouselView.swift */; };
+		8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19B12948978E00BAF218 /* LoginView.swift */; };
+		8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19D8294B3DED00BAF218 /* Fonts.swift */; };
+		8DEB19E2294B44B800BAF218 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E1294B44B800BAF218 /* LabGrotesque-Bold.ttf */; };
+		8DEB19E4294B44C300BAF218 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E3294B44C300BAF218 /* LabGrotesque-Medium.ttf */; };
+		8DEB19E6294B44CC00BAF218 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E5294B44CC00BAF218 /* LabGrotesque-Regular.ttf */; };
+		8DEB19EA294B453E00BAF218 /* JekoMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E7294B453E00BAF218 /* JekoMedium.ttf */; };
+		8DEB19EB294B453E00BAF218 /* JekoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E8294B453E00BAF218 /* JekoRegular.ttf */; };
+		8DEB19EC294B453E00BAF218 /* JekoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E9294B453E00BAF218 /* JekoBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +54,14 @@
 		8DEB19A4294760C200BAF218 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8DEB19A729477AA600BAF218 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8DEB19AC29477B9300BAF218 /* XmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkButton.swift; sourceTree = "<group>"; };
-		8DEB19AE2947941500BAF218 /* carouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselView.swift; sourceTree = "<group>"; };
+		8DEB19B12948978E00BAF218 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8DEB19D8294B3DED00BAF218 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8DEB19E1294B44B800BAF218 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
+		8DEB19E3294B44C300BAF218 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
+		8DEB19E5294B44CC00BAF218 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
+		8DEB19E7294B453E00BAF218 /* JekoMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoMedium.ttf; sourceTree = "<group>"; };
+		8DEB19E8294B453E00BAF218 /* JekoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoRegular.ttf; sourceTree = "<group>"; };
+		8DEB19E9294B453E00BAF218 /* JekoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoBold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +121,7 @@
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
 				8DEB19A12947419E00BAF218 /* 1.mp3 */,
 				8D8A7F512941BC970072A582 /* Preview Content */,
+				8DEB19DA294B3E1600BAF218 /* Fonts */,
 			);
 			path = "Mi-sha";
 			sourceTree = "<group>";
@@ -125,6 +140,7 @@
 				8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */,
 				8DEB19A4294760C200BAF218 /* Color.swift */,
 				8D4684862946164D00B751AC /* DateFormatter.swift */,
+				8DEB19D8294B3DED00BAF218 /* Fonts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,7 +151,6 @@
 				8D8A7F652941C6D70072A582 /* CardView.swift */,
 				8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */,
 				8DEB19AC29477B9300BAF218 /* XmarkButton.swift */,
-				8DEB19AE2947941500BAF218 /* carouselView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -151,6 +166,7 @@
 		8DEB19A629477A7F00BAF218 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8DEB19B02948977A00BAF218 /* LoginScreen */,
 				8DEB19AB29477AED00BAF218 /* HomeScreen */,
 				8D4684852946125900B751AC /* AudioCard */,
 				8D66C66E2941CF8100B37756 /* Player */,
@@ -181,6 +197,27 @@
 				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
 			);
 			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		8DEB19B02948977A00BAF218 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8DEB19B12948978E00BAF218 /* LoginView.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		8DEB19DA294B3E1600BAF218 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8DEB19E1294B44B800BAF218 /* LabGrotesque-Bold.ttf */,
+				8DEB19E3294B44C300BAF218 /* LabGrotesque-Medium.ttf */,
+				8DEB19E5294B44CC00BAF218 /* LabGrotesque-Regular.ttf */,
+				8DEB19E9294B453E00BAF218 /* JekoBold.ttf */,
+				8DEB19E7294B453E00BAF218 /* JekoMedium.ttf */,
+				8DEB19E8294B453E00BAF218 /* JekoRegular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,9 +278,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEB19EA294B453E00BAF218 /* JekoMedium.ttf in Resources */,
 				8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */,
+				8DEB19E2294B44B800BAF218 /* LabGrotesque-Bold.ttf in Resources */,
 				8D8A7F532941BC970072A582 /* Preview Assets.xcassets in Resources */,
 				8D8A7F502941BC970072A582 /* Assets.xcassets in Resources */,
+				8DEB19E4294B44C300BAF218 /* LabGrotesque-Medium.ttf in Resources */,
+				8DEB19EC294B453E00BAF218 /* JekoBold.ttf in Resources */,
+				8DEB19EB294B453E00BAF218 /* JekoRegular.ttf in Resources */,
+				8DEB19E6294B44CC00BAF218 /* LabGrotesque-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,13 +304,14 @@
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
 				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
+				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
-				8DEB19AF2947941500BAF218 /* carouselView.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
+				8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */,
 				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
