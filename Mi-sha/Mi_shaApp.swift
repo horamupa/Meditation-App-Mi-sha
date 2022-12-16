@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+
+
 
 @main
 struct Mi_shaApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     @StateObject var vm = HomeViewModel()
     @StateObject var audioManager = AudioManager()
     var body: some Scene {

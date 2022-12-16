@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct HomeView: View {
     
@@ -44,14 +45,24 @@ struct HomeView: View {
                 Rectangle()
                     .frame(height: 250)
                     .foregroundColor(Color.theme.orange)
-                    .cornerRadius(25)
+                    
                     .overlay(alignment: .bottomTrailing) {
-                        Image(systemName: "play.circle")
-                            .scaleEffect(2.5)
-                            .foregroundColor(Color.theme.white)
-                            .frame(width: 50, height: 50)
-                            .padding()
+                        HStack {
+                            Text("Start your journey here")
+                                .font(.labGrotesque(.medium, size: 16))
+                                Spacer()
+                            Image(systemName: "play.circle")
+                                .scaleEffect(2.5)
+                                .foregroundColor(Color.theme.white)
+                                .frame(width: 50, height: 50)
+                        }
+                        .padding(5)
+                        .padding(.horizontal, 20)
+                        .frame(maxWidth: .infinity)
+                        .background(.ultraThinMaterial)
+                        
                     }
+                    .cornerRadius(25)
                 
                     Text("Explore yourself")
                     .font(.labGrotesque(.medium, size: 20))
@@ -64,11 +75,14 @@ struct HomeView: View {
                                     Rectangle()
                                         .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
                                         .foregroundColor(Color(item.image))
-                                        .cornerRadius(25)
+                                        
                                     Text(item.name)
                                         .font(.labGrotesque(.regular, size: 16))
-                                        .padding()
+                                        .padding(15)
+                                        .frame(maxWidth: .infinity)
+                                        .background(.ultraThinMaterial)
                                 }
+                                .cornerRadius(25)
                             }
                         }
     //                    Rectangle()

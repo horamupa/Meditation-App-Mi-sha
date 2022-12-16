@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>985832041296-8ha1cvv15a1a7ge8rpjjshjcg705di79.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.985832041296-8ha1cvv15a1a7ge8rpjjshjcg705di79</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBwNJHDec7ZrX06zLxqu6xH4q9Qb8Dka40</string>
+	<key>GCM_SENDER_ID</key>
+	<string>985832041296</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.med.meditation</string>
+	<key>PROJECT_ID</key>
+	<string>med-meditation-2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>med-meditation-2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:985832041296:ios:514407445a61ef64321a55</string>
+</dict>
+</plist>

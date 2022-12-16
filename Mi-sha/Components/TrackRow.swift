@@ -10,15 +10,20 @@ import SwiftUI
 struct TrackRow: View {
     let track: TrackModel
     var body: some View {
-        HStack {
-            Text(track.name)
-            Spacer()
-            Image(systemName: "play.fill")
-                .foregroundColor(Color.theme.blue)
-            Image(systemName: "heart.fill")
-                .foregroundColor(.red)
+        ZStack {
+            NavigationLink(destination: PlayerView(model: track), label: {
+                HStack {
+                    Text(track.name).bold()
+                        .minimumScaleFactor(0.5)
+                    Spacer()
+                    Text(DateComponentsFormatter.abbreviated.string(from: track.duration) ?? track.duration.formatted() + "s")
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.red)
+                }
+                .padding(20)
+            })
+            .buttonStyle(.plain)
         }
-        .padding()
     }
 }
 

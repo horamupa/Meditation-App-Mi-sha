@@ -21,14 +21,17 @@ struct CourseView: View {
                             .cornerRadius(25)
                         Text(innerCourse.name)
                             .font(.labGrotesque(.medium))
-                            .padding(.horizontal, 20)
+                            .padding(10)
+                            .frame(maxWidth: .infinity)
+                            .background(.ultraThinMaterial)
                     }
+                    .cornerRadius(25)
                     VStack(alignment: .leading) {
                         
                         ForEach(innerCourse.tracks) { track in
                             TrackRow(track: track)
-                                .background(.thinMaterial)
-                                .cornerRadius(10)
+//                                .background(.thinMaterial)
+//                                .cornerRadius(10)
                         }
                         Spacer()
                     }
@@ -37,6 +40,7 @@ struct CourseView: View {
                 
             }
         }
+        .ignoresSafeArea()
     }
 }
 
