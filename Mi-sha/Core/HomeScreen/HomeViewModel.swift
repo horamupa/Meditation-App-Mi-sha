@@ -1,19 +1,14 @@
-//
-//  MeditationViewModel.swift
-//  Mi-sha
-//
-//  Created by MM on 08.12.2022.
-//
-
 import SwiftUI
 import AVKit
 
-class AudioViewModel: ObservableObject {
+class HomeViewModel: ObservableObject {
     
+    @Published var courses: [CourseModel] = []
     @Published var meditationList: [TrackModel] = []
     
     init() {
         self.meditationList = getData()
+        self.courses = getCourses()
     }
     
     func getData() -> [TrackModel] {
@@ -24,5 +19,15 @@ class AudioViewModel: ObservableObject {
         ]
         
         return fetchedData
+    }
+    
+    func getCourses() -> [CourseModel] {
+        
+        var addCourses = [CourseModel]()
+        for i in 0..<3 {
+            addCourses.append(CourseModel(name: "Course \(String(i))", image: "Color\(i)", tracks: [TrackModel.track]))
+        }
+        return addCourses
+        
     }
 }

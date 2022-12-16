@@ -10,7 +10,7 @@ import Combine
 
 struct PlayerView: View {
     @EnvironmentObject var audioManager: AudioManager
-    var model: AudioModel
+    var model: TrackModel
     
     @State private var value: Double = 0.0
     @State var isPause: Bool = false
@@ -105,7 +105,7 @@ struct PlayerView: View {
 
 struct PlayerVie_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(model: dev.model)
+        PlayerView(model: dev.track)
             .environmentObject(dev.vm)
             .environmentObject(AudioManager())
     }

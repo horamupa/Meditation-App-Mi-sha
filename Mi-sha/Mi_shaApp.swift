@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Mi_shaApp: App {
-    @StateObject var vm = AudioViewModel()
+    @StateObject var vm = HomeViewModel()
     @StateObject var audioManager = AudioManager()
     var body: some Scene {
         WindowGroup {

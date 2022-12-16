@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AudioModel: Codable, Hashable, Identifiable {
+struct TrackModel: Codable, Hashable, Identifiable {
     let id: String
     let name: String
     let duration: TimeInterval
@@ -23,4 +23,7 @@ struct AudioModel: Codable, Hashable, Identifiable {
         self.isListen = isListen
         self.image = image
     }
+    
+   static let track = TrackModel(id: "1", name: "1 minute relaxing meditation", duration: 70, description: "Best Meditation You Ever Heard", image: "stones")
+    
 }

@@ -15,7 +15,7 @@
 		8D8A7F502941BC970072A582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4F2941BC970072A582 /* Assets.xcassets */; };
 		8D8A7F532941BC970072A582 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8A7F522941BC970072A582 /* Preview Assets.xcassets */; };
 		8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F592941BE180072A582 /* AudioView.swift */; };
-		8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5B2941C0640072A582 /* AudioModel.swift */; };
+		8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5B2941C0640072A582 /* TrackModel.swift */; };
 		8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */; };
 		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
@@ -32,6 +32,10 @@
 		8DEB19EA294B453E00BAF218 /* JekoMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E7294B453E00BAF218 /* JekoMedium.ttf */; };
 		8DEB19EB294B453E00BAF218 /* JekoRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E8294B453E00BAF218 /* JekoRegular.ttf */; };
 		8DEB19EC294B453E00BAF218 /* JekoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E9294B453E00BAF218 /* JekoBold.ttf */; };
+		8DEB19EE294B495C00BAF218 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19ED294B495C00BAF218 /* CourseModel.swift */; };
+		8DEB19F0294C8AEA00BAF218 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19EF294C8AEA00BAF218 /* HomeViewModel.swift */; };
+		8DEB19F3294C8F0900BAF218 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F2294C8F0900BAF218 /* CourseView.swift */; };
+		8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F4294C93BB00BAF218 /* TrackRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +48,7 @@
 		8D8A7F4F2941BC970072A582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8A7F522941BC970072A582 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D8A7F592941BE180072A582 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
-		8D8A7F5B2941C0640072A582 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
+		8D8A7F5B2941C0640072A582 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,10 @@
 		8DEB19E7294B453E00BAF218 /* JekoMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoMedium.ttf; sourceTree = "<group>"; };
 		8DEB19E8294B453E00BAF218 /* JekoRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoRegular.ttf; sourceTree = "<group>"; };
 		8DEB19E9294B453E00BAF218 /* JekoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoBold.ttf; sourceTree = "<group>"; };
+		8DEB19ED294B495C00BAF218 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		8DEB19EF294C8AEA00BAF218 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8DEB19F2294C8F0900BAF218 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		8DEB19F4294C93BB00BAF218 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8A7F652941C6D70072A582 /* CardView.swift */,
+				8DEB19F4294C93BB00BAF218 /* TrackRow.swift */,
 				8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */,
 				8DEB19AC29477B9300BAF218 /* XmarkButton.swift */,
 			);
@@ -168,6 +177,7 @@
 			children = (
 				8DEB19B02948977A00BAF218 /* LoginScreen */,
 				8DEB19AB29477AED00BAF218 /* HomeScreen */,
+				8DEB19F1294C8EEE00BAF218 /* CourseView */,
 				8D4684852946125900B751AC /* AudioCard */,
 				8D66C66E2941CF8100B37756 /* Player */,
 				8DEB19A929477AAC00BAF218 /* Settings */,
@@ -186,7 +196,8 @@
 		8DEB19AA29477AC500BAF218 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8D8A7F5B2941C0640072A582 /* AudioModel.swift */,
+				8DEB19ED294B495C00BAF218 /* CourseModel.swift */,
+				8D8A7F5B2941C0640072A582 /* TrackModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8A7F4D2941BC960072A582 /* HomeView.swift */,
+				8DEB19EF294C8AEA00BAF218 /* HomeViewModel.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -218,6 +230,14 @@
 				8DEB19E8294B453E00BAF218 /* JekoRegular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8DEB19F1294C8EEE00BAF218 /* CourseView */ = {
+			isa = PBXGroup;
+			children = (
+				8DEB19F2294C8F0900BAF218 /* CourseView.swift */,
+			);
+			path = CourseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8A7F4E2941BC960072A582 /* HomeView.swift in Sources */,
+				8DEB19EE294B495C00BAF218 /* CourseModel.swift in Sources */,
 				8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */,
 				8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
@@ -306,12 +327,15 @@
 				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
 				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
-				8D8A7F5C2941C0640072A582 /* AudioModel.swift in Sources */,
+				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
+				8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */,
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
+				8DEB19F3294C8F0900BAF218 /* CourseView.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
 				8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */,
+				8DEB19F0294C8AEA00BAF218 /* HomeViewModel.swift in Sources */,
 				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

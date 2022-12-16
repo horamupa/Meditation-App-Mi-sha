@@ -12,7 +12,7 @@ struct AudioView: View {
     @EnvironmentObject var vm: AudioViewModel
     @EnvironmentObject var audioManager: AudioManager
     @State var isPlayerShow: Bool = false
-    var model: AudioModel
+    var model: TrackModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -60,7 +60,7 @@ struct AudioView: View {
 
 struct MeditationView_Previews: PreviewProvider {
     static var previews: some View {
-        AudioView(model: dev.model)
+        AudioView(model: dev.track)
             .environmentObject(AudioManager() )
     }
 }

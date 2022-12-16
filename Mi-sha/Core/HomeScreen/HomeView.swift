@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @EnvironmentObject var vm: AudioViewModel
+    @EnvironmentObject var vm: HomeViewModel
     @EnvironmentObject var audioManager: AudioManager
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
@@ -29,7 +29,6 @@ struct HomeView: View {
                     }
                     .foregroundColor(Color.theme.black)
                     .font(.meditation(.bold, size: 40))
-//                    .font(.labGrotesque(.bold, size: 40))
                     
                     Spacer()
                     
@@ -57,19 +56,34 @@ struct HomeView: View {
                     Text("Explore yourself")
                     .font(.labGrotesque(.medium, size: 20))
                    
-                HStack {
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
-                        .foregroundColor(Color.theme.blue)
-                        .cornerRadius(25)
-                    
-                    Spacer()
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
-                        .foregroundColor(Color.theme.purple)
-                        .cornerRadius(25)
+                ScrollView(.horizontal) {
+                    HStack(spacing: 20) {
+                        ForEach(vm.courses) { item in
+                            NavigationLink(destination: CourseView(innerCourse: item)) {
+                                ZStack(alignment: .bottomTrailing) {
+                                    Rectangle()
+                                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+                                        .foregroundColor(Color(item.image))
+                                        .cornerRadius(25)
+                                    Text(item.name)
+                                        .font(.labGrotesque(.regular, size: 16))
+                                        .padding()
+                                }
+                            }
+                        }
+    //                    Rectangle()
+    //                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+    //                        .foregroundColor(Color.theme.blue)
+    //                        .cornerRadius(25)
+    //
+    //                    Spacer()
+    //                    Rectangle()
+    //                        .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+    //                        .foregroundColor(Color.theme.purple)
+    //                        .cornerRadius(25)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
 
             }
             .padding(30)

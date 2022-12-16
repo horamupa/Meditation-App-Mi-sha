@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    var model: AudioModel
+    var model: TrackModel
     
     var body: some View {
         ZStack {
@@ -44,6 +44,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(model: dev.model)
+        CardView(model: dev.track)
     }
 }
