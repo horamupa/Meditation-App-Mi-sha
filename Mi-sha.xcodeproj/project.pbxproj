@@ -37,7 +37,6 @@
 		8DEB19F3294C8F0900BAF218 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F2294C8F0900BAF218 /* CourseView.swift */; };
 		8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F4294C93BB00BAF218 /* TrackRow.swift */; };
 		8DEB19F7294CC23400BAF218 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F6294CC23400BAF218 /* Double.swift */; };
-		8DEB19F9294CD57A00BAF218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19F8294CD57900BAF218 /* GoogleService-Info.plist */; };
 		8DEB19FC294CD79500BAF218 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB19FB294CD79500BAF218 /* FirebaseAnalytics */; };
 		8DEB19FE294CD79500BAF218 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB19FD294CD79500BAF218 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		8DEB1A00294CD79500BAF218 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB19FF294CD79500BAF218 /* FirebaseAuth */; };
@@ -46,6 +45,11 @@
 		8DEB1A06294CD79500BAF218 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB1A05294CD79500BAF218 /* FirebaseFirestore */; };
 		8DEB1A08294CD79500BAF218 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB1A07294CD79500BAF218 /* FirebaseFirestoreCombine-Community */; };
 		8DEB1A0A294CD79500BAF218 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB1A09294CD79500BAF218 /* FirebaseStorage */; };
+		8DEB1A11295077B300BAF218 /* MateLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB1A10295077B300BAF218 /* MateLoginView.swift */; };
+		8DEB1A13295077E600BAF218 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB1A12295077E600BAF218 /* AuthService.swift */; };
+		8DEB1A15295079FC00BAF218 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB1A14295079FC00BAF218 /* Placeholder.swift */; };
+		8DEB1A172950810A00BAF218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB1A162950810A00BAF218 /* GoogleService-Info.plist */; };
+		8DEB1A1929508DFA00BAF218 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB1A1829508DFA00BAF218 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +85,11 @@
 		8DEB19F2294C8F0900BAF218 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		8DEB19F4294C93BB00BAF218 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
 		8DEB19F6294CC23400BAF218 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		8DEB19F8294CD57900BAF218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DEB1A10295077B300BAF218 /* MateLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateLoginView.swift; sourceTree = "<group>"; };
+		8DEB1A12295077E600BAF218 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8DEB1A14295079FC00BAF218 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		8DEB1A162950810A00BAF218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DEB1A1829508DFA00BAF218 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +147,7 @@
 		8D8A7F4A2941BC960072A582 /* Mi-sha */ = {
 			isa = PBXGroup;
 			children = (
-				8DEB19F8294CD57900BAF218 /* GoogleService-Info.plist */,
+				8DEB1A162950810A00BAF218 /* GoogleService-Info.plist */,
 				8DEB19A32947421C00BAF218 /* Info.plist */,
 				8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */,
 				8DEB199E29473A6700BAF218 /* Utilities */,
@@ -171,6 +179,7 @@
 				8D4684862946164D00B751AC /* DateFormatter.swift */,
 				8DEB19D8294B3DED00BAF218 /* Fonts.swift */,
 				8DEB19F6294CC23400BAF218 /* Double.swift */,
+				8DEB1A14295079FC00BAF218 /* Placeholder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				8DEB199F29473A7A00BAF218 /* AudioManager.swift */,
+				8DEB1A12295077E600BAF218 /* AuthService.swift */,
+				8DEB1A1829508DFA00BAF218 /* DataManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEB19B12948978E00BAF218 /* LoginView.swift */,
+				8DEB1A10295077B300BAF218 /* MateLoginView.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -338,9 +350,9 @@
 				8DEB19E2294B44B800BAF218 /* LabGrotesque-Bold.ttf in Resources */,
 				8D8A7F532941BC970072A582 /* Preview Assets.xcassets in Resources */,
 				8D8A7F502941BC970072A582 /* Assets.xcassets in Resources */,
+				8DEB1A172950810A00BAF218 /* GoogleService-Info.plist in Resources */,
 				8DEB19E4294B44C300BAF218 /* LabGrotesque-Medium.ttf in Resources */,
 				8DEB19EC294B453E00BAF218 /* JekoBold.ttf in Resources */,
-				8DEB19F9294CD57A00BAF218 /* GoogleService-Info.plist in Resources */,
 				8DEB19EB294B453E00BAF218 /* JekoRegular.ttf in Resources */,
 				8DEB19E6294B44CC00BAF218 /* LabGrotesque-Regular.ttf in Resources */,
 			);
@@ -362,6 +374,8 @@
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
 				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
 				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
+				8DEB1A13295077E600BAF218 /* AuthService.swift in Sources */,
+				8DEB1A11295077B300BAF218 /* MateLoginView.swift in Sources */,
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */,
@@ -372,8 +386,10 @@
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
 				8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */,
+				8DEB1A1929508DFA00BAF218 /* DataManager.swift in Sources */,
 				8DEB19F0294C8AEA00BAF218 /* HomeViewModel.swift in Sources */,
 				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,
+				8DEB1A15295079FC00BAF218 /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -484,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

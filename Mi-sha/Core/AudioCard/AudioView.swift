@@ -43,7 +43,7 @@ struct AudioView: View {
                             .background(Color.white)
                             .cornerRadius(20)
                     }
-                    Text(model.description)
+//                    Text(model.description)
                     Spacer()
                 }
                 .padding()

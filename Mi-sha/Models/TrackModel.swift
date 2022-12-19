@@ -11,19 +11,21 @@ struct TrackModel: Codable, Hashable, Identifiable {
     let id: String
     let name: String
     let duration: TimeInterval
-    let description: String
+//    let description: String
     var isListen: Bool
     let image: String?
+    let url: String
     
-    init(id: String, name: String, duration: TimeInterval, description: String, isListen: Bool = false, image: String?) {
+    init(id: String, name: String, duration: TimeInterval, isListen: Bool = false, image: String?, url: String = "") {
         self.id = id
         self.name = name
         self.duration = duration
-        self.description = description
+//        self.description = description
         self.isListen = isListen
         self.image = image
+        self.url = url
     }
     
-   static let track = TrackModel(id: "1", name: "1 minute relaxing meditation", duration: 70, description: "Best Meditation You Ever Heard", image: "stones")
+   static let track = TrackModel(id: "1", name: "1 minute relaxing meditation", duration: 70, image: "stones")
     
 }
