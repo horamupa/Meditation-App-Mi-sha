@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Combine
+import Firebase
+import FirebaseStorage
+import AVKit
 
 struct PlayerView: View {
     @EnvironmentObject var audioManager: AudioManager
@@ -16,6 +19,7 @@ struct PlayerView: View {
     @State var isPause: Bool = false
     @State private var isEditing: Bool = false
     @Environment(\.dismiss) var dismiss
+    @State var player = AVPlayer()
     
     let timer = Timer
         .publish(every: 0.5, on: .main, in: .common)
@@ -40,7 +44,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .onTapGesture {
-                        audioManager.stop()
+                        AudioManager.shared.stop()
                         dismiss()
                     }
                 Text(model.name)
@@ -51,7 +55,7 @@ struct PlayerView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                 Spacer()
-                if let player = audioManager.player {
+                if let player = AudioManager.shared.player {
                     VStack(spacing: 5) {
                         Slider(value: $value, in: 0...player.duration) { editing in
                             //return rewind slider to audio
@@ -70,16 +74,16 @@ struct PlayerView: View {
                         HStack {
                             Spacer()
                             PlayerControlButton(systemName: "gobackward.10") {
-                                player.currentTime -= 10
+                                AudioManager.shared.player?.currentTime -= 10
                             }
                             Spacer()
                             PlayerControlButton(systemName: isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
                                 isPause.toggle()
-                                audioManager.playPause()
+                                AudioManager.shared.playPause()
                             }
                             Spacer()
                             PlayerControlButton(systemName: "goforward.10") {
-                                player.currentTime += 10
+                                AudioManager.shared.player?.currentTime += 10
                             }
                             Spacer()
                         }
@@ -90,11 +94,23 @@ struct PlayerView: View {
             .padding(.horizontal, 20)
         }
         .onAppear {
-            audioManager.startPlayer(name: model.id)
+//            audioManager.startPlayer(name: model.id)
+           let storage = Storage.storage().reference(forURL: model.url)
+            storage.downloadURL { url, error in
+                if let error = error {
+                    print("Error download from the firebase. \(error.localizedDescription)")
+                } else {
+//                    self.player = AVPlayer(url: url!)
+//                    player.play()
+                    AudioManager.shared.startPlayerStream(url: model.url)
+                    print("player Succes")
+                    
+                }
+            }
         }
         .onReceive(timer) { _ in
             guard
-                let player = audioManager.player, !isEditing
+                let player = AudioManager.shared.player, !isEditing
             else {
                 print("no audioplayer in manager")
                 return }
@@ -107,6 +123,6 @@ struct PlayerVie_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView(model: dev.track)
             .environmentObject(dev.vm)
-            .environmentObject(AudioManager())
+            .environmentObject(AudioManager.shared)
     }
 }

@@ -61,6 +61,6 @@ struct AudioView: View {
 struct MeditationView_Previews: PreviewProvider {
     static var previews: some View {
         AudioView(model: dev.track)
-            .environmentObject(AudioManager() )
+            .environmentObject(AudioManager.shared)
     }
 }

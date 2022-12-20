@@ -18,6 +18,33 @@ class AudioManager: ObservableObject {
     }
     @Published var isLoop = false
     
+    static var shared = AudioManager()
+    
+    private init() { }
+    
+    func startPlayerStream(url: String) {
+        guard
+            let url = URL(string: url)
+        else {
+            print("Bad track URL")
+            return
+        }
+        do {
+            //разрешает играть есть в беззвучном режиме.
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            let data = try! Data(contentsOf: url)
+            player = try! AVAudioPlayer(data: data)
+            player?.prepareToPlay()
+//            player = try AVAudioPlayer(contentsOf: url)
+
+        } catch let error {
+            print("Can't create player from url \(error.localizedDescription)")
+        }
+        player?.play()
+        isPlaying = true
+    }
+    
     func startPlayer(name: String) {
         guard
         let url = Bundle.main.url(forResource: name, withExtension: "mp3")

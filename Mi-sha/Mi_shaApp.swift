@@ -26,7 +26,7 @@ struct Mi_shaApp: App {
     }
     
     @StateObject var vm = HomeViewModel()
-    @StateObject var audioManager = AudioManager()
+    @StateObject var audioManager = AudioManager.shared
     var body: some Scene {
         WindowGroup {
             NavigationView {

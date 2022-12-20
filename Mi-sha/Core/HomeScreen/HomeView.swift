@@ -124,7 +124,7 @@ struct ContentView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
                 .environmentObject(dev.vm)
-                .environmentObject(AudioManager())
+                .environmentObject(AudioManager.shared)
         }
     }
 }
