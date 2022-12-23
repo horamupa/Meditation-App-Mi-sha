@@ -19,6 +19,7 @@
 		8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */; };
 		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
+		8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664042955B25100123DA2 /* OnboardingView.swift */; };
 		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
 		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
 		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
@@ -67,6 +68,7 @@
 		8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8DC663F72951CA0A00123DA2 /* Mi-sha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mi-sha.entitlements"; sourceTree = "<group>"; };
+		8DC664042955B25100123DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
 		8DEB19A32947421C00BAF218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -197,6 +199,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		8DC664032955B21300123DA2 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8DC664042955B25100123DA2 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		8DEB199E29473A6700BAF218 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 				8DEB19F1294C8EEE00BAF218 /* CourseView */,
 				8D4684852946125900B751AC /* AudioCard */,
 				8D66C66E2941CF8100B37756 /* Player */,
+				8DC664032955B21300123DA2 /* Onboarding */,
 				8DEB19A929477AAC00BAF218 /* Settings */,
 			);
 			path = Core;
@@ -378,6 +389,7 @@
 				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
 				8DEB1A13295077E600BAF218 /* AuthService.swift in Sources */,
 				8DEB1A11295077B300BAF218 /* MateLoginView.swift in Sources */,
+				8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */,
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */,

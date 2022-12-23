@@ -4,6 +4,10 @@
 //
 //  Created by MM on 08.12.2022.
 //
+/*
+ Want to do:
+ Upgrade first screen main window to next meditation
+ */
 
 import SwiftUI
 import Firebase

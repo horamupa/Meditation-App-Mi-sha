@@ -24,15 +24,19 @@ struct Mi_shaApp: App {
     init() {
         FirebaseApp.configure()
     }
-    
+    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     @StateObject var vm = HomeViewModel()
     @StateObject var audioManager = AudioManager.shared
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeView()
-                    .environmentObject(vm)
-                    .environmentObject(audioManager)
+            if !currentUserSignedIn {
+                OnboardingView()
+            } else {
+                NavigationView {
+                    HomeView()
+                        .environmentObject(vm)
+                        .environmentObject(audioManager)
+                }
             }
         }
     }
