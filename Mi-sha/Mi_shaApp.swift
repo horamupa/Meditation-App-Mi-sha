@@ -33,9 +33,13 @@ struct Mi_shaApp: App {
                 OnboardingView()
             } else {
                 NavigationView {
-                    HomeView()
-                        .environmentObject(vm)
-                        .environmentObject(audioManager)
+                    if vm.courses.count > 0 {
+                        HomeView()
+                            .environmentObject(vm)
+                            .environmentObject(audioManager)
+                    } else {
+                        CustomLoadingView()
+                    }
                 }
             }
         }

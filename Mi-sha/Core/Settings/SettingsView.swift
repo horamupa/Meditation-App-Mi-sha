@@ -24,6 +24,10 @@ struct SettingsView: View {
                     .scaledToFill()
                     .frame(width: 150, height: 150)
                     .clipShape(Circle())
+                Text("1 day streak добавить в мёд")
+                Image("streak")
+                    .resizable()
+                    .frame(width: 150, height: 150)
                 Text(userName)
                 List {
                     Section("User Info") {

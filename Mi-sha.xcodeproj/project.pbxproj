@@ -20,6 +20,9 @@
 		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
 		8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664042955B25100123DA2 /* OnboardingView.swift */; };
+		8DC664072955B46700123DA2 /* FileManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664062955B46700123DA2 /* FileManagerClass.swift */; };
+		8DC664092955B49500123DA2 /* CacheManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664082955B49500123DA2 /* CacheManagerClass.swift */; };
+		8DC6640B2955B56600123DA2 /* ProgressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6640A2955B56600123DA2 /* ProgressInfo.swift */; };
 		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
 		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
 		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
@@ -51,6 +54,8 @@
 		8DEB1A15295079FC00BAF218 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB1A14295079FC00BAF218 /* Placeholder.swift */; };
 		8DEB1A172950810A00BAF218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB1A162950810A00BAF218 /* GoogleService-Info.plist */; };
 		8DEB1A1929508DFA00BAF218 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB1A1829508DFA00BAF218 /* DataManager.swift */; };
+		8DFA30412959CAF200AB0170 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA30402959CAF200AB0170 /* CustomLoadingView.swift */; };
+		8DFA30432959D59700AB0170 /* SavedPreferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA30422959D59700AB0170 /* SavedPreferenceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +74,9 @@
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8DC663F72951CA0A00123DA2 /* Mi-sha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mi-sha.entitlements"; sourceTree = "<group>"; };
 		8DC664042955B25100123DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		8DC664062955B46700123DA2 /* FileManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerClass.swift; sourceTree = "<group>"; };
+		8DC664082955B49500123DA2 /* CacheManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerClass.swift; sourceTree = "<group>"; };
+		8DC6640A2955B56600123DA2 /* ProgressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressInfo.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
 		8DEB19A32947421C00BAF218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +101,8 @@
 		8DEB1A14295079FC00BAF218 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		8DEB1A162950810A00BAF218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DEB1A1829508DFA00BAF218 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8DFA30402959CAF200AB0170 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		8DFA30422959D59700AB0170 /* SavedPreferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPreferenceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +223,9 @@
 				8DEB199F29473A7A00BAF218 /* AudioManager.swift */,
 				8DEB1A12295077E600BAF218 /* AuthService.swift */,
 				8DEB1A1829508DFA00BAF218 /* DataManager.swift */,
+				8DC664062955B46700123DA2 /* FileManagerClass.swift */,
+				8DC664082955B49500123DA2 /* CacheManagerClass.swift */,
+				8DC6640A2955B56600123DA2 /* ProgressInfo.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -227,6 +240,7 @@
 				8D66C66E2941CF8100B37756 /* Player */,
 				8DC664032955B21300123DA2 /* Onboarding */,
 				8DEB19A929477AAC00BAF218 /* Settings */,
+				8DFA303F2959CA5A00AB0170 /* LoadingView */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -243,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEB19ED294B495C00BAF218 /* CourseModel.swift */,
+				8DFA30422959D59700AB0170 /* SavedPreferenceModel.swift */,
 				8D8A7F5B2941C0640072A582 /* TrackModel.swift */,
 			);
 			path = Models;
@@ -285,6 +300,14 @@
 				8DEB19F2294C8F0900BAF218 /* CourseView.swift */,
 			);
 			path = CourseView;
+			sourceTree = "<group>";
+		};
+		8DFA303F2959CA5A00AB0170 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				8DFA30402959CAF200AB0170 /* CustomLoadingView.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +405,7 @@
 				8DEB19EE294B495C00BAF218 /* CourseModel.swift in Sources */,
 				8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */,
 				8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */,
+				8DC664072955B46700123DA2 /* FileManagerClass.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
@@ -392,6 +416,7 @@
 				8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */,
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
+				8DC6640B2955B56600123DA2 /* ProgressInfo.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */,
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
 				8DEB19F7294CC23400BAF218 /* Double.swift in Sources */,
@@ -400,6 +425,9 @@
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
 				8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */,
+				8DFA30432959D59700AB0170 /* SavedPreferenceModel.swift in Sources */,
+				8DFA30412959CAF200AB0170 /* CustomLoadingView.swift in Sources */,
+				8DC664092955B49500123DA2 /* CacheManagerClass.swift in Sources */,
 				8DEB1A1929508DFA00BAF218 /* DataManager.swift in Sources */,
 				8DEB19F0294C8AEA00BAF218 /* HomeViewModel.swift in Sources */,
 				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,

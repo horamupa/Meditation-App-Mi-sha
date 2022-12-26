@@ -116,6 +116,11 @@ struct PlayerView: View {
                 return }
             value = player.currentTime
         }
+        .onDisappear {
+            ProgressInfo.shared.updateProgress(model: model)
+            ProgressInfo.shared.savePreference()
+            print(ProgressInfo.shared.progressInfo)
+        }
     }
 }
 

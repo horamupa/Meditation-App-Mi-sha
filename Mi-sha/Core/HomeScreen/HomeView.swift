@@ -18,6 +18,7 @@ struct HomeView: View {
     @EnvironmentObject var audioManager: AudioManager
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
+    @State var isActualLesson: Bool = false
     
     
     var body: some View {
@@ -47,8 +48,13 @@ struct HomeView: View {
 //        .ignoresSafeArea()
         .sheet(isPresented: $isSettings, content: {
             SettingsView()
-            
         })
+        .sheet(isPresented: $isActualLesson) {
+            if let lesson = vm.actualLesson() {
+                
+                PlayerView(model: lesson)
+            }
+        }
     }
 }
 
@@ -114,6 +120,9 @@ extension HomeView {
                 
             }
             .cornerRadius(25)
+            .onTapGesture {
+                isActualLesson = true
+            }
     }
     
     var bottomBlock: some View {

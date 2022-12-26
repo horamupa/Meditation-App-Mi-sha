@@ -38,7 +38,8 @@ class DataManager: ObservableObject {
                                 let lessonDuration = lesson.value["duration"] as? TimeInterval ?? 0.00
                                 let lessonURL = lesson.value["url"] as? String ?? "Error url"
                                 let lessonImage = lesson.value["image"] as? String ?? "Error image"
-                                fetchedLessons.append(TrackModel(id: lessonID, name: lessonName, duration: lessonDuration, image: lessonImage, url: lessonURL))
+                                let lessonNumber = lesson.value["number"] as? String ?? "Error FB number"
+                                fetchedLessons.append(TrackModel(id: lessonID, name: lessonName, duration: lessonDuration, image: lessonImage, url: lessonURL, number: lessonNumber))
                             }
                         }
                         self.courses.append(CourseModel(name: name, image: image, tracks: fetchedLessons))
