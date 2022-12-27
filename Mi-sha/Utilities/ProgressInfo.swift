@@ -87,7 +87,6 @@ class ProgressInfo: ObservableObject {
     
     func nextMeditation() -> String {
         let num: Int = (Int(nextMeditationNum) ?? 0) + 1
-    
         return String(num)
     }
     

@@ -23,29 +23,30 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-//            Color.theme.black
             Color.theme.white
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 15) {
                 Spacer()
                upperBlock
-                Text("Have a great day!")
+                Text("Актуальная серия:")
                     .font(.labGrotesque(.regular, size: 18))
                middleBlock
-               
+                    .cornerRadius(25)
+//                HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
+//                    .shadow(radius: 2, y: 2)
                 Spacer()
                 
-               Text("Выбери свой путь")
-                    .font(.labGrotesque(.medium, size: 20))
+               Text("В нашем сериале:")
+                    .font(.labGrotesque(.regular, size: 20))
                    
                bottomBlock
+                    .shadow(radius: 2, y: 2)
+                Spacer()
             }
             .padding(30)
             .foregroundColor(Color.theme.black)
             .navigationBarHidden(true)
-//            .ignoresSafeArea()
         }
-//        .ignoresSafeArea()
         .sheet(isPresented: $isSettings, content: {
             SettingsView()
         })
@@ -71,7 +72,6 @@ struct ContentView_Previews: PreviewProvider {
 extension HomeView {
     
     var upperBlock: some View {
-//        Group {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Good")
@@ -90,39 +90,39 @@ extension HomeView {
                         .frame(width: 50, height: 80, alignment: .topTrailing)
                 }
             }
-        
-//            .frame(maxHeight: .infinity, alignment: .topLeading)
-        
-            
-          
-//        }
     }
     
     var middleBlock: some View {
-        Rectangle()
-            .frame(height: 250)
-            .foregroundColor(Color.theme.orange)
-            
-            .overlay(alignment: .bottomTrailing) {
-                HStack {
-                    Text("Start your journey here")
-                        .font(.labGrotesque(.medium, size: 16))
-                        Spacer()
-                    Image(systemName: "play.circle")
-                        .scaleEffect(2.5)
-                        .foregroundColor(Color.theme.white)
-                        .frame(width: 50, height: 50)
-                }
-                .padding(5)
-                .padding(.horizontal, 20)
-                .frame(maxWidth: .infinity)
-                .background(.ultraThinMaterial)
-                
-            }
-            .cornerRadius(25)
-            .onTapGesture {
-                isActualLesson = true
-            }
+        
+        HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
+/*
+         Image("home1")
+             .resizable()
+             .frame(height: 250)
+             .foregroundColor(Color.theme.orange)
+ 
+             .overlay(alignment: .bottomTrailing) {
+                 HStack {
+                     Text("Start your journey here")
+                         .font(.labGrotesque(.medium, size: 16))
+                         Spacer()
+                     Image(systemName: "play.circle")
+                         .scaleEffect(2.5)
+                         .foregroundColor(Color.theme.white)
+                         .frame(width: 50, height: 50)
+                 }
+                 .padding(5)
+                 .padding(.horizontal, 20)
+                 .frame(maxWidth: .infinity)
+                 .background(.ultraThinMaterial)
+ 
+             }
+             .cornerRadius(25)
+             .onTapGesture {
+                 isActualLesson = true
+             }
+ */
+
     }
     
     var bottomBlock: some View {
@@ -132,8 +132,10 @@ extension HomeView {
                     ForEach(vm.courses) { item in
                         NavigationLink(destination: CourseView(innerCourse: item)) {
                             ZStack(alignment: .bottomTrailing) {
-                                Rectangle()
-                                    .foregroundColor(Color(item.image))
+
+                                Image(item.image)
+                                    .resizable()
+                                    .scaledToFill()
                                 
                                 Text(item.name)
                                     .font(.labGrotesque(.regular, size: 16))
@@ -144,7 +146,7 @@ extension HomeView {
                                     
                             }
                             .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
-                            .cornerRadius(25)
+                            .cornerRadius(15)
                         }
                     }
                 } else {

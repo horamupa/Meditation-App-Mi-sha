@@ -28,6 +28,6 @@ struct TrackModel: Codable, Hashable, Identifiable {
         self.number = number
     }
     
-   static let track = TrackModel(id: "1", name: "1 minute relaxing meditation", duration: 70, image: "stones", number: "1")
+   static let track = TrackModel(id: "1", name: "В путь", duration: 70, image: "home1", number: "1")
     
 }

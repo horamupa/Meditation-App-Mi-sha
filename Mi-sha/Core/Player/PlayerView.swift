@@ -12,7 +12,7 @@ import FirebaseStorage
 import AVKit
 
 struct PlayerView: View {
-    @EnvironmentObject var audioManager: AudioManager
+    var audioManager = AudioManager.shared
     var model: TrackModel
     
     @State private var value: Double = 0.0
@@ -20,6 +20,7 @@ struct PlayerView: View {
     @State private var isEditing: Bool = false
     @Environment(\.dismiss) var dismiss
     @State var player = AVPlayer()
+    let closeRangeCreate: ClosedRange<Double> = 0...60
     
     let timer = Timer
         .publish(every: 0.5, on: .main, in: .common)
@@ -27,18 +28,10 @@ struct PlayerView: View {
     
     var body: some View {
         ZStack {
+            GradientView()
             
-            Image("stones")
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: UIScreen.main.bounds.width)
-                .ignoresSafeArea()
-            Rectangle()
-                .background(.thinMaterial)
-                .opacity(0.25)
-                .ignoresSafeArea()
             
-            VStack(alignment: .leading, spacing: 32) {
+            VStack(spacing: 32) {
                 Image(systemName: "xmark.circle.fill")
                     .font(.title)
                     .foregroundColor(.white)
@@ -47,52 +40,76 @@ struct PlayerView: View {
                         AudioManager.shared.stop()
                         dismiss()
                     }
+                Spacer()
+                LogoView()
+                Spacer()
+                Spacer()
                 Text(model.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .blur(radius: 0.1)
+//                    .font(.title)
+//                    .fontWeight(.bold)
+                    .font(.labGrotesque(.medium, size: 30))
                     .foregroundColor(.white)
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
+                    .overlay(alignment: .bottom) {
+                        Capsule(style: .continuous)
+                            .frame(height: 3)
+                            .offset(y: 5)
+                            .foregroundColor(.white.opacity(0.7))
+                    }
                 Spacer()
-                if let player = AudioManager.shared.player {
+//                if let player = audioManager.player {
                     VStack(spacing: 5) {
-                        Slider(value: $value, in: 0...player.duration) { editing in
+                        Slider(value: $value, in: 0...(audioManager.player?.duration ?? 0) ?? closeRangeCreate) { editing in
                             //return rewind slider to audio
                             isEditing = editing
                             if !editing {
-                                player.currentTime = value
+                                audioManager.player?.currentTime = value
                             }
                         }
                         .accentColor(.white)
                         HStack {
-                            Text(DateComponentsFormatter.positional.string(from: player.currentTime) ?? "0:00")
+                            Text(DateComponentsFormatter.positional.string(from: audioManager.player?.currentTime ?? 0) ?? "0:00")
                             Spacer()
-                            Text(DateComponentsFormatter.positional.string(from: player.duration) ?? "0:00")
+                            Text(DateComponentsFormatter.positional.string(from: audioManager.player?.duration ?? 0) ?? "0:00")
                         }
                         .font(.caption)
                         HStack {
                             Spacer()
                             PlayerControlButton(systemName: "gobackward.10") {
-                                AudioManager.shared.player?.currentTime -= 10
+                                audioManager.player?.currentTime -= 10
                             }
                             Spacer()
-                            PlayerControlButton(systemName: isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
+                            PlayerControlButton(systemName: !isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
                                 isPause.toggle()
-                                AudioManager.shared.playPause()
+                                audioManager.playPause()
                             }
                             Spacer()
                             PlayerControlButton(systemName: "goforward.10") {
-                                AudioManager.shared.player?.currentTime += 10
+                                audioManager.player?.currentTime += 10
                             }
                             Spacer()
                         }
+                        
                     }
                     .foregroundColor(.white)
-                }
+                    .overlay {
+                        if let playerLoaded = audioManager.player {
+                           EmptyView()
+                        } else {
+                            ZStack {
+                                ProgressView()
+                                    .scaleEffect(2)
+                            }
+                        }
+                    }
+//                }
             }
             .padding(.horizontal, 20)
         }
+        .statusBarHidden()
+        .labelsHidden()
+        .navigationBarBackButtonHidden()
         .onAppear {
 //            audioManager.startPlayer(name: model.id)
            let storage = Storage.storage().reference(forURL: model.url)
@@ -110,7 +127,7 @@ struct PlayerView: View {
         }
         .onReceive(timer) { _ in
             guard
-                let player = AudioManager.shared.player, !isEditing
+                let player = audioManager.player, !isEditing
             else {
                 print("no audioplayer in manager")
                 return }
@@ -119,7 +136,6 @@ struct PlayerView: View {
         .onDisappear {
             ProgressInfo.shared.updateProgress(model: model)
             ProgressInfo.shared.savePreference()
-            print(ProgressInfo.shared.progressInfo)
         }
     }
 }
@@ -128,6 +144,5 @@ struct PlayerVie_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView(model: dev.track)
             .environmentObject(dev.vm)
-            .environmentObject(AudioManager.shared)
     }
 }

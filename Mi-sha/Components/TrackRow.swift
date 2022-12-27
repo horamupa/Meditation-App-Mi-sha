@@ -15,23 +15,57 @@ struct TrackRow: View {
     var body: some View {
         ZStack {
             NavigationLink(destination: PlayerView(model: track), label: {
-                HStack {
+                HStack(spacing: 0) {
+                    Text(track.number)
+                        .font(.caption)
+                        .frame(minWidth: 30)
                     if progress.checkDone(model: track) {
-                        Image(systemName: "checkmark.circle")
-                            .foregroundColor(.green)
+                        Circle()
+                            .foregroundColor(Color.theme.orange)
+                            .frame(width: 30, height: 30)
                     } else {
-                        Image(systemName: "checkmark.circle")
-                            .opacity(0.3)
+                        if track.number == ProgressInfo.shared.nextMeditation() {
+                            Circle()
+                                .foregroundColor(Color.theme.orange)
+                                .frame(width: 30, height: 30)
+                                .opacity(0.3)
+                                .overlay {
+                                    Circle()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(.white)
+                                        .overlay {
+                                            Image(systemName: "chevron.forward")
+                                                .frame(width: 30, height: 30)
+                                                .foregroundColor(Color.theme.orange)
+                                                .opacity(0.5)
+                                        }
+                                }
+                        } else {
+                            Circle()
+                                .foregroundColor(Color.theme.orange)
+                                .frame(width: 30, height: 30)
+                                .opacity(0.3)
+                                .overlay {
+                                    Circle()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(.white)
+                                }
+                        }
                     }
-                    Text(track.name).bold()
-                        .minimumScaleFactor(0.5)
+                    Spacer()
+                    Text(track.name)
+                        .font(.callout)
+                        .minimumScaleFactor(0.1)
                     Spacer()
                     Text(DateComponentsFormatter.abbreviated.string(from: track.duration) ?? track.duration.formatted() + "s")
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
+                        
+                    Image(systemName: "heart")
+                        .foregroundColor(Color.theme.purple)
+                        .frame(width: 60, height: 30)
+//                        .padding(.trailing, 20)
                 }
+                .font(.labGrotesque(.medium, size: 16))
                 .frame(height: 55)
-                .padding(20)
             })
             .buttonStyle(.plain)
         }

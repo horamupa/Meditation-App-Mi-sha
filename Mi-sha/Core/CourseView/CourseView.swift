@@ -18,7 +18,7 @@ struct CourseView: View {
                         Rectangle()
                             .frame(height: 250)
                             .foregroundColor(Color(innerCourse.image))
-                            .cornerRadius(25)
+                            .cornerRadius(10)
                         Text(innerCourse.name)
                             .font(.labGrotesque(.medium))
                             .padding(10)
@@ -26,19 +26,22 @@ struct CourseView: View {
                             .background(.ultraThinMaterial)
                     }
                     .cornerRadius(25)
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 5) {
                         
-                        ForEach(innerCourse.tracks) { track in
+                        ForEach(innerCourse.tracks.sorted(by: { $0.number < $1.number
+                        })) { track in
                             TrackRow(track: track)
 //                                .background(.thinMaterial)
 //                                .cornerRadius(10)
                         }
                         Spacer()
                     }
-                    .padding()
+
                 }
                 
             }
+            .listStyle(.plain)
+            
         }
         .ignoresSafeArea()
     }
