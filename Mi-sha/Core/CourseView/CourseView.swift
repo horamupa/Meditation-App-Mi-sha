@@ -12,12 +12,13 @@ struct CourseView: View {
     var innerCourse: CourseModel
     var body: some View {
         ZStack {
-            ScrollView {
+            
                 VStack(alignment: .leading) {
                     ZStack(alignment: .bottomTrailing) {
-                        Rectangle()
+                        Image(innerCourse.image )
+                            .resizable()
+                            .scaledToFill()
                             .frame(height: 250)
-                            .foregroundColor(Color(innerCourse.image))
                             .cornerRadius(10)
                         Text(innerCourse.name)
                             .font(.labGrotesque(.medium))
@@ -26,6 +27,7 @@ struct CourseView: View {
                             .background(.ultraThinMaterial)
                     }
                     .cornerRadius(25)
+                    ScrollView {
                     VStack(alignment: .leading, spacing: 5) {
                         
                         ForEach(innerCourse.tracks.sorted(by: { $0.number < $1.number

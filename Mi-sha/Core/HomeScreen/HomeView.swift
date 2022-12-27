@@ -28,11 +28,15 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 15) {
                 Spacer()
                upperBlock
+                
                 Text("Свежая серия:")
                     .font(.labGrotesque(.regular, size: 18))
                middleBlock
                     .cornerRadius(25)
                     .shadow(radius: 2, y: 2)
+                    .onTapGesture {
+                        isActualLesson = true
+                    }
                 Spacer()
                 
                Text("В нашем сериале:")

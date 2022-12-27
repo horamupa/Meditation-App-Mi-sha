@@ -55,19 +55,25 @@ struct TrackRow: View {
                     
                     Text(track.name)
                         .font(.callout)
-                        .minimumScaleFactor(0.1)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
                         .padding(.leading, 20)
-//                    Spacer()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                    Spacer()
                     Text(DateComponentsFormatter.abbreviated.string(from: track.duration) ?? track.duration.formatted() + "s")
-                        .frame(width: 100)
+                        .font(.caption)
+                        .lineLimit(1)
+//                        .frame(width: 60)
                         
                     Image(systemName: "heart")
                         .foregroundColor(Color.theme.purple)
-                        .frame(width: 60, height: 30)
+                        .frame(width: 30, height: 30)
 //                        .frame(width: UIScreen.main.bounds.width / 3.5)
                 }
                 .font(.labGrotesque(.medium, size: 16))
                 .frame(height: 55)
+//                .frame(maxWidth: .infinity)
             })
             .buttonStyle(.plain)
         }

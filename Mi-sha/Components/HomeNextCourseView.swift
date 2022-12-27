@@ -23,10 +23,10 @@ struct HomeNextCourseView: View {
                     .overlay(alignment: .bottomTrailing) {
                         HStack {
                             Text("\(model.id):" ?? "Next Series:")
-                                .font(.labGrotesque(.regular, size: 20))
+                                .font(.labGrotesque(.regular, size: 16))
 //                                .shadow(radius: 0)
                             Text(model.name ?? "Start your journey here")
-                                .font(.labGrotesque(.semibold, size: 20))
+                                .font(.labGrotesque(.semibold, size: 16))
 //                                .shadow(radius: 0)
                             
                             Image(systemName: "play.circle")
