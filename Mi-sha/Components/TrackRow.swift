@@ -18,7 +18,7 @@ struct TrackRow: View {
                 HStack(spacing: 0) {
                     Text(track.number)
                         .font(.caption)
-                        .frame(minWidth: 30)
+                        .frame(width: 30)
                     if progress.checkDone(model: track) {
                         Circle()
                             .foregroundColor(Color.theme.orange)
@@ -52,17 +52,19 @@ struct TrackRow: View {
                                 }
                         }
                     }
-                    Spacer()
+                    
                     Text(track.name)
                         .font(.callout)
                         .minimumScaleFactor(0.1)
-                    Spacer()
+                        .padding(.leading, 20)
+//                    Spacer()
                     Text(DateComponentsFormatter.abbreviated.string(from: track.duration) ?? track.duration.formatted() + "s")
+                        .frame(width: 100)
                         
                     Image(systemName: "heart")
                         .foregroundColor(Color.theme.purple)
                         .frame(width: 60, height: 30)
-//                        .padding(.trailing, 20)
+//                        .frame(width: UIScreen.main.bounds.width / 3.5)
                 }
                 .font(.labGrotesque(.medium, size: 16))
                 .frame(height: 55)

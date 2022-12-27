@@ -23,24 +23,27 @@ struct HomeNextCourseView: View {
                     .overlay(alignment: .bottomTrailing) {
                         HStack {
                             Text("\(model.id):" ?? "Next Series:")
-                                .font(.labGrotesque(.medium, size: 16))
-                                .shadow(radius: 0)
+                                .font(.labGrotesque(.regular, size: 20))
+//                                .shadow(radius: 0)
                             Text(model.name ?? "Start your journey here")
-                                .font(.labGrotesque(.medium, size: 16))
-                                .shadow(radius: 0)
+                                .font(.labGrotesque(.semibold, size: 20))
+//                                .shadow(radius: 0)
                             
                             Image(systemName: "play.circle")
                                 .scaleEffect(2.5)
-                                .foregroundColor(Color.theme.white)
+                                .foregroundColor(Color.theme.orange.opacity(0.7))
                                 .frame(width: 50, height: 50)
-                            
+                                .shadow(radius: 5, y: 5)
                         }
 //                        .frame(maxWidth: .infinity)
                         .padding(5)
                         .padding(.horizontal, 20)
-                        .background(.ultraThinMaterial)
+                        .background(.regularMaterial.opacity(0.9))
+                        
                         .cornerRadius(15)
+                        
                     }
+                    .shadow(radius: 5, y: 5)
                 
             }
 //            .frame(height: 250)
@@ -51,6 +54,10 @@ struct HomeNextCourseView: View {
 
 struct HomeNextCourseView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeNextCourseView(model: dev.track)
+        NavigationView {
+            HomeView()
+                .environmentObject(dev.vm)
+                .environmentObject(AudioManager.shared)
+        }
     }
 }
