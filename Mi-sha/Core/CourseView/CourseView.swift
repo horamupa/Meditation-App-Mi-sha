@@ -30,8 +30,7 @@ struct CourseView: View {
                     ScrollView {
                     VStack(alignment: .leading, spacing: 5) {
                         
-                        ForEach(innerCourse.tracks.sorted(by: { $0.number < $1.number
-                        })) { track in
+                        ForEach(innerCourse.tracks.sorted()) { track in
                             TrackRow(track: track)
 //                                .background(.thinMaterial)
 //                                .cornerRadius(10)

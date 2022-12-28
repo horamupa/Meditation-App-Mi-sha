@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct TrackModel: Codable, Hashable, Identifiable {
+struct TrackModel: Codable, Hashable, Identifiable, Comparable {
+    static func < (lhs: TrackModel, rhs: TrackModel) -> Bool {
+        lhs.number.compare(rhs.number, options: .numeric) == .orderedAscending
+    }
+    
     let id: String
     let name: String
     let duration: TimeInterval

@@ -23,8 +23,7 @@ struct TrackRow: View {
                         Circle()
                             .foregroundColor(Color.theme.orange)
                             .frame(width: 30, height: 30)
-                    } else {
-                        if track.number == ProgressInfo.shared.nextMeditation() {
+                    } else if track.number == ProgressInfo.shared.nextMeditation(){
                             Circle()
                                 .foregroundColor(Color.theme.orange)
                                 .frame(width: 30, height: 30)
@@ -50,7 +49,7 @@ struct TrackRow: View {
                                         .frame(width: 25, height: 25)
                                         .foregroundColor(.white)
                                 }
-                        }
+                        
                     }
                     
                     Text(track.name)
