@@ -59,6 +59,8 @@
 		8DFA3045295A306500AB0170 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA3044295A306500AB0170 /* GradientView.swift */; };
 		8DFA3047295A308100AB0170 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA3046295A308100AB0170 /* LogoView.swift */; };
 		8DFA3049295B2D3E00AB0170 /* HomeNextCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA3048295B2D3E00AB0170 /* HomeNextCourseView.swift */; };
+		8DFA304D295C5F4A00AB0170 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA304C295C5F4A00AB0170 /* SettingsViewModel.swift */; };
+		8DFA304F295C5F9000AB0170 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFA304E295C5F9000AB0170 /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		8DFA3044295A306500AB0170 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		8DFA3046295A308100AB0170 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		8DFA3048295B2D3E00AB0170 /* HomeNextCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNextCourseView.swift; sourceTree = "<group>"; };
+		8DFA304C295C5F4A00AB0170 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		8DFA304E295C5F9000AB0170 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEB19A729477AA600BAF218 /* SettingsView.swift */,
+				8DFA304C295C5F4A00AB0170 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				8DEB19ED294B495C00BAF218 /* CourseModel.swift */,
 				8DFA30422959D59700AB0170 /* SavedPreferenceModel.swift */,
 				8D8A7F5B2941C0640072A582 /* TrackModel.swift */,
+				8DFA304E295C5F9000AB0170 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,12 +436,14 @@
 				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
 				8DC6640B2955B56600123DA2 /* ProgressInfo.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */,
+				8DFA304D295C5F4A00AB0170 /* SettingsViewModel.swift in Sources */,
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
 				8DEB19F7294CC23400BAF218 /* Double.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
 				8DEB19F3294C8F0900BAF218 /* CourseView.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
+				8DFA304F295C5F9000AB0170 /* ProfileModel.swift in Sources */,
 				8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */,
 				8DFA30432959D59700AB0170 /* SavedPreferenceModel.swift in Sources */,
 				8DFA30412959CAF200AB0170 /* CustomLoadingView.swift in Sources */,

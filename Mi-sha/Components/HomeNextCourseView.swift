@@ -17,6 +17,7 @@ struct HomeNextCourseView: View {
                 Image(model.image ?? "home1")
                         .resizable()
                         .scaledToFill()
+                        .offset(y: -20)
 //                        .frame(height: 250)
 //                        .frame(minWidth: 400)
                     .foregroundColor(Color.theme.orange)
@@ -24,26 +25,28 @@ struct HomeNextCourseView: View {
                         HStack {
                             Text("\(model.id):" ?? "Next Series:")
                                 .font(.labGrotesque(.regular, size: 16))
-//                                .shadow(radius: 0)
+                                .shadow(radius: 0)
                             Text(model.name ?? "Start your journey here")
                                 .font(.labGrotesque(.semibold, size: 16))
-//                                .shadow(radius: 0)
+                                .shadow(radius: 0)
+                            
                             
                             Image(systemName: "play.circle")
-                                .scaleEffect(2.5)
+                                .scaleEffect(2)
                                 .foregroundColor(Color.theme.orange.opacity(0.7))
-                                .frame(width: 50, height: 50)
-                                .shadow(radius: 5, y: 5)
+                                .frame(width: 50, height: 40)
+                                .shadow(radius: 3, x: 2, y: 2)
+                            
+
                         }
 //                        .frame(maxWidth: .infinity)
                         .padding(5)
                         .padding(.horizontal, 20)
+                        .frame(maxWidth: .infinity)
                         .background(.regularMaterial.opacity(0.9))
                         
-                        .cornerRadius(15)
-                        
                     }
-                    .shadow(radius: 5, y: 5)
+                    .shadow(radius: 10)
                 
             }
 //            .frame(height: 250)

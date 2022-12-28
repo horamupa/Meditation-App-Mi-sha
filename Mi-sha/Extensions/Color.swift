@@ -21,4 +21,5 @@ class ThemeColors {
     let orange = Color(#colorLiteral(red: 0.9559542537, green: 0.5613597035, blue: 0.4460546374, alpha: 1))
     let blue = Color(#colorLiteral(red: 0.607198894, green: 0.6928299069, blue: 0.995575726, alpha: 1))
     let purple = Color (#colorLiteral(red: 0.6922668219, green: 0.5555503368, blue: 0.8966576457, alpha: 1))
+    let main = Color(#colorLiteral(red: 0.9427313209, green: 0.8394339681, blue: 0.7850262523, alpha: 1))
 }
