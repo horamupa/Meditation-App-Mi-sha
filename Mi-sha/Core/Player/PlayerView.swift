@@ -104,7 +104,7 @@ struct PlayerView: View {
                     }
                     .foregroundColor(Color.theme.black)
                     .overlay {
-                        if audioManager.player != nil || audioManager.isDownloaded {
+                        if audioManager.isDownloaded {
                            EmptyView()
                         } else {
                             VStack {
@@ -130,6 +130,7 @@ struct PlayerView: View {
             storage.downloadURL { url, error in
                 if let error = error {
                     print("Error download from the firebase. \(error.localizedDescription)")
+                    AudioManager.shared.startPlayer(name: "1")
                 } else {
 //                    self.player = AVPlayer(url: url!)
 //                    player.play()

@@ -22,12 +22,12 @@ class AudioManager: ObservableObject {
     
     static var shared = AudioManager()
     var dataManager = DataManager.shared
+    var somethingBad = false
     
     private init() { }
     
     func startPlayerStream(url: String) {
-        
-        if preDownloadedURL != url || !isDownloaded {
+         if !isDownloaded {
             
             guard
                 let url = URL(string: url)
@@ -74,7 +74,13 @@ class AudioManager: ObservableObject {
             try AVAudioSession.sharedInstance().setActive(true)
             
                 DispatchQueue.global().async {
-                    let data = try! Data(contentsOf: url)
+                    guard
+                       let data = try? Data(contentsOf: url)
+                    else {
+                        self.somethingBad = true
+                        print("Something bad == true ")
+                        return
+                    }
                     DispatchQueue.main.async {
                         self.player = try! AVAudioPlayer(data: data)
                         self.player?.prepareToPlay()
@@ -106,11 +112,14 @@ class AudioManager: ObservableObject {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
+            player?.play()
+            self.isDownloaded = true
         } catch let error {
             print("Can't create player from url \(error.localizedDescription)")
         }
-        player?.play()
-        isPlaying = true
+        
+        
     }
     
     func playPause() {
