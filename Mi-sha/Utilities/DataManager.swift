@@ -51,4 +51,14 @@ class DataManager: ObservableObject {
         print(self.courses)
     }
     
+    func downloadDataFromUrl(url: URL) async throws -> Data? {
+ 
+        do {
+            let (data, _) = try await URLSession(configuration: .default).data(from: url)
+            return data
+        } catch {
+            throw error
+        }
+    }
+    
 }

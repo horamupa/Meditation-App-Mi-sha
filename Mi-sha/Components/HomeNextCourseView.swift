@@ -22,31 +22,30 @@ struct HomeNextCourseView: View {
 //                        .frame(minWidth: 400)
                     .foregroundColor(Color.theme.orange)
                     .overlay(alignment: .bottomTrailing) {
-                        HStack {
-                            Text("\(model.id):" ?? "Next Series:")
-                                .font(.labGrotesque(.regular, size: 16))
+                        HStack(spacing: 5) {
+    
+                            Text("\(model.id) :" ?? "Next Series:")
+                                .font(.labGrotesque(.thin, size: 18))
                                 .shadow(radius: 0)
                             Text(model.name ?? "Start your journey here")
-                                .font(.labGrotesque(.semibold, size: 16))
+                                .font(.labGrotesque(.semibold, size: 18))
                                 .shadow(radius: 0)
-                            
                             
                             Image(systemName: "play.circle")
                                 .scaleEffect(2)
                                 .foregroundColor(Color.theme.orange.opacity(0.7))
                                 .frame(width: 50, height: 40)
-                                .shadow(radius: 3, x: 2, y: 2)
-                            
-
+                                .shadow(color: Color.theme.orange.opacity(0.5), radius: 2, y: 2)
                         }
-//                        .frame(maxWidth: .infinity)
-                        .padding(5)
-                        .padding(.horizontal, 20)
-                        .frame(maxWidth: .infinity)
+                        
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 20)
+                        .padding(.vertical, 4)
                         .background(.regularMaterial.opacity(0.9))
                         
+                        
                     }
-                    .shadow(radius: 10)
+//                    .shadow(radius: 10)
                 
             }
 //            .frame(height: 250)

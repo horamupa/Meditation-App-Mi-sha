@@ -31,12 +31,20 @@ struct HomeView: View {
                 
                 Text("Свежая серия:")
                     .font(.labGrotesque(.regular, size: 20))
-               middleBlock
-                    .cornerRadius(25)
-                    .shadow(radius: 2, y: 2)
-                    .onTapGesture {
-                        isActualLesson = true
+                NavigationLink {
+                    if let lesson = vm.actualLesson() {
+                        PlayerView(model: lesson)
                     }
+                } label: {
+                    middleBlock
+                        .cornerRadius(15)
+                        .shadow(radius: 2, y: 2)
+    //                    .onTapGesture {
+    //                        isActualLesson = true
+    //                    }
+                }
+
+                
                 Spacer()
                 
                Text("В нашем сериале:")
@@ -57,6 +65,11 @@ struct HomeView: View {
             if let lesson = vm.actualLesson() {
                 
                 PlayerView(model: lesson)
+            }
+        }
+        .onAppear {
+            if let url2 = vm.actualLesson()?.url {
+                AudioManager.shared.preDownload(url: url2)
             }
         }
     }
@@ -128,7 +141,7 @@ extension HomeView {
                                     .minimumScaleFactor(0.5)
                                     .padding(15)
                                     .frame(maxWidth: .infinity)
-                                    .background(.ultraThinMaterial)
+                                    .background(.regularMaterial.opacity(0.9))
                                     
                             }
                             .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)

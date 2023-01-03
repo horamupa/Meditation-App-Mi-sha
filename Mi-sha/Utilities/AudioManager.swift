@@ -17,12 +17,50 @@ class AudioManager: ObservableObject {
         }
     }
     @Published var isLoop = false
+    var preDownloadedURL = ""
     
     static var shared = AudioManager()
+    var dataManager = DataManager.shared
     
     private init() { }
     
     func startPlayerStream(url: String) {
+        
+        if preDownloadedURL != url {
+            
+            guard
+                let url = URL(string: url)
+            else {
+                print("Bad track URL")
+                return
+            }
+            do {
+                //разрешает играть есть в беззвучном режиме.
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                DispatchQueue.global().async {
+                    let data = try! Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.player = try! AVAudioPlayer(data: data)
+                        self.player?.prepareToPlay()
+                        self.player?.play()
+                        self.isPlaying = true
+                    }
+                }
+                //            player = try AVAudioPlayer(contentsOf: url)
+                
+            } catch let error {
+                print("Can't create player from url \(error.localizedDescription)")
+            }
+        }
+        else {
+            playPreDownloaded()
+        }
+    }
+    
+    func preDownload(url: String) {
+        preDownloadedURL = url
         guard
             let url = URL(string: url)
         else {
@@ -33,16 +71,23 @@ class AudioManager: ObservableObject {
             //разрешает играть есть в беззвучном режиме.
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-            let data = try! Data(contentsOf: url)
-            player = try! AVAudioPlayer(data: data)
-            player?.prepareToPlay()
-//            player = try AVAudioPlayer(contentsOf: url)
-
+            
+                DispatchQueue.global().async {
+                    let data = try! Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        self.player = try! AVAudioPlayer(data: data)
+                        self.player?.prepareToPlay()
+                    }
+                }
         } catch let error {
             print("Can't create player from url \(error.localizedDescription)")
         }
-        player?.play()
-        isPlaying = true
+        
+    }
+    
+    func playPreDownloaded() {
+        self.player?.play()
+        self.isPlaying = true
     }
     
     func startPlayer(name: String) {

@@ -28,8 +28,11 @@ struct PlayerView: View {
     
     var body: some View {
         ZStack {
-            GradientView()
-            
+            Color.theme.main2
+                .ignoresSafeArea()
+            Image("home1")
+                .resizable()
+                .scaledToFit()
             
             VStack(spacing: 32) {
                 Image(systemName: "xmark.circle.fill")
@@ -42,25 +45,29 @@ struct PlayerView: View {
                     }
                 Spacer()
                 LogoView()
+                    .scaleEffect(0.5)
+                    .offset(x: 100)
+                    .opacity(0.8)
+                Spacer()
                 Spacer()
                 Spacer()
                 Text(model.name)
 //                    .font(.title)
 //                    .fontWeight(.bold)
                     .font(.labGrotesque(.medium, size: 30))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.theme.black.opacity(0.7))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
                     .overlay(alignment: .bottom) {
                         Capsule(style: .continuous)
                             .frame(height: 3)
                             .offset(y: 5)
-                            .foregroundColor(.white.opacity(0.7))
+                            .foregroundColor(Color.theme.black.opacity(0.7))
                     }
                 Spacer()
 //                if let player = audioManager.player {
                     VStack(spacing: 5) {
-                        Slider(value: $value, in: 0...(audioManager.player?.duration ?? 0) ?? closeRangeCreate) { editing in
+                        Slider(value: $value, in: 0...(audioManager.player?.duration ?? 0) ) { editing in
                             //return rewind slider to audio
                             isEditing = editing
                             if !editing {
@@ -92,14 +99,18 @@ struct PlayerView: View {
                         }
                         
                     }
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.theme.black)
                     .overlay {
-                        if let playerLoaded = audioManager.player {
+                        if audioManager.player != nil {
                            EmptyView()
                         } else {
-                            ZStack {
-                                ProgressView()
-                                    .scaleEffect(2)
+                            VStack {
+                                Text("Почти загрузили...")
+                                    .font(.labGrotesque(.regular,size: 16))
+                                ZStack {
+                                    ProgressView()
+                                        .scaleEffect(2)
+                                }
                             }
                         }
                     }
