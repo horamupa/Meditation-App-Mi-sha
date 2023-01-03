@@ -18,6 +18,7 @@ class AudioManager: ObservableObject {
     }
     @Published var isLoop = false
     var preDownloadedURL = ""
+    var isDownloaded = false
     
     static var shared = AudioManager()
     var dataManager = DataManager.shared
@@ -26,7 +27,7 @@ class AudioManager: ObservableObject {
     
     func startPlayerStream(url: String) {
         
-        if preDownloadedURL != url {
+        if preDownloadedURL != url || !isDownloaded {
             
             guard
                 let url = URL(string: url)
@@ -77,6 +78,7 @@ class AudioManager: ObservableObject {
                     DispatchQueue.main.async {
                         self.player = try! AVAudioPlayer(data: data)
                         self.player?.prepareToPlay()
+                        self.isDownloaded = true
                     }
                 }
         } catch let error {
@@ -86,8 +88,10 @@ class AudioManager: ObservableObject {
     }
     
     func playPreDownloaded() {
-        self.player?.play()
-        self.isPlaying = true
+        if let player = self.player {
+            player.play()
+            self.isPlaying = true
+        }
     }
     
     func startPlayer(name: String) {

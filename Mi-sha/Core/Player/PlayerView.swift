@@ -86,22 +86,25 @@ struct PlayerView: View {
                             PlayerControlButton(systemName: "gobackward.10") {
                                 audioManager.player?.currentTime -= 10
                             }
+                            .scaleEffect(1.3)
                             Spacer()
                             PlayerControlButton(systemName: !isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
                                 isPause.toggle()
                                 audioManager.playPause()
                             }
+                            .scaleEffect(1.3)
                             Spacer()
                             PlayerControlButton(systemName: "goforward.10") {
                                 audioManager.player?.currentTime += 10
                             }
+                            .scaleEffect(1.3)
                             Spacer()
                         }
                         
                     }
                     .foregroundColor(Color.theme.black)
                     .overlay {
-                        if audioManager.player != nil {
+                        if audioManager.player != nil || audioManager.isDownloaded {
                            EmptyView()
                         } else {
                             VStack {
