@@ -145,8 +145,10 @@ struct PlayerView: View {
             value = player.currentTime
         }
         .onDisappear {
-            ProgressInfo.shared.updateProgress(model: model)
-            ProgressInfo.shared.savePreference()
+            if audioManager.getPlayerTime() > 420 {
+                ProgressInfo.shared.updateProgress(model: model)
+                ProgressInfo.shared.savePreference()
+            }
         }
     }
 }

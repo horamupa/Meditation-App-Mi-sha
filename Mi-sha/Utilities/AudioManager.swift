@@ -132,6 +132,13 @@ class AudioManager: ObservableObject {
         }
     }
     
+    func getPlayerTime() -> Double {
+        guard let player = player else {
+            return 0
+        }
+        return player.currentTime
+    }
+    
     // player looping if number of loops = -1
     func toggleLoop() {
         guard let player = player else { return }

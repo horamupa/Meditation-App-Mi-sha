@@ -30,6 +30,7 @@ struct HomeNextCourseView: View {
                             Text(model.name ?? "Start your journey here")
                                 .font(.labGrotesque(.semibold, size: 18))
                                 .shadow(radius: 0)
+                                .minimumScaleFactor(0.6)
                             
                             Image(systemName: "play.circle")
                                 .scaleEffect(2)
