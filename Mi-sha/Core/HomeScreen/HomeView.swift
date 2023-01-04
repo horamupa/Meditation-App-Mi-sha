@@ -134,7 +134,9 @@ extension HomeView {
                                 Image(item.image)
                                     .resizable()
                                     .scaledToFill()
-                                    .offset(y: -10)
+//                                    .cornerRadius(15)
+//                                    .padding(10)
+//                                    .offset(y: -10)
                                 
                                 Text(item.name)
                                     .font(.labGrotesque(.regular, size: 16))

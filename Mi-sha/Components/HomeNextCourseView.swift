@@ -14,10 +14,11 @@ struct HomeNextCourseView: View {
         
         ZStack {
             ZStack {
-                Image(model.image ?? "home1")
+                Image("home1") //model.image ?? 
                         .resizable()
                         .scaledToFill()
                         .offset(y: -20)
+//                        .padding(5)
 //                        .frame(height: 250)
 //                        .frame(minWidth: 400)
                     .foregroundColor(Color.theme.orange)
@@ -25,12 +26,12 @@ struct HomeNextCourseView: View {
                         HStack(spacing: 5) {
     
                             Text("\(model.id) :" ?? "Next Series:")
-                                .font(.labGrotesque(.semibold, size: 18))
+                                .font(.labGrotesque(.thin, size: 18))
                                 .shadow(radius: 0)
                           
-                            .font(.labGrotesque(.thin,size: 13))
+//                            .font(.labGrotesque(.thin,size: 13))
                             Text(model.name ?? "Start your journey here")
-                                .font(.labGrotesque(.semibold, size: 18))
+                                .font(.labGrotesque(.medium, size: 18))
                                 .shadow(radius: 0)
                                 .minimumScaleFactor(0.6)
                             
@@ -45,7 +46,7 @@ struct HomeNextCourseView: View {
                         .padding(.leading, 20)
                         .padding(.vertical, 4)
                         .background(.regularMaterial.opacity(0.9))
-                        .cornerRadius(10)
+                        .cornerRadius(0)
                         .shadow(color: Color.theme.orange.opacity(0.4), radius: 2)
                         
                         

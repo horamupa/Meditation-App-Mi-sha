@@ -20,134 +20,166 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        NavigationView {
             ZStack {
-//                Color.theme.white
-                Color.white
+                Color.theme.main2
                     .ignoresSafeArea()
                 VStack {
-                    HStack {
-                        Image(vm.userProfile.userImage)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-                        VStack(alignment: .leading) {
-                            Text(vm.userProfile.userName)
-                                .font(.labGrotesque(.regular, size: 16))
-                        }
+                    userProfile
+
+                        .padding()
+                        .padding(.horizontal, 20)
+                        .background(.regularMaterial)
+                        .cornerRadius(30)
+                    medalView
+//                        .cornerRadius(0)
+                        .padding(20)
+                    
+                        .background(.regularMaterial)
+                        
+                        .cornerRadius(30)
+                        .padding(.horizontal, 20)
+                    VStack {
+                        linksView
                     }
                     
-                    VStack(spacing: 20) {
-                        Text("Ваши достижения:")
-                            .font(.labGrotesque(.medium, size: 20))
-                        
-                        HStack {
-                            VStack(spacing: 0) {
-                                Text("Вы медитировали:")
-                                ZStack {
-    //                                RoundedRectangle(cornerRadius: 15)
-    //                                    .foregroundColor(Color.theme.main)
-    //                                    .shadow(radius: 5, y: 5)
-                                    Image("medal1")
-                                        .resizable()
-                                        .scaledToFill()
-                                        .scaleEffect(0.6)
-                                    VStack(spacing: 5) {
-                                        
-                                        Text("\(vm.userProfile.userTotalTime.formatted()) мин")
-                                            .offset(y: -15)
-                                    }
-                                }
-                                .offset(y: -30)
-                            }
-                            VStack(spacing: 0) {
-                                Text("Дней практики")
-                                ZStack {
-    //                                RoundedRectangle(cornerRadius: 15)
-    //                                    .foregroundColor(Color.theme.main)
-    //                                    .shadow(radius: 5, y: 5)
-                                    Image("medal2")
-                                        .resizable()
-                                        .scaledToFill()
-                                        .scaleEffect(0.7)
-                                    VStack(spacing: 5) {
-                                        
-                                        Text("\(vm.userProfile.userTotalDays) дней")
-                                            .offset(y: -20)
-                                    }
-                                }
-                                .offset(y: -20)
-                            }
-                        }
-                        
-                        
-                        VStack(spacing: 5) {
-                            Text("Дней без пропусков")
-                            ZStack {
-                                Circle()
-                                    .frame(width: 90, height: 90)
-                                    .foregroundColor(Color.theme.main)
-                                    .shadow(radius: 5, y: 5)
-                                VStack {
-                                    Text("\(vm.userProfile.userBestStreak) дня")
-                                }
-                            }
-                        }
+                    Spacer()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.black)
                     }
-                    .padding()
-//                    .background(.thinMaterial)
-//                    .padding(.top, 20)
-                    List {
-                        Section("User Info") {
-                            HStack {
-                                Text("Имя")
-                                Spacer()
-                                Text(vm.userProfile.userName)
-                                    
-                            }
-                            HStack {
-                                Text("Статус")
-                                Spacer()
-                                Text("Unbelievable hero")
-                            }
-                        }
-                        Section("Common Links") {
-                            Link("Terms of service", destination: defaultURL)
-                            Link("Privacy policy", destination: secondURL)
-                        }
-                        Section("Buy me a coffe") {
-                            Link("Buy me a coffe☕️", destination: coffeURL)
-                        }
-                    }
-    //                .navigationTitle("Settings")
-                    .navigationBarBackButtonHidden()
-    //                .statusBarHidden()
-    //                .labelsHidden()
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button {
-                                dismiss()
-                            } label: {
-                                Image(systemName: "xmark")
-                                    .foregroundColor(.black)
-                            }
 
-                        }
-                    }
-                .listStyle(.grouped )
                 }
             }
             .font(.labGrotesque(.regular, size: 16))
-        }
+//            .ignoresSafeArea()
+            .navigationTitle("Настройки")
+            .navigationBarBackButtonHidden()
+//            .statusBarHidden()
+//            .labelsHidden()
+            .navigationBarTitleDisplayMode(.inline)
+
     }
 }
 
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
-//        NavigationView {
+        NavigationView {
             SettingsView()
-//        }
+        }
         
+    }
+}
+
+extension SettingsView {
+    
+    private var userProfile: some View {
+        HStack {
+            Image(vm.userProfile.userImage)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 100)
+                .clipShape(Circle())
+                .shadow(radius: 5, y: 5)
+            VStack(alignment: .leading) {
+                Text("Имя:")
+                Text(vm.userProfile.userName)
+            }
+            .font(.labGrotesque(.regular, size: 16))
+        }
+    }
+    
+    private var medalView: some View {
+        VStack(spacing: 20) {
+            HStack(spacing: 40) {
+                VStack(spacing: 10) {
+                    Text("Медитировали")
+                        .font(.labGrotesque(.regular, size: 18))
+                        
+                    ZStack {
+
+                        Image("flower5")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                        VStack(spacing: 5) {
+                            
+                            Text("\(vm.userProfile.userTotalTime.formatted()) мин")
+                                .font(.labGrotesque(.regular, size: 24))
+                        }
+                    }
+                    .frame(width: 110, height: 110)
+                    .cornerRadius(0)
+                    .shadow(radius: 5, y: 5)
+                }
+                
+                VStack(spacing: 10) {
+                    Text("Практиковали")
+                        .font(.labGrotesque(.regular, size: 18))
+                    ZStack {
+                            Image("flower4")
+                                .resizable()
+                                .scaledToFill()
+                                .clipShape(Circle())
+                                
+                            VStack(spacing: 20) {
+                                
+                                Text("\(vm.userProfile.userTotalDays) дней")
+                                    .font(.labGrotesque(.regular, size: 24))
+                            }
+                    }
+                    .frame(width: 110, height: 110)
+                    .cornerRadius(0)
+                    .shadow(radius: 5, y: 5)
+                }
+                
+            }
+            
+            
+            VStack(spacing: 10) {
+                Text("Лучший результат")
+                    .font(.labGrotesque(.regular, size: 18))
+                ZStack {
+                        Image("flower6")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            
+                        VStack(spacing: 20) {
+                            
+                            Text("\(vm.userProfile.userTotalDays) дней")
+                                .font(.labGrotesque(.regular, size: 24))
+                        }
+                }
+                .frame(width: 110, height: 110)
+                .cornerRadius(0)
+                .shadow(radius: 5, y: 5)
+            }
+            HStack {
+                Text("Имя")
+                Spacer()
+                Text(vm.userProfile.userName)
+                    
+            }
+            HStack {
+                Text("Статус")
+                Spacer()
+                Text("Unbelievable hero")
+            }
+        }
+    }
+    
+    private var linksView: some View {
+        VStack(spacing: 10) {
+            Link("Buy me a coffe☕️", destination: coffeURL)
+            Link("Terms of service", destination: defaultURL)
+            Link("Privacy policy", destination: secondURL)
+        }
+        .foregroundColor(.black)
     }
 }
