@@ -23,10 +23,10 @@ struct SettingsView: View {
             ZStack {
                 Color.theme.main2
                     .ignoresSafeArea()
-                VStack {
+                VStack(spacing: 10) {
                     userProfile
 
-                        .padding()
+                        .padding(20)
                         .padding(.horizontal, 20)
                         .background(.regularMaterial)
                         .cornerRadius(30)
@@ -85,7 +85,7 @@ extension SettingsView {
                 .scaledToFill()
                 .frame(width: 100, height: 100)
                 .clipShape(Circle())
-                .shadow(radius: 5, y: 5)
+                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
             VStack(alignment: .leading) {
                 Text("Имя:")
                 Text(vm.userProfile.userName)
@@ -115,7 +115,7 @@ extension SettingsView {
                     }
                     .frame(width: 110, height: 110)
                     .cornerRadius(0)
-                    .shadow(radius: 5, y: 5)
+                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
                 }
                 
                 VStack(spacing: 10) {
@@ -135,7 +135,7 @@ extension SettingsView {
                     }
                     .frame(width: 110, height: 110)
                     .cornerRadius(0)
-                    .shadow(radius: 5, y: 5)
+                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
                 }
                 
             }
@@ -158,7 +158,7 @@ extension SettingsView {
                 }
                 .frame(width: 110, height: 110)
                 .cornerRadius(0)
-                .shadow(radius: 5, y: 5)
+                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
             }
             HStack {
                 Text("Имя")
