@@ -44,6 +44,7 @@ struct CourseView: View {
             .listStyle(.plain)
             
         }
+        
         .ignoresSafeArea()
     }
 }
