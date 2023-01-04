@@ -25,8 +25,10 @@ struct HomeNextCourseView: View {
                         HStack(spacing: 5) {
     
                             Text("\(model.id) :" ?? "Next Series:")
-                                .font(.labGrotesque(.thin, size: 18))
+                                .font(.labGrotesque(.semibold, size: 18))
                                 .shadow(radius: 0)
+                          
+                            .font(.labGrotesque(.thin,size: 13))
                             Text(model.name ?? "Start your journey here")
                                 .font(.labGrotesque(.semibold, size: 18))
                                 .shadow(radius: 0)
@@ -43,6 +45,8 @@ struct HomeNextCourseView: View {
                         .padding(.leading, 20)
                         .padding(.vertical, 4)
                         .background(.regularMaterial.opacity(0.9))
+                        .cornerRadius(10)
+                        .shadow(color: Color.theme.orange.opacity(0.4), radius: 2)
                         
                         
                     }

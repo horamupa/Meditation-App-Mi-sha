@@ -40,12 +40,10 @@ class HomeViewModel: ObservableObject {
         var lessons: [TrackModel] = []
         for course in courses {
             for trackNew in course.tracks {
-                print("Append track number \(trackNew.number)")
                 lessons.append(trackNew)
             }
         }
         let lesson = lessons.first(where: { $0.number == ProgressInfo.shared.nextMeditation()})
-        print("return nil")
         return lesson
     }
 }
