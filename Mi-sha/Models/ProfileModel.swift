@@ -14,5 +14,6 @@ struct ProfileModel: Codable {
     var userTotalTime: Double
     var userTotalDays: Int
     var userBestStreak: Int
+    var userLastSeen: Date
     
 }

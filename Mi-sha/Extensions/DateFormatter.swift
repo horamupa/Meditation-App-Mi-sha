@@ -22,5 +22,12 @@ extension DateComponentsFormatter {
         formatter.zeroFormattingBehavior = .pad
         return formatter
     }
+    
+    static var onlyMinutes: DateComponentsFormatter {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute]
+        formatter.unitsStyle = .abbreviated
+        return formatter
+    }
 }
 

@@ -4,7 +4,7 @@
 //
 //  Created by MM on 08.12.2022.
 //
-
+#warning("Find padding.infinity")
 import SwiftUI
 import Combine
 import Firebase
@@ -20,6 +20,7 @@ struct PlayerView: View {
     @State private var isEditing: Bool = false
     @Environment(\.dismiss) var dismiss
     @State var player = AVPlayer()
+    var manager = DataManager.shared
     let closeRangeCreate: ClosedRange<Double> = 0...60
     
     let timer = Timer
@@ -152,6 +153,8 @@ struct PlayerView: View {
             if audioManager.getPlayerTime() > 420 {
                 ProgressInfo.shared.updateProgress(model: model)
                 ProgressInfo.shared.savePreference()
+                manager.userProfile.userTotalTime += audioManager.getPlayerTime()
+                manager.userProfile.userTotalDays += 1
             }
         }
     }

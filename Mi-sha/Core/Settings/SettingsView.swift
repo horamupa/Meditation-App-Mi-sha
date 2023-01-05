@@ -11,7 +11,7 @@ struct SettingsView: View {
     
     @StateObject var vm = SettingsViewModel()
     
-    @State var userName = "UserName"
+//    @State var userName = "UserName"
     
     
     var defaultURL = URL(string: "https://www.google.com")!
@@ -24,26 +24,30 @@ struct SettingsView: View {
                 Color.theme.main2
                     .ignoresSafeArea()
                 VStack(spacing: 10) {
-                    userProfile
-
-                        .padding(20)
-                        .padding(.horizontal, 20)
-                        .background(.regularMaterial)
-                        .cornerRadius(30)
-                    medalView
-//                        .cornerRadius(0)
-                        .padding(20)
+                    VStack {
+                        userProfile
+                            .padding(20)
+                            .frame(maxWidth: .infinity)
+                            .background(.regularMaterial)
+                            .cornerRadius(30)
+                        medalView
+    //                        .cornerRadius(0)
+                            .padding(20)
+                            .frame(maxWidth: .infinity)
+                            .background(.regularMaterial)
+                            
+                            .cornerRadius(30)
+//                            .padding(.horizontal, 20)
+                    }
+                    .padding()
                     
-                        .background(.regularMaterial)
-                        
-                        .cornerRadius(30)
-                        .padding(.horizontal, 20)
                     VStack {
                         linksView
                     }
                     
                     Spacer()
                 }
+                .padding(.horizontal, 10)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -57,11 +61,8 @@ struct SettingsView: View {
                 }
             }
             .font(.labGrotesque(.regular, size: 16))
-//            .ignoresSafeArea()
             .navigationTitle("Настройки")
             .navigationBarBackButtonHidden()
-//            .statusBarHidden()
-//            .labelsHidden()
             .navigationBarTitleDisplayMode(.inline)
 
     }
@@ -79,7 +80,7 @@ struct Settings_Previews: PreviewProvider {
 extension SettingsView {
     
     private var userProfile: some View {
-        HStack {
+        HStack(spacing: 30) {
             Image(vm.userProfile.userImage)
                 .resizable()
                 .scaledToFill()
@@ -87,11 +88,14 @@ extension SettingsView {
                 .clipShape(Circle())
                 .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
             VStack(alignment: .leading) {
-                Text("Имя:")
-                Text(vm.userProfile.userName)
+                Text("Ваше имя:")
+                TextField("введите ваше имя...", text: $vm.userProfile.userName)
+//                Text(vm.userProfile.userName)
+                    .font(.labGrotesque(.regular, size: 20))
             }
-            .font(.labGrotesque(.regular, size: 16))
+            .font(.labGrotesque(.thin, size: 14))
         }
+        
     }
     
     private var medalView: some View {
@@ -109,7 +113,7 @@ extension SettingsView {
                             .clipShape(Circle())
                         VStack(spacing: 5) {
                             
-                            Text("\(vm.userProfile.userTotalTime.formatted()) мин")
+                            Text("\((Int(vm.userProfile.userTotalTime/60)).formatted()) мин")
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                     }
@@ -129,7 +133,7 @@ extension SettingsView {
                                 
                             VStack(spacing: 20) {
                                 
-                                Text("\(vm.userProfile.userTotalDays) дней")
+                                Text("\(vm.userProfile.userTotalDays) дня")
                                     .font(.labGrotesque(.regular, size: 24))
                             }
                     }
@@ -152,7 +156,7 @@ extension SettingsView {
                             
                         VStack(spacing: 20) {
                             
-                            Text("\(vm.userProfile.userTotalDays) дней")
+                            Text("\(vm.userProfile.userTotalDays) дня")
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                 }
@@ -169,9 +173,10 @@ extension SettingsView {
             HStack {
                 Text("Статус")
                 Spacer()
-                Text("Unbelievable hero")
+                Text("Невероятный герой")
             }
         }
+        .padding(.vertical, 15)
     }
     
     private var linksView: some View {

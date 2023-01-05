@@ -44,6 +44,7 @@ class ProgressInfo: ObservableObject {
     
     @Published var nextMeditationNum = "0"
     
+    
     static var shared = ProgressInfo()
     
     private init() {
