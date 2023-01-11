@@ -27,11 +27,13 @@ struct HomeNextCourseView: View {
     
                             Text("\(model.id) :" ?? "Next Series:")
                                 .font(.labGrotesque(.thin, size: 18))
+                                .foregroundColor(Color.theme.black)
                                 .shadow(radius: 0)
                           
 //                            .font(.labGrotesque(.thin,size: 13))
                             Text(model.name ?? "Start your journey here")
                                 .font(.labGrotesque(.medium, size: 18))
+                                .foregroundColor(Color.theme.black)
                                 .shadow(radius: 0)
                                 .minimumScaleFactor(0.6)
                             

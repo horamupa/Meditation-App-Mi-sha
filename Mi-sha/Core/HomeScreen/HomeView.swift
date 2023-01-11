@@ -18,8 +18,6 @@ struct HomeView: View {
     @EnvironmentObject var audioManager: AudioManager
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
-    @State var isActualLesson: Bool = false
-    
     
     var body: some View {
         ZStack {
@@ -27,31 +25,21 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 20) {
                 Spacer()
-               upperBlock
+                
+                upperBlock
                 
                 Text("Свежая серия:")
                     .font(.labGrotesque(.regular, size: 20))
-                NavigationLink {
-                    if let lesson = vm.actualLesson() {
-                        PlayerView(model: lesson)
-                    }
-                } label: {
-                    middleBlock
-                        .cornerRadius(15)
-                        .shadow(radius: 2, y: 2)
-    //                    .onTapGesture {
-    //                        isActualLesson = true
-    //                    }
-                }
-
+                
+                middleBlock
                 
                 Spacer()
                 
                Text("В нашем сериале:")
                     .font(.labGrotesque(.regular, size: 20))
-                   
                bottomBlock
-                    .shadow(radius: 2, y: 2)
+
+                
                 Spacer()
             }
             .padding(30)
@@ -61,12 +49,6 @@ struct HomeView: View {
         .sheet(isPresented: $isSettings, content: {
             SettingsView()
         })
-        .sheet(isPresented: $isActualLesson) {
-            if let lesson = vm.actualLesson() {
-                
-                PlayerView(model: lesson)
-            }
-        }
         .onAppear {
             if let url2 = vm.actualLesson()?.url {
                 AudioManager.shared.preDownload(url: url2)
@@ -118,9 +100,15 @@ extension HomeView {
     }
     
     var middleBlock: some View {
-        
-        HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
-
+        NavigationLink {
+            if let lesson = vm.actualLesson() {
+                PlayerView(model: lesson)
+            }
+        } label: {
+            HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
+                .cornerRadius(15)
+                .shadow(radius: 2, y: 2)
+        }
     }
     
     var bottomBlock: some View {
@@ -134,9 +122,6 @@ extension HomeView {
                                 Image(item.image)
                                     .resizable()
                                     .scaledToFill()
-//                                    .cornerRadius(15)
-//                                    .padding(10)
-//                                    .offset(y: -10)
                                 
                                 Text(item.name)
                                     .font(.labGrotesque(.regular, size: 16))
@@ -156,7 +141,6 @@ extension HomeView {
                                             .foregroundColor(Color.theme.blue)
                                             .cornerRadius(25)
                     
-//                                                Spacer()
                                         Rectangle()
                                             .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
                                             .foregroundColor(Color.theme.purple)
@@ -165,6 +149,7 @@ extension HomeView {
             }
             .frame(maxWidth: .infinity)
         }
+        .shadow(radius: 2, y: 2)
     }
         
         var halfScreen: CGFloat {

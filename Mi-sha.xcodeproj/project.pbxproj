@@ -24,6 +24,7 @@
 		8DC664092955B49500123DA2 /* CacheManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664082955B49500123DA2 /* CacheManagerClass.swift */; };
 		8DC6640B2955B56600123DA2 /* ProgressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6640A2955B56600123DA2 /* ProgressInfo.swift */; };
 		8DD5063E29659D58006D9F6E /* BagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5063D29659D58006D9F6E /* BagesView.swift */; };
+		8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */; };
 		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
 		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
 		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
@@ -84,6 +85,7 @@
 		8DC664082955B49500123DA2 /* CacheManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerClass.swift; sourceTree = "<group>"; };
 		8DC6640A2955B56600123DA2 /* ProgressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressInfo.swift; sourceTree = "<group>"; };
 		8DD5063D29659D58006D9F6E /* BagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagesView.swift; sourceTree = "<group>"; };
+		8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
 		8DEB19A32947421C00BAF218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8D66C66F2941CF8C00B37756 /* PlayerView.swift */,
+				8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
+				8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */,
 				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
 				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
 				8DEB1A13295077E600BAF218 /* AuthService.swift in Sources */,
