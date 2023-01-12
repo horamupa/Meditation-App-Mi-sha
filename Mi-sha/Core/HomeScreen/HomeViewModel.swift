@@ -43,7 +43,7 @@ class HomeViewModel: ObservableObject {
                 lessons.append(trackNew)
             }
         }
-        let lesson = lessons.first(where: { $0.number == ProgressInfo.shared.nextMeditation()})
+        let lesson = lessons.first(where: { $0.number == UserProgress.shared.nextMeditation()})
         return lesson
     }
 }

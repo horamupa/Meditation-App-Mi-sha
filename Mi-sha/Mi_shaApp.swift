@@ -17,7 +17,9 @@ struct Mi_shaApp: App {
     }
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     @StateObject var vm = HomeViewModel()
-    @StateObject var audioManager = AudioManager.shared
+    @StateObject var audioManager = AudioManager()
+    @StateObject var userProgress = UserProgress()
+    @StateObject var dataManager = DataManager()
     
     var body: some Scene {
         WindowGroup {
@@ -26,7 +28,7 @@ struct Mi_shaApp: App {
             } else {
                 NavigationView {
                     if vm.courses.count > 0 {
-                        HomeView()
+                        HomeView(container: AppDependency(dataManager: dataManager, audioManager: audioManager, userProgress: userProgress, vm: vm))
                             .environmentObject(vm)
                             .environmentObject(audioManager)
                     } else {

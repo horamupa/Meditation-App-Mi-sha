@@ -24,7 +24,7 @@ class AudioManager: ObservableObject {
     var dataManager = DataManager.shared
     var somethingBad = false
     
-    private init() { }
+    init() { }
     
     func startPlayerStream(url: String) {
          if !isDownloaded {

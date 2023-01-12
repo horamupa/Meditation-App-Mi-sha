@@ -10,21 +10,28 @@ import SwiftUI
 struct CourseView: View {
     
     var innerCourse: CourseModel
+    var container: AppDependency
+    
+    init(innerCourse: CourseModel, container: AppDependency) {
+        self.innerCourse = innerCourse
+        self.container = container
+    }
+    
     var body: some View {
         ZStack {
-            
                 VStack(alignment: .leading) {
                     upperBlock
                     
                     ScrollView {
                     VStack(alignment: .leading, spacing: 5) {
                         ForEach(innerCourse.tracks.sorted()) { track in
-                            TrackRow(track: track)
+                            TrackRow(track: track, container: container)
                         }
                         
                         Spacer()
                     }
                 }
+                    .padding(.horizontal, 10)
             }
             .listStyle(.plain)
         }
@@ -34,7 +41,7 @@ struct CourseView: View {
 
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseView(innerCourse: dev.course)
+        CourseView(innerCourse: dev.course, container: dev.dependencyContainer)
     }
 }
 

@@ -16,7 +16,7 @@ class DataManager: ObservableObject {
     
     static var shared = DataManager()
     
-    private init () {
+    init () {
         loadDataFromFirestore()
         setUserProfile()
     }

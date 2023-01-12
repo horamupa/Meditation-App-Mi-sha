@@ -75,7 +75,7 @@ extension OnboardingView {
                     .blur(radius: 10)
                     
             }
-            Text("Осознанность")
+            Text("Привет!")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
@@ -85,9 +85,8 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Медитируйте с приложением ми-ша для достижения наилучших результатов и что бы всё было заебок")
-                .font(.callout)
-                .fontWeight(.medium)
+            Text("Мёд - это сериал про тебя. В котором ты будешь главный герой. А все события будут разворачиваться прямо у тебя в сознании.")
+                .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
                 .padding(.horizontal, 40)
@@ -124,9 +123,8 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Просто сядь, запусти медитацию и дальше мы проведём тебя по самому оптимальному пути")
-                .font(.callout)
-                .fontWeight(.medium)
+            Text("Просто сядь, запусти медитацию и дальше я проведу тебя по самому оптимальному пути")
+                .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
                 .padding(.horizontal, 40)
@@ -163,9 +161,8 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Древние техники в сочетании с самыми последними методиками, просто наслаждайся")
-                .font(.callout)
-                .fontWeight(.medium)
+            Text("Я буду сопровождать тебя на каждом моменте, подсказывая что делать, а ты просто наслаждайся")
+                .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
                 .padding(.horizontal, 40)

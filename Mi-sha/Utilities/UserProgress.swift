@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-class ProgressInfo: ObservableObject {
+class UserProgress: ObservableObject {
     
-    @Published var progressInfo: [SavedPreferenceModel] = [
+    @Published var courseProgress: [SavedPreferenceModel] = [
         SavedPreferenceModel(number: "1", done: false),
         SavedPreferenceModel(number: "2", done: false),
         SavedPreferenceModel(number: "3", done: false),
@@ -45,23 +45,23 @@ class ProgressInfo: ObservableObject {
     @Published var nextMeditationNum = "0"
     
     
-    static var shared = ProgressInfo()
+    static var shared = UserProgress()
     
-    private init() {
-        print(self.progressInfo.first?.number)
-        print(self.progressInfo.first?.done)
+    init() {
+        print(self.courseProgress.first?.number)
+        print(self.courseProgress.first?.done)
         setPreference()
     }
     
     func updateProgress(model: TrackModel) {
         nextMeditationNum = model.number
-        var updateLesson = self.progressInfo.first(where: { $0.number == model.number } )
+        var updateLesson = self.courseProgress.first(where: { $0.number == model.number } )
         updateLesson?.done = true
         savePreference()
     }
     
     func checkDone(model: TrackModel) -> Bool {
-        var updateLesson = self.progressInfo.first(where: { $0.number == model.number } )
+        var updateLesson = self.courseProgress.first(where: { $0.number == model.number } )
         if updateLesson?.done == true {
             return true
         } else {
@@ -72,7 +72,7 @@ class ProgressInfo: ObservableObject {
     }
     
     func savePreference() {
-        let settings = self.progressInfo
+        let settings = self.courseProgress
         guard let encoder = try? JSONEncoder().encode(settings) else { return }
         UserDefaults.standard.set(encoder, forKey: "save_it")
     }
@@ -83,7 +83,7 @@ class ProgressInfo: ObservableObject {
               let decodedData = try? JSONDecoder().decode([SavedPreferenceModel].self, from: data)
         else { return }
         // надо сравнить каждую ячейку и добавить к кей значение
-        self.progressInfo = decodedData.sorted()
+        self.courseProgress = decodedData.sorted()
     }
     
     func nextMeditation() -> String {

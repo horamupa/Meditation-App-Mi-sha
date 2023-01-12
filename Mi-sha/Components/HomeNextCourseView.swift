@@ -38,10 +38,10 @@ struct HomeNextCourseView: View {
                                 .minimumScaleFactor(0.6)
                             
                             Image(systemName: "play.circle")
-                                .scaleEffect(2)
+                                .scaleEffect(1.7)
                                 .foregroundColor(Color.theme.orange.opacity(0.7))
                                 .frame(width: 50, height: 40)
-                                .shadow(color: Color.theme.orange.opacity(0.5), radius: 2, y: 2)
+                                .shadow(color: Color.theme.orange.opacity(0.2), radius: 2, y: 2)
                         }
                         
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -65,7 +65,7 @@ struct HomeNextCourseView: View {
 struct HomeNextCourseView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView()
+            HomeView(container: dev.dependencyContainer)
                 .environmentObject(dev.vm)
                 .environmentObject(AudioManager.shared)
         }

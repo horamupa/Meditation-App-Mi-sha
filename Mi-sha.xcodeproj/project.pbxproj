@@ -19,10 +19,11 @@
 		8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */; };
 		8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */; };
 		8D8A7F662941C6D70072A582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F652941C6D70072A582 /* CardView.swift */; };
+		8D93A350296F08B700E8E3EB /* InjectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93A34F296F08B700E8E3EB /* InjectionProtocols.swift */; };
 		8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664042955B25100123DA2 /* OnboardingView.swift */; };
 		8DC664072955B46700123DA2 /* FileManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664062955B46700123DA2 /* FileManagerClass.swift */; };
 		8DC664092955B49500123DA2 /* CacheManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664082955B49500123DA2 /* CacheManagerClass.swift */; };
-		8DC6640B2955B56600123DA2 /* ProgressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6640A2955B56600123DA2 /* ProgressInfo.swift */; };
+		8DC6640B2955B56600123DA2 /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6640A2955B56600123DA2 /* UserProgress.swift */; };
 		8DD5063E29659D58006D9F6E /* BagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5063D29659D58006D9F6E /* BagesView.swift */; };
 		8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */; };
 		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
@@ -79,11 +80,12 @@
 		8D8A7F5D2941C15E0072A582 /* AudioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewModel.swift; sourceTree = "<group>"; };
 		8D8A7F602941C1FD0072A582 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		8D8A7F652941C6D70072A582 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8D93A34F296F08B700E8E3EB /* InjectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionProtocols.swift; sourceTree = "<group>"; };
 		8DC663F72951CA0A00123DA2 /* Mi-sha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mi-sha.entitlements"; sourceTree = "<group>"; };
 		8DC664042955B25100123DA2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8DC664062955B46700123DA2 /* FileManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerClass.swift; sourceTree = "<group>"; };
 		8DC664082955B49500123DA2 /* CacheManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerClass.swift; sourceTree = "<group>"; };
-		8DC6640A2955B56600123DA2 /* ProgressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressInfo.swift; sourceTree = "<group>"; };
+		8DC6640A2955B56600123DA2 /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
 		8DD5063D29659D58006D9F6E /* BagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagesView.swift; sourceTree = "<group>"; };
 		8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -182,8 +184,8 @@
 				8DEB199E29473A6700BAF218 /* Utilities */,
 				8D8A7F5F2941C1DE0072A582 /* Extensions */,
 				8DEB19AA29477AC500BAF218 /* Models */,
-				8D8A7F642941C6C60072A582 /* Components */,
 				8DEB19A629477A7F00BAF218 /* Core */,
+				8D8A7F642941C6C60072A582 /* Components */,
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
 				8DEB19A12947419E00BAF218 /* 1.mp3 */,
 				8D8A7F512941BC970072A582 /* Preview Content */,
@@ -251,7 +253,8 @@
 				8DEB1A1829508DFA00BAF218 /* DataManager.swift */,
 				8DC664062955B46700123DA2 /* FileManagerClass.swift */,
 				8DC664082955B49500123DA2 /* CacheManagerClass.swift */,
-				8DC6640A2955B56600123DA2 /* ProgressInfo.swift */,
+				8DC6640A2955B56600123DA2 /* UserProgress.swift */,
+				8D93A34F296F08B700E8E3EB /* InjectionProtocols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
+				8D93A350296F08B700E8E3EB /* InjectionProtocols.swift in Sources */,
 				8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */,
 				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
 				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
@@ -449,7 +453,7 @@
 				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
 				8DFA3045295A306500AB0170 /* GradientView.swift in Sources */,
 				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
-				8DC6640B2955B56600123DA2 /* ProgressInfo.swift in Sources */,
+				8DC6640B2955B56600123DA2 /* UserProgress.swift in Sources */,
 				8D8A7F5C2941C0640072A582 /* TrackModel.swift in Sources */,
 				8DFA304D295C5F4A00AB0170 /* SettingsViewModel.swift in Sources */,
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,

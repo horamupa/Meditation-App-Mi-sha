@@ -14,10 +14,18 @@ import Firebase
 
 struct HomeView: View {
     
-    @EnvironmentObject var vm: HomeViewModel
-    @EnvironmentObject var audioManager: AudioManager
+    typealias Dependencies = DataManagerProtocol & AudioManagerProtocol & UserProgressProtocol & ViewModeProtocol
+    var vm: HomeViewModel
+    var audioManager: AudioManager
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
+    var container: AppDependency
+    
+    init(container: AppDependency) {
+        self.vm = container.vm
+        self.audioManager = container.audioManager
+        self.container = container
+    }
     
     var body: some View {
         ZStack {
@@ -49,18 +57,18 @@ struct HomeView: View {
         .sheet(isPresented: $isSettings, content: {
             SettingsView()
         })
-        .onAppear {
-            if let url2 = vm.actualLesson()?.url {
-                AudioManager.shared.preDownload(url: url2)
-            }
-        }
+//        .onAppear {
+//            if let url2 = vm.actualLesson()?.url {
+//                audioManager.preDownload(url: url2)
+//            }
+//        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView()
+            HomeView(container: dev.dependencyContainer)
                 .environmentObject(dev.vm)
                 .environmentObject(AudioManager.shared)
         }
@@ -102,7 +110,7 @@ extension HomeView {
     var middleBlock: some View {
         NavigationLink {
             if let lesson = vm.actualLesson() {
-                PlayerView(model: lesson)
+                PlayerView(model: lesson, container: container)
             }
         } label: {
             HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
@@ -116,38 +124,58 @@ extension HomeView {
             HStack(spacing: 20) {
                 if !vm.courses.isEmpty {
                     ForEach(vm.courses) { item in
-                        NavigationLink(destination: CourseView(innerCourse: item)) {
-                            ZStack(alignment: .bottomTrailing) {
-
+                        NavigationLink(destination: CourseView(innerCourse: item, container: container)) {
+                            ZStack(alignment: .bottom) {
                                 Image(item.image)
                                     .resizable()
                                     .scaledToFill()
-                                
+                                    .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
                                 Text(item.name)
                                     .font(.labGrotesque(.regular, size: 16))
-                                    .minimumScaleFactor(0.5)
+//                                    .minimumScaleFactor(0.5)
                                     .padding(15)
                                     .frame(maxWidth: .infinity)
                                     .background(.regularMaterial.opacity(0.9))
-                                    
                             }
-                            .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+                            
                             .cornerRadius(15)
                         }
                     }
                 } else {
-                                        Rectangle()
-                                            .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
-                                            .foregroundColor(Color.theme.blue)
-                                            .cornerRadius(25)
+                    ZStack(alignment: .bottom) {
+                        Image("home3")
+                            .resizable()
+                            .scaledToFill()
+                        
+                        Text("Сезон первый")
+                            .font(.labGrotesque(.regular, size: 16))
+//                            .minimumScaleFactor(0.5)
+                            .padding(15)
+                            .frame(maxWidth: .infinity)
+                            .background(.regularMaterial.opacity(0.9))
+                            
+                    }
+                  
+                    .cornerRadius(15)
                     
-                                        Rectangle()
-                                            .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
-                                            .foregroundColor(Color.theme.purple)
-                                            .cornerRadius(25)
+                    ZStack(alignment: .bottom) {
+
+                        Image("Doggo2")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width / 2.5)
+                        Text("Второй сезон")
+                            .font(.labGrotesque(.regular, size: 16))
+                            .padding(15)
+                            .frame(maxWidth: .infinity)
+                            .background(.regularMaterial.opacity(0.9))
+                            
+                    }
+                  
+                    .cornerRadius(15)
                 }
             }
-            .frame(maxWidth: .infinity)
+//            .frame(maxWidth: .infinity)
         }
         .shadow(radius: 2, y: 2)
     }

@@ -9,12 +9,20 @@ import SwiftUI
 
 struct TrackRow: View {
     
-    @ObservedObject var progress = ProgressInfo.shared
+    @ObservedObject var progress = UserProgress.shared
     
     let track: TrackModel
+    var container: AppDependency
+    
+    init(track: TrackModel, container: AppDependency) {
+        self.container = container
+        self.track = track
+        self.progress = container.userProgress
+    }
+    
     var body: some View {
         ZStack {
-            NavigationLink(destination: PlayerView(model: track), label: {
+            NavigationLink(destination: PlayerView(model: track, container: container), label: {
                 HStack(spacing: 0) {
                     Text(track.number)
                         .font(.caption)
@@ -23,7 +31,7 @@ struct TrackRow: View {
                         Circle()
                             .foregroundColor(Color.theme.orange)
                             .frame(width: 30, height: 30)
-                    } else if track.number == ProgressInfo.shared.nextMeditation(){
+                    } else if track.number == progress.nextMeditation(){
                             Circle()
                                 .foregroundColor(Color.theme.orange)
                                 .frame(width: 30, height: 30)
@@ -81,6 +89,6 @@ struct TrackRow: View {
 
 struct TrackRow_Previews: PreviewProvider {
     static var previews: some View {
-        TrackRow(track: dev.track)
+        TrackRow(track: dev.track, container: dev.dependencyContainer)
     }
 }
