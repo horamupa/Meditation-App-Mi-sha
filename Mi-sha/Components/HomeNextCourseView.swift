@@ -25,13 +25,13 @@ struct HomeNextCourseView: View {
                     .overlay(alignment: .bottomTrailing) {
                         HStack(spacing: 5) {
     
-                            Text("\(model.id) :" ?? "Next Series:")
+                            Text("\(model.id) :" )
                                 .font(.labGrotesque(.thin, size: 18))
                                 .foregroundColor(Color.theme.black)
                                 .shadow(radius: 0)
                           
 //                            .font(.labGrotesque(.thin,size: 13))
-                            Text(model.name ?? "Start your journey here")
+                            Text(model.name )
                                 .font(.labGrotesque(.medium, size: 18))
                                 .foregroundColor(Color.theme.black)
                                 .shadow(radius: 0)

@@ -57,11 +57,11 @@ struct HomeView: View {
         .sheet(isPresented: $isSettings, content: {
             SettingsView()
         })
-//        .onAppear {
-//            if let url2 = vm.actualLesson()?.url {
-//                audioManager.preDownload(url: url2)
-//            }
-//        }
+        .onAppear {
+            if let url2 = vm.actualLesson()?.url {
+                audioManager.preDownload(url: url2)
+            }
+        }
     }
 }
 

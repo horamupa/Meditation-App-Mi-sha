@@ -262,7 +262,6 @@
 		8DEB19A629477A7F00BAF218 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8DEB19B02948977A00BAF218 /* LoginScreen */,
 				8DEB19AB29477AED00BAF218 /* HomeScreen */,
 				8DEB19F1294C8EEE00BAF218 /* CourseView */,
 				8D4684852946125900B751AC /* AudioCard */,
@@ -271,6 +270,7 @@
 				8DEB19A929477AAC00BAF218 /* Settings */,
 				8DFA303F2959CA5A00AB0170 /* LoadingView */,
 				8DD5063C29659D39006D9F6E /* BagesView */,
+				8DEB19B02948977A00BAF218 /* LoginScreen */,
 			);
 			path = Core;
 			sourceTree = "<group>";
