@@ -11,16 +11,16 @@ class SettingsViewModel: ObservableObject {
     
     @Published var userProfile: ProfileModel
 //userName: "Юный друг", userImage: "home1", userTotalTime: 0, userTotalDays: 0, userBestStreak: 0, userLastSeen: Date.now)
-    var manager = DataManager.shared
+    var progress = UserProgress.shared
     
     init() {
-        userProfile = manager.userProfile
+        userProfile = progress.userProfile
     }
     
     func saveName(name:String) {
         if name != "" {
-            manager.userProfile.userName = name
-            userProfile = manager.userProfile
+            progress.userProfile.userName = name
+            userProfile = progress.userProfile
         }
         else { return }
     }

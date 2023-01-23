@@ -8,6 +8,7 @@
 import SwiftUI
 import AVKit
 
+/// <#Description#>
 class AudioManager: ObservableObject {
     
     @Published var player: AVAudioPlayer?
@@ -18,17 +19,17 @@ class AudioManager: ObservableObject {
     }
     @Published var isLoop = false
     var preDownloadedURL = ""
-    var isDownloaded = false
+    @Published var isDownloaded = false
     
     static var shared = AudioManager()
     var dataManager = DataManager.shared
     var somethingBad = false
     
-    init() { }
+    private init() { }
     
+    // Chek preDownload, if not - download fresh
     func startPlayerStream(url: String) {
-         if !isDownloaded {
-            
+         if preDownloadedURL != url {
             guard
                 let url = URL(string: url)
             else {
@@ -36,6 +37,7 @@ class AudioManager: ObservableObject {
                 return
             }
             do {
+                self.isDownloaded = false
                 //разрешает играть есть в беззвучном режиме.
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                 try AVAudioSession.sharedInstance().setActive(true)
@@ -46,7 +48,9 @@ class AudioManager: ObservableObject {
                         self.player = try! AVAudioPlayer(data: data)
                         self.player?.prepareToPlay()
                         self.player?.play()
+                        print("play from startStream")
                         self.isPlaying = true
+                        self.isDownloaded = true
                     }
                 }
                 //            player = try AVAudioPlayer(contentsOf: url)
@@ -72,7 +76,7 @@ class AudioManager: ObservableObject {
             //разрешает играть есть в беззвучном режиме.
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
-            
+            self.isDownloaded = false
                 DispatchQueue.global().async {
                     guard
                        let data = try? Data(contentsOf: url)
@@ -85,6 +89,7 @@ class AudioManager: ObservableObject {
                         self.player = try! AVAudioPlayer(data: data)
                         self.player?.prepareToPlay()
                         self.isDownloaded = true
+                        print("play from predownload")
                     }
                 }
         } catch let error {
@@ -118,8 +123,8 @@ class AudioManager: ObservableObject {
         } catch let error {
             print("Can't create player from url \(error.localizedDescription)")
         }
-        
-        
+
+
     }
     
     func playPause() {

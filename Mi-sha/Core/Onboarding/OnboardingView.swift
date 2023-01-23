@@ -85,7 +85,7 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Мёд - это сериал про тебя. В котором ты будешь главный герой. А все события будут разворачиваться прямо у тебя в сознании.")
+            Text("Мёд - это сериал про тебя. Ты - главный и единственный герой. И все события разворачиваются прямо в твоём сознании.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
@@ -123,7 +123,7 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Просто сядь, запусти медитацию и дальше я проведу тебя по самому оптимальному пути")
+            Text("Просто сядь, запусти медитацию и я проведу тебя по захватывающему сюжету про самого тебя")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
@@ -161,7 +161,7 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Я буду сопровождать тебя на каждом моменте, подсказывая что делать, а ты просто наслаждайся")
+            Text("Я буду сопровождать тебя в каждом моменте, подсказывая что делать, а ты просто наслаждайся")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)

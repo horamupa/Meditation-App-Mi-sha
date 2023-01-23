@@ -73,7 +73,6 @@ struct Settings_Previews: PreviewProvider {
         NavigationView {
             SettingsView()
         }
-        
     }
 }
 
@@ -119,7 +118,12 @@ extension SettingsView {
                     }
                     .frame(width: 110, height: 110)
                     .cornerRadius(0)
-                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                    .background {
+                        Circle()
+                            .foregroundColor(Color("ColorMain"))
+                            .frame(width: 125, height: 125)
+                    }
+//                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
                 }
                 
                 VStack(spacing: 10) {
@@ -139,7 +143,11 @@ extension SettingsView {
                     }
                     .frame(width: 110, height: 110)
                     .cornerRadius(0)
-                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                    .background {
+                        Circle()
+                            .foregroundColor(Color("ColorMain"))
+                            .frame(width: 125, height: 125)
+                    }
                 }
                 
             }
@@ -156,13 +164,17 @@ extension SettingsView {
                             
                         VStack(spacing: 20) {
                             
-                            Text("\(vm.userProfile.userTotalDays) дня")
+                            Text("\(vm.userProfile.userBestStreak) дня")
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                 }
                 .frame(width: 110, height: 110)
                 .cornerRadius(0)
-                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                .background {
+                    Circle()
+                        .foregroundColor(Color("ColorMain"))
+                        .frame(width: 125, height: 125)
+                }
             }
             HStack {
                 Text("Имя")

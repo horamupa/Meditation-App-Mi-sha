@@ -18,9 +18,6 @@ struct HomeNextCourseView: View {
                         .resizable()
                         .scaledToFill()
                         .offset(y: -20)
-//                        .padding(5)
-//                        .frame(height: 250)
-//                        .frame(minWidth: 400)
                     .foregroundColor(Color.theme.orange)
                     .overlay(alignment: .bottomTrailing) {
                         HStack(spacing: 5) {
@@ -65,7 +62,7 @@ struct HomeNextCourseView: View {
 struct HomeNextCourseView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView(container: dev.dependencyContainer)
+            HomeView()
                 .environmentObject(dev.vm)
                 .environmentObject(AudioManager.shared)
         }

@@ -13,31 +13,18 @@ import AVKit
 
 struct PlayerView: View {
     
-    typealias Dependencies = AudioManagerProtocol & DataManagerProtocol & UserProgressProtocol
-    
-    
-    init(model: TrackModel, container: Dependencies) {
+    init(model: TrackModel) {
         self.model = model
-        self.manager = container.dataManager
-        self.audioManager = container.audioManager
-        _vm = StateObject(wrappedValue: PlayerViewModel(model: model, container: container))
-        
+        _vm = StateObject(wrappedValue: PlayerViewModel(model: model))
     }
-    /*
-    //    var audioManager = AudioManager.shared
-    //    @State private var vm.playerTime: Double = 0.0
-    //    @State var player = AVPlayer()
-    //    let timer = Timer
-    //        .publish(every: 0.5, on: .main, in: .common)
-    //        .autoconnect()
-     */
+    
     @StateObject var vm: PlayerViewModel
     @State var isPause: Bool = false
     @State private var isEditing: Bool = false
     @Environment(\.dismiss) var dismiss
     var model: TrackModel
-    var manager: DataManager
-    var audioManager: AudioManager
+//    var manager: DataManager
+//    var audioManager = AudioManager.shared
     let closeRangeCreate: ClosedRange<Double> = 0...60
     
     
@@ -88,7 +75,7 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(model: dev.track, container: dev.dependencyContainer)
+        PlayerView(model: dev.track)
             .environmentObject(dev.vm)
     }
 }

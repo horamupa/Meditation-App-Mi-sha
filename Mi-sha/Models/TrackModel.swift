@@ -9,8 +9,12 @@ import SwiftUI
 
 struct TrackModel: Codable, Hashable, Identifiable, Comparable {
     static func < (lhs: TrackModel, rhs: TrackModel) -> Bool {
-        lhs.number.compare(rhs.number, options: .numeric) == .orderedAscending
+        lhs.number < rhs.number
     }
+    
+//    static func < (lhs: TrackModel, rhs: TrackModel) -> Bool {
+//        lhs.number.compare(rhs.number, options: .numeric) == .orderedAscending
+//    }
     
     let id: String
     let name: String
@@ -19,9 +23,9 @@ struct TrackModel: Codable, Hashable, Identifiable, Comparable {
     var isListen: Bool
     let image: String?
     let url: String
-    let number: String
+    let number: Int
     
-    init(id: String, name: String, duration: TimeInterval, isListen: Bool = false, image: String?, url: String = "", number: String) {
+    init(id: String, name: String, duration: TimeInterval, isListen: Bool = false, image: String?, url: String = "", number: Int) {
         self.id = id
         self.name = name
         self.duration = duration
@@ -32,6 +36,6 @@ struct TrackModel: Codable, Hashable, Identifiable, Comparable {
         self.number = number
     }
     
-   static let track = TrackModel(id: "1", name: "В путь", duration: 70, image: "home1", number: "1")
+   static let track = TrackModel(id: "1", name: "В путь", duration: 70, image: "home1", number: 1)
     
 }

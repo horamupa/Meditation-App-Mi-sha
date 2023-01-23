@@ -12,19 +12,12 @@ struct TrackRow: View {
     @ObservedObject var progress = UserProgress.shared
     
     let track: TrackModel
-    var container: AppDependency
-    
-    init(track: TrackModel, container: AppDependency) {
-        self.container = container
-        self.track = track
-        self.progress = container.userProgress
-    }
     
     var body: some View {
         ZStack {
-            NavigationLink(destination: PlayerView(model: track, container: container), label: {
+            NavigationLink(destination: PlayerView(model: track), label: {
                 HStack(spacing: 0) {
-                    Text(track.number)
+                    Text("\(track.number)")
                         .font(.caption)
                         .frame(width: 30)
                     if progress.checkDone(model: track) {
@@ -89,6 +82,6 @@ struct TrackRow: View {
 
 struct TrackRow_Previews: PreviewProvider {
     static var previews: some View {
-        TrackRow(track: dev.track, container: dev.dependencyContainer)
+        TrackRow(track: dev.track)
     }
 }

@@ -18,10 +18,10 @@ class SavedPreferenceModel: Comparable, Codable {
         lhs.number < rhs.number
     }
     
-    let number: String
+    let number: Int
     var done: Bool
     
-    init(number: String, done: Bool = false) {
+    init(number: Int, done: Bool = false) {
         self.number = number
         self.done = done
     }

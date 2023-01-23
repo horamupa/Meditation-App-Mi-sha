@@ -13,19 +13,13 @@ import AVKit
 
 class PlayerViewModel: ObservableObject {
     
-    typealias Dependencies = AudioManagerProtocol & DataManagerProtocol & UserProgressProtocol
-    
-    @Published var audioManager: AudioManager
-    @Published var manager: DataManager
-    @Published var userProgress: UserProgress
+    @Published var audioManager = AudioManager.shared
+    @Published var userProgress = UserProgress.shared
     @Published var playerTime: Double = 0.0
     var model: TrackModel
     
-    init(model: TrackModel, container: Dependencies) {
+    init(model: TrackModel) {
         self.model = model
-        self.audioManager = container.audioManager
-        self.manager = container.dataManager
-        self.userProgress = container.userProgress
     }
     
     
@@ -37,8 +31,9 @@ class PlayerViewModel: ObservableObject {
         if audioManager.getPlayerTime() > 420 {
             userProgress.updateProgress(model: model)
             userProgress.savePreference()
-            manager.userProfile.userTotalTime += audioManager.getPlayerTime()
-            manager.userProfile.userTotalDays += 1
+            userProgress.userProfile.userTotalTime += audioManager.getPlayerTime()
+            userProgress.userProfile.userTotalDays += 1
+            userProgress.dateChecker()
         }
     }
     

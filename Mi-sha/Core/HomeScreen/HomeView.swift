@@ -14,18 +14,11 @@ import Firebase
 
 struct HomeView: View {
     
-    typealias Dependencies = DataManagerProtocol & AudioManagerProtocol & UserProgressProtocol & ViewModeProtocol
-    var vm: HomeViewModel
-    var audioManager: AudioManager
+    @EnvironmentObject var vm: HomeViewModel
+    var audioManager = AudioManager.shared
+    @ObservedObject var progress = UserProgress.shared
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
-    var container: AppDependency
-    
-    init(container: AppDependency) {
-        self.vm = container.vm
-        self.audioManager = container.audioManager
-        self.container = container
-    }
     
     var body: some View {
         ZStack {
@@ -38,7 +31,8 @@ struct HomeView: View {
                 
                 Text("Свежая серия:")
                     .font(.labGrotesque(.regular, size: 20))
-                
+                Text("\(progress.nextMeditation())")
+                    .font(.labGrotesque(.regular, size: 20))
                 middleBlock
                 
                 Spacer()
@@ -68,7 +62,7 @@ struct HomeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HomeView(container: dev.dependencyContainer)
+            HomeView()
                 .environmentObject(dev.vm)
                 .environmentObject(AudioManager.shared)
         }
@@ -110,7 +104,7 @@ extension HomeView {
     var middleBlock: some View {
         NavigationLink {
             if let lesson = vm.actualLesson() {
-                PlayerView(model: lesson, container: container)
+                PlayerView(model: lesson)
             }
         } label: {
             HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
@@ -124,7 +118,7 @@ extension HomeView {
             HStack(spacing: 20) {
                 if !vm.courses.isEmpty {
                     ForEach(vm.courses) { item in
-                        NavigationLink(destination: CourseView(innerCourse: item, container: container)) {
+                        NavigationLink(destination: CourseView(innerCourse: item)) {
                             ZStack(alignment: .bottom) {
                                 Image(item.image)
                                     .resizable()
