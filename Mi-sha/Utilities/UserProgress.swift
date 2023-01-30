@@ -41,7 +41,7 @@ class UserProgress: ObservableObject {
         SavedPreferenceModel(number: 29, done: false),
         SavedPreferenceModel(number: 30, done: false)
     ]
-    @Published var userProfile = ProfileModel(userName: "Друг животных", userImage: "home1", userTotalTime: 0, userTotalDays: 0, userBestStreak: 0, userLastSeen: Date.now)
+    @Published var userProfile = ProfileModel(userName: "Друг зверей", userImage: "home1", userTotalTime: 0, userTotalDays: 0, userBestStreak: 0, userLastSeen: Date.now)
     @Published var nextMeditationNum = 0
     
     

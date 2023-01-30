@@ -38,6 +38,7 @@ struct PlayerView: View {
             
             VStack(spacing: 32) {
                 dissmissButton
+                    .padding()
                 Spacer()
                 LogoView()
                     .scaleEffect(0.5)
@@ -53,9 +54,9 @@ struct PlayerView: View {
             }
             .padding(.horizontal, 20)
         }
-        .statusBarHidden()
-        .labelsHidden()
-        .navigationBarBackButtonHidden()
+        .navigationTitle("")
+        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden()
         .onAppear {
             vm.startOnAppear()
         }

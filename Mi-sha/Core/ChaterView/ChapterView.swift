@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CourseView: View {
+struct ChapterView: View {
     
     var innerCourse: CourseModel
     
@@ -35,11 +35,11 @@ struct CourseView: View {
 
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseView(innerCourse: dev.course)
+        ChapterView(innerCourse: dev.course)
     }
 }
 
-extension CourseView {
+extension ChapterView {
     var upperBlock: some View {
         ZStack(alignment: .bottomTrailing) {
             Image(innerCourse.image )

@@ -41,7 +41,7 @@
 		8DEB19EC294B453E00BAF218 /* JekoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19E9294B453E00BAF218 /* JekoBold.ttf */; };
 		8DEB19EE294B495C00BAF218 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19ED294B495C00BAF218 /* CourseModel.swift */; };
 		8DEB19F0294C8AEA00BAF218 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19EF294C8AEA00BAF218 /* HomeViewModel.swift */; };
-		8DEB19F3294C8F0900BAF218 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F2294C8F0900BAF218 /* CourseView.swift */; };
+		8DEB19F3294C8F0900BAF218 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F2294C8F0900BAF218 /* ChapterView.swift */; };
 		8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F4294C93BB00BAF218 /* TrackRow.swift */; };
 		8DEB19F7294CC23400BAF218 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19F6294CC23400BAF218 /* Double.swift */; };
 		8DEB19FC294CD79500BAF218 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEB19FB294CD79500BAF218 /* FirebaseAnalytics */; };
@@ -104,7 +104,7 @@
 		8DEB19E9294B453E00BAF218 /* JekoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JekoBold.ttf; sourceTree = "<group>"; };
 		8DEB19ED294B495C00BAF218 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 		8DEB19EF294C8AEA00BAF218 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		8DEB19F2294C8F0900BAF218 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		8DEB19F2294C8F0900BAF218 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		8DEB19F4294C93BB00BAF218 /* TrackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRow.swift; sourceTree = "<group>"; };
 		8DEB19F6294CC23400BAF218 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		8DEB1A10295077B300BAF218 /* MateLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateLoginView.swift; sourceTree = "<group>"; };
@@ -188,6 +188,7 @@
 				8D8A7F642941C6C60072A582 /* Components */,
 				8D8A7F4F2941BC970072A582 /* Assets.xcassets */,
 				8DEB19A12947419E00BAF218 /* 1.mp3 */,
+				8D4684852946125900B751AC /* AudioCard */,
 				8D8A7F512941BC970072A582 /* Preview Content */,
 				8DEB19DA294B3E1600BAF218 /* Fonts */,
 			);
@@ -263,8 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEB19AB29477AED00BAF218 /* HomeScreen */,
-				8DEB19F1294C8EEE00BAF218 /* CourseView */,
-				8D4684852946125900B751AC /* AudioCard */,
+				8DEB19F1294C8EEE00BAF218 /* ChaterView */,
 				8D66C66E2941CF8100B37756 /* Player */,
 				8DC664032955B21300123DA2 /* Onboarding */,
 				8DEB19A929477AAC00BAF218 /* Settings */,
@@ -326,12 +326,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		8DEB19F1294C8EEE00BAF218 /* CourseView */ = {
+		8DEB19F1294C8EEE00BAF218 /* ChaterView */ = {
 			isa = PBXGroup;
 			children = (
-				8DEB19F2294C8F0900BAF218 /* CourseView.swift */,
+				8DEB19F2294C8F0900BAF218 /* ChapterView.swift */,
 			);
-			path = CourseView;
+			path = ChaterView;
 			sourceTree = "<group>";
 		};
 		8DFA303F2959CA5A00AB0170 /* LoadingView */ = {
@@ -459,7 +459,7 @@
 				8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */,
 				8DEB19F7294CC23400BAF218 /* Double.swift in Sources */,
 				8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */,
-				8DEB19F3294C8F0900BAF218 /* CourseView.swift in Sources */,
+				8DEB19F3294C8F0900BAF218 /* ChapterView.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
 				8DD5063E29659D58006D9F6E /* BagesView.swift in Sources */,
@@ -609,7 +609,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -641,7 +641,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

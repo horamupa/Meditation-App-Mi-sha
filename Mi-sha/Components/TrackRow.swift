@@ -24,22 +24,6 @@ struct TrackRow: View {
                         Circle()
                             .foregroundColor(Color.theme.orange)
                             .frame(width: 30, height: 30)
-                    } else if track.number == progress.nextMeditation(){
-                            Circle()
-                                .foregroundColor(Color.theme.orange)
-                                .frame(width: 30, height: 30)
-                                .opacity(0.3)
-                                .overlay {
-                                    Circle()
-                                        .frame(width: 25, height: 25)
-                                        .foregroundColor(.white)
-                                        .overlay {
-                                            Image(systemName: "chevron.forward")
-                                                .frame(width: 30, height: 30)
-                                                .foregroundColor(Color.theme.orange)
-                                                .opacity(0.5)
-                                        }
-                                }
                         } else {
                             Circle()
                                 .foregroundColor(Color.theme.orange)

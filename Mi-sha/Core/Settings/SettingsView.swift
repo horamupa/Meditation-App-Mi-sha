@@ -120,10 +120,9 @@ extension SettingsView {
                     .cornerRadius(0)
                     .background {
                         Circle()
-                            .foregroundColor(Color("ColorMain"))
+                            .foregroundColor(Color.theme.orange.opacity(0.6))
                             .frame(width: 125, height: 125)
                     }
-//                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
                 }
                 
                 VStack(spacing: 10) {
@@ -145,7 +144,7 @@ extension SettingsView {
                     .cornerRadius(0)
                     .background {
                         Circle()
-                            .foregroundColor(Color("ColorMain"))
+                            .foregroundColor(Color.theme.orange.opacity(0.6))
                             .frame(width: 125, height: 125)
                     }
                 }
@@ -172,7 +171,7 @@ extension SettingsView {
                 .cornerRadius(0)
                 .background {
                     Circle()
-                        .foregroundColor(Color("ColorMain"))
+                        .foregroundColor(Color.theme.orange.opacity(0.6))
                         .frame(width: 125, height: 125)
                 }
             }

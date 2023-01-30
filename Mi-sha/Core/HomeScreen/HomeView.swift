@@ -29,10 +29,9 @@ struct HomeView: View {
                 
                 upperBlock
                 
-                Text("Свежая серия:")
+                Text("Свежая история:")
                     .font(.labGrotesque(.regular, size: 20))
-                Text("\(progress.nextMeditation())")
-                    .font(.labGrotesque(.regular, size: 20))
+                
                 middleBlock
                 
                 Spacer()
@@ -118,7 +117,7 @@ extension HomeView {
             HStack(spacing: 20) {
                 if !vm.courses.isEmpty {
                     ForEach(vm.courses) { item in
-                        NavigationLink(destination: CourseView(innerCourse: item)) {
+                        NavigationLink(destination: ChapterView(innerCourse: item)) {
                             ZStack(alignment: .bottom) {
                                 Image(item.image)
                                     .resizable()
