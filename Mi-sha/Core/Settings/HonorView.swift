@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct HonorView: View {
     
     @StateObject var vm = SettingsViewModel()
     
@@ -71,12 +71,12 @@ struct SettingsView: View {
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SettingsView()
+            HonorView()
         }
     }
 }
 
-extension SettingsView {
+extension HonorView {
     
     private var userProfile: some View {
         HStack(spacing: 30) {
@@ -85,6 +85,11 @@ extension SettingsView {
                 .scaledToFill()
                 .frame(width: 100, height: 100)
                 .clipShape(Circle())
+                .background {
+                    Circle()
+                        .foregroundColor(Color.theme.orange)
+                        .frame(width: 115, height: 115)
+                }
                 .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
             VStack(alignment: .leading) {
                 Text("Ваше имя:")
@@ -120,9 +125,10 @@ extension SettingsView {
                     .cornerRadius(0)
                     .background {
                         Circle()
-                            .foregroundColor(Color.theme.orange.opacity(0.6))
+                            .foregroundColor(Color.theme.orange)
                             .frame(width: 125, height: 125)
                     }
+                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
                 }
                 
                 VStack(spacing: 10) {
@@ -144,9 +150,10 @@ extension SettingsView {
                     .cornerRadius(0)
                     .background {
                         Circle()
-                            .foregroundColor(Color.theme.orange.opacity(0.6))
+                            .foregroundColor(Color.theme.orange)
                             .frame(width: 125, height: 125)
                     }
+                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
                 }
                 
             }
@@ -171,9 +178,10 @@ extension SettingsView {
                 .cornerRadius(0)
                 .background {
                     Circle()
-                        .foregroundColor(Color.theme.orange.opacity(0.6))
+                        .foregroundColor(Color.theme.orange)
                         .frame(width: 125, height: 125)
                 }
+                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
             }
             HStack {
                 Text("Имя")

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D4684872946164D00B751AC /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4684862946164D00B751AC /* DateFormatter.swift */; };
+		8D66C5E1299A464100270D77 /* MediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66C5E0299A464100270D77 /* MediaPlayer.swift */; };
 		8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66C66F2941CF8C00B37756 /* PlayerView.swift */; };
 		8D66C6722941D4AD00B37756 /* PlayerControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */; };
 		8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */; };
@@ -26,10 +27,10 @@
 		8DC6640B2955B56600123DA2 /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6640A2955B56600123DA2 /* UserProgress.swift */; };
 		8DD5063E29659D58006D9F6E /* BagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5063D29659D58006D9F6E /* BagesView.swift */; };
 		8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */; };
-		8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AudioManager.swift */; };
+		8DEB19A029473A7A00BAF218 /* AVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AVManager.swift */; };
 		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
 		8DEB19A5294760C200BAF218 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A4294760C200BAF218 /* Color.swift */; };
-		8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A729477AA600BAF218 /* SettingsView.swift */; };
+		8DEB19A829477AA600BAF218 /* HonorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19A729477AA600BAF218 /* HonorView.swift */; };
 		8DEB19AD29477B9300BAF218 /* XmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19AC29477B9300BAF218 /* XmarkButton.swift */; };
 		8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19B12948978E00BAF218 /* LoginView.swift */; };
 		8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB19D8294B3DED00BAF218 /* Fonts.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		8D4684862946164D00B751AC /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		8D66C5E0299A464100270D77 /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		8D66C66F2941CF8C00B37756 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlButton.swift; sourceTree = "<group>"; };
 		8D8A7F482941BC960072A582 /* Mi-sha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi-sha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,11 +90,11 @@
 		8DC6640A2955B56600123DA2 /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
 		8DD5063D29659D58006D9F6E /* BagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagesView.swift; sourceTree = "<group>"; };
 		8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
-		8DEB199F29473A7A00BAF218 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		8DEB199F29473A7A00BAF218 /* AVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVManager.swift; sourceTree = "<group>"; };
 		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
 		8DEB19A32947421C00BAF218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DEB19A4294760C200BAF218 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		8DEB19A729477AA600BAF218 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8DEB19A729477AA600BAF218 /* HonorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonorView.swift; sourceTree = "<group>"; };
 		8DEB19AC29477B9300BAF218 /* XmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkButton.swift; sourceTree = "<group>"; };
 		8DEB19B12948978E00BAF218 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8DEB19D8294B3DED00BAF218 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -249,7 +251,8 @@
 		8DEB199E29473A6700BAF218 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8DEB199F29473A7A00BAF218 /* AudioManager.swift */,
+				8DEB199F29473A7A00BAF218 /* AVManager.swift */,
+				8D66C5E0299A464100270D77 /* MediaPlayer.swift */,
 				8DEB1A12295077E600BAF218 /* AuthService.swift */,
 				8DEB1A1829508DFA00BAF218 /* DataManager.swift */,
 				8DC664062955B46700123DA2 /* FileManagerClass.swift */,
@@ -278,7 +281,7 @@
 		8DEB19A929477AAC00BAF218 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				8DEB19A729477AA600BAF218 /* SettingsView.swift */,
+				8DEB19A729477AA600BAF218 /* HonorView.swift */,
 				8DFA304C295C5F4A00AB0170 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
@@ -437,7 +440,7 @@
 				8DFA3049295B2D3E00AB0170 /* HomeNextCourseView.swift in Sources */,
 				8DEB19EE294B495C00BAF218 /* CourseModel.swift in Sources */,
 				8D8A7F5A2941BE180072A582 /* AudioView.swift in Sources */,
-				8DEB19A829477AA600BAF218 /* SettingsView.swift in Sources */,
+				8DEB19A829477AA600BAF218 /* HonorView.swift in Sources */,
 				8DC664072955B46700123DA2 /* FileManagerClass.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
@@ -450,7 +453,7 @@
 				8DEB1A11295077B300BAF218 /* MateLoginView.swift in Sources */,
 				8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */,
 				8DFA3047295A308100AB0170 /* LogoView.swift in Sources */,
-				8DEB19A029473A7A00BAF218 /* AudioManager.swift in Sources */,
+				8DEB19A029473A7A00BAF218 /* AVManager.swift in Sources */,
 				8DFA3045295A306500AB0170 /* GradientView.swift in Sources */,
 				8DEB19F5294C93BB00BAF218 /* TrackRow.swift in Sources */,
 				8DC6640B2955B56600123DA2 /* UserProgress.swift in Sources */,
@@ -462,6 +465,7 @@
 				8DEB19F3294C8F0900BAF218 /* ChapterView.swift in Sources */,
 				8D8A7F5E2941C15E0072A582 /* AudioViewModel.swift in Sources */,
 				8D8A7F662941C6D70072A582 /* CardView.swift in Sources */,
+				8D66C5E1299A464100270D77 /* MediaPlayer.swift in Sources */,
 				8DD5063E29659D58006D9F6E /* BagesView.swift in Sources */,
 				8DFA304F295C5F9000AB0170 /* ProfileModel.swift in Sources */,
 				8DEB19B22948978E00BAF218 /* LoginView.swift in Sources */,

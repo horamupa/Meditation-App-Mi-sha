@@ -17,7 +17,7 @@ struct Mi_shaApp: App {
     }
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     @StateObject var vm = HomeViewModel()
-    @StateObject var audioManager = AudioManager.shared
+    @StateObject var audioManager = AVManager.shared
     @StateObject var userProgress = UserProgress.shared
     @StateObject var dataManager = DataManager.shared
     

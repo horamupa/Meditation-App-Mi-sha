@@ -12,7 +12,7 @@ protocol DataManagerProtocol {
 }
 
 protocol AudioManagerProtocol {
-    var audioManager: AudioManager { get }
+    var audioManager: AVManager { get }
 }
 
 protocol UserProgressProtocol {
@@ -25,7 +25,7 @@ protocol ViewModeProtocol {
 
 struct AppDependency: DataManagerProtocol, AudioManagerProtocol, UserProgressProtocol, ViewModeProtocol {
     var dataManager: DataManager
-    var audioManager: AudioManager
+    var audioManager: AVManager
     var userProgress: UserProgress
     var vm: HomeViewModel
 }

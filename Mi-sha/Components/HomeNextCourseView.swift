@@ -64,7 +64,7 @@ struct HomeNextCourseView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
                 .environmentObject(dev.vm)
-                .environmentObject(AudioManager.shared)
+                .environmentObject(AVManager.shared)
         }
     }
 }

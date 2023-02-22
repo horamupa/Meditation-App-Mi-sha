@@ -15,7 +15,7 @@ import Firebase
 struct HomeView: View {
     
     @EnvironmentObject var vm: HomeViewModel
-    var audioManager = AudioManager.shared
+    var audioManager = AVManager.shared
     @ObservedObject var progress = UserProgress.shared
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
@@ -48,13 +48,14 @@ struct HomeView: View {
             .navigationBarHidden(true)
         }
         .sheet(isPresented: $isSettings, content: {
-            SettingsView()
+            HonorView()
         })
-        .onAppear {
-            if let url2 = vm.actualLesson()?.url {
-                audioManager.preDownload(url: url2)
-            }
-        }
+//        .onAppear {
+////             Pre-Download Start
+//            if let url2 = vm.actualLesson()?.url {
+//                audioManager.preDownload(url: url2)
+//            }
+//        }
     }
 }
 
@@ -63,7 +64,7 @@ struct ContentView_Previews: PreviewProvider {
         NavigationView {
             HomeView()
                 .environmentObject(dev.vm)
-                .environmentObject(AudioManager.shared)
+                .environmentObject(AVManager.shared)
         }
     }
 }
@@ -82,7 +83,7 @@ extension HomeView {
             
                 Spacer()
                 NavigationLink {
-                    SettingsView()
+                    HonorView()
                 } label: {
                     ZStack(alignment: .bottomLeading) {
                         Circle()

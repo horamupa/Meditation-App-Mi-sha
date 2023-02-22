@@ -13,20 +13,17 @@ import AVKit
 
 struct PlayerView: View {
     
+    @StateObject var vm: PlayerViewModel
+    @ObservedObject var avp: AVManager = AVManager.shared
+    @State private var isEditing: Bool = false
+    @Environment(\.dismiss) var dismiss
+    var model: TrackModel
+    let closeRangeCreate: ClosedRange<Double> = 0...60
+    
     init(model: TrackModel) {
         self.model = model
         _vm = StateObject(wrappedValue: PlayerViewModel(model: model))
     }
-    
-    @StateObject var vm: PlayerViewModel
-    @State var isPause: Bool = false
-    @State private var isEditing: Bool = false
-    @Environment(\.dismiss) var dismiss
-    var model: TrackModel
-//    var manager: DataManager
-//    var audioManager = AudioManager.shared
-    let closeRangeCreate: ClosedRange<Double> = 0...60
-    
     
     var body: some View {
         ZStack {
@@ -56,20 +53,20 @@ struct PlayerView: View {
         }
         .navigationTitle("")
         .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden()
         .onAppear {
             vm.startOnAppear()
         }
         .onDisappear {
             vm.checkProgress()
+            vm.audioManager.isLoadedBefore = false
         }
         .onReceive(vm.timer) { _ in
             guard
-                let player = vm.audioManager.player, !isEditing
+                !isEditing
             else {
                 print("no audioplayer in manager")
                 return }
-            vm.playerTime = player.currentTime
+            vm.playerTime = vm.audioManager.getStreamPlayerTime() ?? 0.0
         }
     }
 }
@@ -88,7 +85,7 @@ extension PlayerView {
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             .onTapGesture {
-                vm.audioManager.stop()
+                vm.audioManager.streamPlayerStop()
                 dismiss()
             }
     }
@@ -111,18 +108,21 @@ extension PlayerView {
         HStack {
             Spacer()
             PlayerControlButton(systemName: "gobackward.10") {
-                vm.audioManager.player?.currentTime -= 10
+                vm.audioManager.streamPlayerBackward()
+//                vm.audioManager.player?.currentTime -= 10
             }
             .scaleEffect(1.3)
             Spacer()
-            PlayerControlButton(systemName: !isPause ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
-                isPause.toggle()
-                vm.audioManager.playPause()
+            PlayerControlButton(systemName: avp.isPlaying ? "pause.circle.fill" : "play.circle.fill", fontSize: 44) {
+//                isPause.toggle()
+//                vm.audioManager.playPause()
+                avp.streamPlayPause()
             }
             .scaleEffect(1.3)
             Spacer()
             PlayerControlButton(systemName: "goforward.10") {
-                vm.audioManager.player?.currentTime += 10
+//                vm.audioManager.player?.currentTime += 10
+                vm.audioManager.streamPlayerForward()
             }
             .scaleEffect(1.3)
             Spacer()
@@ -137,8 +137,8 @@ extension PlayerView {
         .padding(.bottom, 10)
         .foregroundColor(Color.theme.black)
         .overlay {
-            if vm.audioManager.isDownloaded {
-               EmptyView()
+            if vm.audioManager.isPlayerInit {
+//               EmptyView()
             } else {
                 VStack {
                     Text("Почти загрузили...")
@@ -154,18 +154,15 @@ extension PlayerView {
     
     var playerSlider: some View {
         Group {
-            Slider(value: $vm.playerTime, in: 0...(vm.audioManager.player?.duration ?? 0) ) { editing in
-                //return rewind slider to audio
-                isEditing = editing
-                if !editing {
-                    vm.audioManager.player?.currentTime = vm.playerTime
-                }
+            Slider(value: $vm.sliderProgress) { editing in
+                vm.didSliderChanged(editing)
             }
             .accentColor(.white)
+            
             HStack {
-                Text(DateComponentsFormatter.positional.string(from: vm.audioManager.player?.currentTime ?? 0) ?? "0:00")
+                Text(DateComponentsFormatter.positional.string(from: vm.playerTime) ?? "0:00")
                 Spacer()
-                Text(DateComponentsFormatter.positional.string(from: vm.audioManager.player?.duration ?? 0) ?? "0:00")
+                Text(DateComponentsFormatter.positional.string(from: avp.getStreamPlayerDuration() ?? 0) ?? "0:00")
             }
         }
         .font(.caption)

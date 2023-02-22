@@ -13,13 +13,19 @@ import AVKit
 
 class PlayerViewModel: ObservableObject {
     
-    @Published var audioManager = AudioManager.shared
+    @Published var audioManager = AVManager.shared //PLAyER
     @Published var userProgress = UserProgress.shared
     @Published var playerTime: Double = 0.0
+    @Published var sliderProgress: Float = 0
+    @Published var isPlaying: Bool = false
+    var acceptProgressUpdates = true
     var model: TrackModel
+    var subscriptions = Set<AnyCancellable>()
+    
     
     init(model: TrackModel) {
         self.model = model
+        listenToProgress()
     }
     
     
@@ -27,11 +33,30 @@ class PlayerViewModel: ObservableObject {
         .publish(every: 0.5, on: .main, in: .common)
         .autoconnect()
     
+    //Slider
+    private func listenToProgress() {
+        audioManager.currentProgressPublisher.sink { [weak self] progress in
+               guard let self = self,
+                     self.acceptProgressUpdates else { return }
+               self.sliderProgress = progress
+           }.store(in: &subscriptions)
+       }
+    
+    func didSliderChanged(_ didChange: Bool) {
+            acceptProgressUpdates = !didChange
+            if didChange {
+                audioManager.pause()
+            } else {
+                audioManager.seek(to: sliderProgress)
+                audioManager.play()
+            }
+        }
+    
     func checkProgress() {
-        if audioManager.getPlayerTime() > 420 {
+        if audioManager.getStreamPlayerTime() ?? 0 > 420 {
             userProgress.updateProgress(model: model)
             userProgress.savePreference()
-            userProgress.userProfile.userTotalTime += audioManager.getPlayerTime()
+            userProgress.userProfile.userTotalTime += audioManager.getStreamPlayerTime() ?? 0
             userProgress.userProfile.userTotalDays += 1
             userProgress.dateChecker()
         }
@@ -42,10 +67,11 @@ class PlayerViewModel: ObservableObject {
          storage.downloadURL { url, error in
              if let error = error {
                  print("Error download from the firebase. \(error.localizedDescription)")
-                 self.audioManager.startPlayer(name: "1")
+//                 self.audioManager.startPlayer(name: "1")
              } else {
-                 self.audioManager.startPlayerStream(url: self.model.url)
-                 print("player Succes")
+                 self.audioManager.initPlayer(url: self.model.url)
+//                 self.audioManager.startPlayerStream(url: self.model.url)
+                 print("player Success")
 
              }
          }
