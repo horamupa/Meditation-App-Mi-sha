@@ -12,8 +12,9 @@ struct CourseModel: Hashable, Identifiable {
     var name: String
     var image: String
     var tracks: [TrackModel]
+    var color: String
     
     var course: CourseModel {
-        CourseModel(name: "Gentle Beggining", image: "stones", tracks: [TrackModel.track,TrackModel.track,TrackModel.track])
+        CourseModel(name: "Gentle Beggining", image: "stones", tracks: [TrackModel.track,TrackModel.track,TrackModel.track], color: "smollDoggo")
     }
 }

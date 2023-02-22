@@ -16,7 +16,7 @@ struct HomeNextCourseView: View {
             ZStack {
                 Image("home1") //model.image ?? 
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
                         .offset(y: -20)
                     .foregroundColor(Color.theme.orange)
                     .overlay(alignment: .bottomTrailing) {
@@ -53,7 +53,6 @@ struct HomeNextCourseView: View {
 //                    .shadow(radius: 10)
                 
             }
-//            .frame(height: 250)
 //            .padding()
             }
     }

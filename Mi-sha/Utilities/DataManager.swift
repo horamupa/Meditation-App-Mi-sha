@@ -42,7 +42,7 @@ class DataManager: ObservableObject {
                                 fetchedLessons.append(TrackModel(id: lessonID, name: lessonName, duration: lessonDuration, image: lessonImage, url: lessonURL, number: lessonNumber))
                             }
                         }
-                        self.courses.append(CourseModel(name: name, image: image, tracks: fetchedLessons))
+                        self.courses.append(CourseModel(name: name, image: image, tracks: fetchedLessons, color: "smollDoggo"))
                     }
                 }
             }

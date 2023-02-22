@@ -23,4 +23,7 @@ class ThemeColors {
     let purple = Color (#colorLiteral(red: 0.6922668219, green: 0.5555503368, blue: 0.8966576457, alpha: 1))
     let main = Color(#colorLiteral(red: 0.9427313209, green: 0.8394339681, blue: 0.7850262523, alpha: 1))
     let main2 = Color(#colorLiteral(red: 0.9380407929, green: 0.8396212459, blue: 0.7851215005, alpha: 1))
+    let smollDoggo = Color(#colorLiteral(red: 0.8424865603, green: 0.8280478716, blue: 0.7804499269, alpha: 1))
+    let mediumDoggo = Color(#colorLiteral(red: 0.7664349675, green: 0.8263677955, blue: 0.7951148152, alpha: 1))
+    let bigDoggo = Color(#colorLiteral(red: 0.9380407929, green: 0.8396212459, blue: 0.7851215005, alpha: 1))
 }

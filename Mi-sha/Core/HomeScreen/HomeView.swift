@@ -19,31 +19,24 @@ struct HomeView: View {
     @ObservedObject var progress = UserProgress.shared
     @State var isSettings: Bool = false
     @State var currentIndex: Int = 0
+    var chapterCell: [GridItem] = [GridItem(.flexible(), spacing: 16, alignment: .bottom)]
     
     var body: some View {
         ZStack {
             Color.theme.white
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 20) {
-                Spacer()
-                
                 upperBlock
                 
                 Text("Свежая история:")
                     .font(.labGrotesque(.regular, size: 20))
-                
                 middleBlock
-                
-                Spacer()
                 
                Text("В нашем сериале:")
                     .font(.labGrotesque(.regular, size: 20))
                bottomBlock
-
-                
-                Spacer()
             }
-            .padding(30)
+            .padding(16)
             .foregroundColor(Color.theme.black)
             .navigationBarHidden(true)
         }
@@ -109,68 +102,75 @@ extension HomeView {
         } label: {
             HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
                 .cornerRadius(15)
+//                .padding()
                 .shadow(radius: 2, y: 2)
         }
     }
     
     var bottomBlock: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 20) {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHGrid(rows: chapterCell, spacing: 16) {
                 if !vm.courses.isEmpty {
                     ForEach(vm.courses) { item in
                         NavigationLink(destination: ChapterView(innerCourse: item)) {
-                            ZStack(alignment: .bottom) {
-                                Image(item.image)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.width / 2.5, height: 250)
+                            VStack(spacing: 0) {
+                                ZStack {
+//                                    Color("bigDoggo")
+                                    Color("\(item.color)")
+                                    Image(item.image)
+                                        .resizable()
+    //                                    .fixedSize()
+                                    .scaledToFit()
+                                }
+//                                    .frame(maxWidth: UIScreen.main.bounds.width/2.3)
                                 Text(item.name)
                                     .font(.labGrotesque(.regular, size: 16))
-//                                    .minimumScaleFactor(0.5)
+                                    .minimumScaleFactor(0.5)
                                     .padding(15)
                                     .frame(maxWidth: .infinity)
                                     .background(.regularMaterial.opacity(0.9))
                             }
-                            
                             .cornerRadius(15)
                         }
                     }
-                } else {
-                    ZStack(alignment: .bottom) {
-                        Image("home3")
-                            .resizable()
-                            .scaledToFill()
-                        
-                        Text("Сезон первый")
-                            .font(.labGrotesque(.regular, size: 16))
-//                            .minimumScaleFactor(0.5)
-                            .padding(15)
-                            .frame(maxWidth: .infinity)
-                            .background(.regularMaterial.opacity(0.9))
-                            
-                    }
-                  
-                    .cornerRadius(15)
-                    
-                    ZStack(alignment: .bottom) {
-
-                        Image("Doggo2")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: UIScreen.main.bounds.width / 2.5)
-                        Text("Второй сезон")
-                            .font(.labGrotesque(.regular, size: 16))
-                            .padding(15)
-                            .frame(maxWidth: .infinity)
-                            .background(.regularMaterial.opacity(0.9))
-                            
-                    }
-                  
-                    .cornerRadius(15)
                 }
+//                    else {
+//                    ZStack(alignment: .bottom) {
+//                        Image("home3")
+//                            .resizable()
+//                            .scaledToFill()
+//
+//                        Text("Сезон первый")
+//                            .font(.labGrotesque(.regular, size: 16))
+////                            .minimumScaleFactor(0.5)
+//                            .padding(15)
+//                            .frame(maxWidth: .infinity)
+//                            .background(.regularMaterial.opacity(0.9))
+//
+//                    }
+//
+//                    .cornerRadius(15)
+//
+//                    ZStack(alignment: .bottom) {
+//
+//                        Image("Doggo2")
+//                            .resizable()
+//                            .scaledToFill()
+//                            .frame(width: UIScreen.main.bounds.width / 2.5)
+//                        Text("Второй сезон")
+//                            .font(.labGrotesque(.regular, size: 16))
+//                            .padding(15)
+//                            .frame(maxWidth: .infinity)
+//                            .background(.regularMaterial.opacity(0.9))
+//
+//                    }
+//
+//                    .cornerRadius(15)
+//                }
             }
 //            .frame(maxWidth: .infinity)
         }
+        .frame(maxHeight: .infinity)
         .shadow(radius: 2, y: 2)
     }
         
