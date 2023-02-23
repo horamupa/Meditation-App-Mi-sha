@@ -27,26 +27,29 @@ struct HonorView: View {
                     VStack {
                         userProfile
                             .padding(.horizontal, 16)
-                            .padding(.vertical, 16)
-                            .frame(maxWidth: .infinity)
-
-                            .cornerRadius(10)
+//                            .padding(.vertical, )
+//                            .frame(maxWidth: .infinity)
+                            .frame(height: 160)
+                            .cornerRadius(20)
                         medalView
     //                        .cornerRadius(0)
                             .padding(.horizontal, 16)
-                            .frame(maxWidth: .infinity)
-                            .cornerRadius(10)
+//                            .frame(maxWidth: .infinity)
+                            .cornerRadius(20)
 //                            .padding(.horizontal, 20)
+                        
                     }
+                    .padding(16)
                     .background(.regularMaterial)
-                    .cornerRadius(10)
+                    .cornerRadius(25)
 //                    .padding()
                     
                     VStack {
                         linksView
                     }
+                    Spacer()
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, 32)
             }
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarLeading) {
@@ -79,125 +82,65 @@ extension HonorView {
     
     private var userProfile: some View {
         HStack(spacing: 24) {
+            Spacer()
             Image(vm.userProfile.userImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 100, height: 100)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             
                 .background {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color.theme.orange)
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(Color.theme.orange.opacity(0.5))
                         .frame(width: 111, height: 111)
                 }
                 .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
             VStack(alignment: .leading) {
                 Text("Ваше имя:")
                 TextField("введите ваше имя...", text: $vm.userProfile.userName)
-//                Text(vm.userProfile.userName)
                     .font(.labGrotesque(.regular, size: 20))
             }
             .font(.labGrotesque(.thin, size: 14))
         }
-        .padding(.top, 20)
         
     }
     
     private var medalView: some View {
-        VStack(spacing: 16) {
-            HStack(spacing: 24) {
-                VStack(spacing: 10) {
-                    Text("Медитировали")
-                        .font(.labGrotesque(.regular, size: 18))
-                        
-                    ZStack {
+        VStack(alignment: .leading, spacing: 32) {
 
-                        Image("flower5")
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                        VStack(spacing: 5) {
-                            
+                HStack(spacing: 16) {
+                    Text("Медитировали")
+                        .font(.labGrotesque(.regular, size: 20))
+                        Spacer()
                             Text("\((Int(vm.userProfile.userTotalTime/60)).formatted()) мин")
-                                .font(.labGrotesque(.regular, size: 24))
-                        }
-                    }
-                    .frame(width: 80, height: 80)
-                    .cornerRadius(0)
-                    .background {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color.theme.orange)
-                            .frame(width: 92, height: 92)
-                    }
-                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
+                                .font(.labGrotesque(.regular, size: 20))
                 }
                 
-                VStack(spacing: 10) {
+                HStack(spacing: 16) {
                     Text("Практиковали")
-                        .font(.labGrotesque(.regular, size: 18))
-                    ZStack {
-                            Image("flower4")
-                                .resizable()
-                                .scaledToFill()
-//                        #error
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
+                        .font(.labGrotesque(.regular, size: 20))
+                    Spacer()
                             VStack(spacing: 20) {
-                                
                                 Text("\(vm.userProfile.userTotalDays) дня")
-                                    .font(.labGrotesque(.regular, size: 24))
-                            }
+                                    .font(.labGrotesque(.regular, size: 20))
                     }
-                    .frame(width: 80, height: 80)
-                    .cornerRadius(0)
-                    .background {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color.theme.orange)
-                            .frame(width: 92, height: 92)
-                    }
-                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
-                }
-                
             }
             
             
-            VStack(spacing: 10) {
+            HStack(spacing: 16) {
                 Text("Лучший результат")
-                    .font(.labGrotesque(.regular, size: 18))
-                ZStack {
-                        Image("flower6")
-                            .resizable()
-                            .scaledToFill()
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            
-                        VStack(spacing: 20) {
-                            
-                            Text("\(vm.userProfile.userBestStreak) дня")
-                                .font(.labGrotesque(.regular, size: 24))
-                        }
+                    .font(.labGrotesque(.regular, size: 20))
+                Spacer()
+                VStack(spacing: 20) {
+                    Text("\(vm.userProfile.userBestStreak) дня")
+                        .font(.labGrotesque(.regular, size: 20))
                 }
-                .frame(width: 80, height: 80)
                 .cornerRadius(0)
-                .background {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color.theme.orange)
-                        .frame(width: 92, height: 92)
-                }
-                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
             }
-            HStack {
-                Text("Имя")
-                Spacer()
-                Text(vm.userProfile.userName)
-                    
-            }
-            HStack {
-                Text("Статус")
-                Spacer()
-                Text("Невероятный герой")
-            }
+            
         }
-        .padding(.vertical, 16)
+        .padding(16)
+        
     }
     
     private var linksView: some View {
