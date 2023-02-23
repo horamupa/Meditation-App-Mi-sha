@@ -48,16 +48,14 @@ struct TrackRow: View {
                     Text(DateComponentsFormatter.abbreviated.string(from: track.duration) ?? track.duration.formatted() + "s")
                         .font(.caption)
                         .lineLimit(1)
-//                        .frame(width: 60)
+                        .padding(.trailing, 16)
                         
-                    Image(systemName: "heart")
-                        .foregroundColor(Color.theme.purple)
-                        .frame(width: 30, height: 30)
-//                        .frame(width: UIScreen.main.bounds.width / 3.5)
+//                    Image(systemName: "heart")
+//                        .foregroundColor(Color.theme.purple)
+//                        .frame(width: 30, height: 30)
                 }
                 .font(.labGrotesque(.medium, size: 16))
                 .frame(height: 55)
-//                .frame(maxWidth: .infinity)
             })
             .buttonStyle(.plain)
         }

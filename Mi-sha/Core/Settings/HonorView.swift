@@ -51,17 +51,17 @@ struct HonorView: View {
                 }
                 .padding(.horizontal, 32)
             }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    Button {
-//                        dismiss()
-//                    } label: {
-//                        Image(systemName: "xmark")
-//                            .foregroundColor(.black)
-//                    }
-//
-//                }
-//            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                    }
+
+                }
+            }
             .font(.labGrotesque(.regular, size: 16))
             .navigationTitle("Зал славы")
 //            .navigationBarBackButtonHidden()

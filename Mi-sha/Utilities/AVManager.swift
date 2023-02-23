@@ -38,6 +38,7 @@ class AVManager: ObservableObject {
        guard let url = URL.init(string: url) else { return }
        self.playerItem = AVPlayerItem(url: url)
        streamPlayer = AVPlayer.init(playerItem: playerItem)
+       try! AVAudioSession.sharedInstance().setCategory(.playback)
        streamPlayer.play()
        isPlayerInit = true
        self.isPlaying = true
@@ -111,12 +112,12 @@ class AVManager: ObservableObject {
         if streamPlayer.currentItem?.status == AVPlayerItem.Status.readyToPlay {
             guard let durationCMTime = streamPlayer.currentItem?.duration
                     //        CMTimeGetSeconds(playerItem?.duration ?? CMTime.zero)
-            else { return 600 }
+            else { return 0 }
             let duration = CMTimeGetSeconds(durationCMTime)
 //            print("Duration: \(duration)")
             return duration
         }
-        else { return 600 }
+        else { return 0 }
     }
     
     

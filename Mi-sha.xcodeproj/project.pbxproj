@@ -267,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEB19AB29477AED00BAF218 /* HomeScreen */,
-				8DEB19F1294C8EEE00BAF218 /* ChaterView */,
+				8DEB19F1294C8EEE00BAF218 /* ChapterView */,
 				8D66C66E2941CF8100B37756 /* Player */,
 				8DC664032955B21300123DA2 /* Onboarding */,
 				8DEB19A929477AAC00BAF218 /* Settings */,
@@ -329,12 +329,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		8DEB19F1294C8EEE00BAF218 /* ChaterView */ = {
+		8DEB19F1294C8EEE00BAF218 /* ChapterView */ = {
 			isa = PBXGroup;
 			children = (
 				8DEB19F2294C8F0900BAF218 /* ChapterView.swift */,
 			);
-			path = ChaterView;
+			path = ChapterView;
 			sourceTree = "<group>";
 		};
 		8DFA303F2959CA5A00AB0170 /* LoadingView */ = {

@@ -14,6 +14,7 @@ struct ChapterView: View {
     var body: some View {
         ZStack {
                 VStack(alignment: .leading) {
+                    
                     upperBlock
                     
                     ScrollView {
@@ -42,17 +43,20 @@ struct CourseView_Previews: PreviewProvider {
 extension ChapterView {
     var upperBlock: some View {
         ZStack(alignment: .bottomTrailing) {
-            Image(innerCourse.image )
-                .resizable()
-                .scaledToFill()
-                .frame(height: 250)
+            Color(innerCourse.color)
+            VStack {
+                Image(innerCourse.image )
+                    .resizable()
+                    .scaledToFit()
                 .cornerRadius(10)
-            Text(innerCourse.name)
-                .font(.labGrotesque(.medium))
-                .padding(10)
-                .frame(maxWidth: .infinity)
-                .background(.ultraThinMaterial)
+                Text(innerCourse.name)
+                    .font(.labGrotesque(.medium))
+                    .padding(10)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThinMaterial)
+            }
         }
-        .cornerRadius(25)
+        .frame(height: 250)
+        .cornerRadius(20)
     }
 }
