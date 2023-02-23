@@ -23,46 +23,46 @@ struct HonorView: View {
             ZStack {
                 Color.theme.main2
                     .ignoresSafeArea()
-                VStack(spacing: 10) {
+                VStack(spacing: 16) {
                     VStack {
                         userProfile
-                            .padding(20)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 16)
                             .frame(maxWidth: .infinity)
-                            .background(.regularMaterial)
-                            .cornerRadius(30)
+
+                            .cornerRadius(10)
                         medalView
     //                        .cornerRadius(0)
-                            .padding(20)
+                            .padding(.horizontal, 16)
                             .frame(maxWidth: .infinity)
-                            .background(.regularMaterial)
-                            
-                            .cornerRadius(30)
+                            .cornerRadius(10)
 //                            .padding(.horizontal, 20)
                     }
-                    .padding()
+                    .background(.regularMaterial)
+                    .cornerRadius(10)
+//                    .padding()
                     
                     VStack {
                         linksView
                     }
-                    
-                    Spacer()
                 }
-                .padding(.horizontal, 10)
+                .padding(.horizontal, 16)
+                .padding(.top, 10)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .foregroundColor(.black)
-                    }
-
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    Button {
+//                        dismiss()
+//                    } label: {
+//                        Image(systemName: "xmark")
+//                            .foregroundColor(.black)
+//                    }
+//
+//                }
+//            }
             .font(.labGrotesque(.regular, size: 16))
-            .navigationTitle("Настройки")
-            .navigationBarBackButtonHidden()
+            .navigationTitle("Зал славы")
+//            .navigationBarBackButtonHidden()
             .navigationBarTitleDisplayMode(.inline)
 
     }
@@ -79,18 +79,19 @@ struct Settings_Previews: PreviewProvider {
 extension HonorView {
     
     private var userProfile: some View {
-        HStack(spacing: 30) {
+        HStack(spacing: 24) {
             Image(vm.userProfile.userImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 100, height: 100)
-                .clipShape(Circle())
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            
                 .background {
-                    Circle()
+                    RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(Color.theme.orange)
-                        .frame(width: 115, height: 115)
+                        .frame(width: 111, height: 111)
                 }
-                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
             VStack(alignment: .leading) {
                 Text("Ваше имя:")
                 TextField("введите ваше имя...", text: $vm.userProfile.userName)
@@ -99,6 +100,7 @@ extension HonorView {
             }
             .font(.labGrotesque(.thin, size: 14))
         }
+        .padding(.top, 20)
         
     }
     
@@ -114,21 +116,21 @@ extension HonorView {
                         Image("flower5")
                             .resizable()
                             .scaledToFill()
-                            .clipShape(Circle())
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                         VStack(spacing: 5) {
                             
                             Text("\((Int(vm.userProfile.userTotalTime/60)).formatted()) мин")
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                     }
-                    .frame(width: 110, height: 110)
+                    .frame(width: 100, height: 100)
                     .cornerRadius(0)
                     .background {
-                        Circle()
+                        RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(Color.theme.orange)
-                            .frame(width: 125, height: 125)
+                            .frame(width: 112, height: 112)
                     }
-                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
                 }
                 
                 VStack(spacing: 10) {
@@ -138,7 +140,8 @@ extension HonorView {
                             Image("flower4")
                                 .resizable()
                                 .scaledToFill()
-                                .clipShape(Circle())
+//                        #error
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
                                 
                             VStack(spacing: 20) {
                                 
@@ -146,14 +149,14 @@ extension HonorView {
                                     .font(.labGrotesque(.regular, size: 24))
                             }
                     }
-                    .frame(width: 110, height: 110)
+                    .frame(width: 100, height: 100)
                     .cornerRadius(0)
                     .background {
-                        Circle()
+                        RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(Color.theme.orange)
-                            .frame(width: 125, height: 125)
+                            .frame(width: 112, height: 112)
                     }
-                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                    .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
                 }
                 
             }
@@ -166,7 +169,7 @@ extension HonorView {
                         Image("flower6")
                             .resizable()
                             .scaledToFill()
-                            .clipShape(Circle())
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                             
                         VStack(spacing: 20) {
                             
@@ -174,14 +177,14 @@ extension HonorView {
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                 }
-                .frame(width: 110, height: 110)
+                .frame(width: 100, height: 100)
                 .cornerRadius(0)
                 .background {
-                    Circle()
+                    RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(Color.theme.orange)
-                        .frame(width: 125, height: 125)
+                        .frame(width: 112, height: 112)
                 }
-                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 5)
+                .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
             }
             HStack {
                 Text("Имя")
