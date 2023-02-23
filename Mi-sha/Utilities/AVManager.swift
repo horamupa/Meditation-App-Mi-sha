@@ -11,19 +11,14 @@ import Combine
 
 class AVManager: ObservableObject {
     
-//    @Published var player: AVAudioPlayer?
     @Published var streamPlayer = AVPlayer()
     @Published var isPlaying: Bool = false
-//    { didSet { print("isPlaying", isPlaying) } }
     @Published var isLoop = false
-    var preDownloadedURL = ""
     @Published var isDownloaded = false
-    @Published var isLoadedBefore = false
     @Published var sliderProgress: Float = 0
-    
+    var somethingBad = false
     static var shared = AVManager()
     var dataManager = DataManager.shared
-    var somethingBad = false
     
     //init 4 combine
     var currentTimePublisher: PassthroughSubject<Double, Never> = .init()

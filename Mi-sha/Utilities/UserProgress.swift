@@ -82,6 +82,7 @@ class UserProgress: ObservableObject {
         self.courseProgress = decodedData.sorted()
     }
     
+    
     func nextMeditation() -> Int {
         let notDone = self.courseProgress.sorted().first(where: { $0.done == false } )
         return notDone?.number ?? 0
@@ -121,6 +122,14 @@ class UserProgress: ObservableObject {
         self.userProfile.userLastSeen = Date.now
         saveUserProfile()
         setUserProfile()
+    }
+    
+    func totalDaysChek() {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        if calendar.isDateInToday(self.userProfile.userLastSeen) {
+            return
+        } else { userProfile.userTotalDays += 1 }
     }
     
 }

@@ -58,7 +58,6 @@ struct PlayerView: View {
         }
         .onDisappear {
             vm.checkProgress()
-            vm.audioManager.isLoadedBefore = false
         }
         .onReceive(vm.timer) { _ in
             guard

@@ -115,7 +115,7 @@ extension HomeView {
                         NavigationLink(destination: ChapterView(innerCourse: item)) {
                             VStack(spacing: 0) {
                                 ZStack {
-//                                    Color("bigDoggo")
+//                                    Color("mediumDoggo")
                                     Color("\(item.color)")
                                     Image(item.image)
                                         .resizable()
@@ -171,6 +171,7 @@ extension HomeView {
 //            .frame(maxWidth: .infinity)
         }
         .frame(maxHeight: .infinity)
+        .clipped()
         .shadow(radius: 2, y: 2)
     }
         

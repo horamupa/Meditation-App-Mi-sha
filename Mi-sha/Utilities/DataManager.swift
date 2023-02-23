@@ -26,10 +26,10 @@ class DataManager: ObservableObject {
             } else {
                 if let snapshot = snapshot {
                     for document in snapshot.documents {
-                        let name = document.data()["name"] as? String ?? "Error grab name"
-                        let image = document.data()["image"] as? String ?? "Error grab image"
+                        let name = document.data()["name"] as? String ?? "Error grab a name"
+                        let image = document.data()["image"] as? String ?? "Error grab an image"
                         let lessons = document.data()["audio"] as? [String : [String:Any]]
-                        
+                        let color = document.data()["color"] as? String ?? "Error grab a color"
                         var fetchedLessons = [TrackModel]()
                         if let lessons = lessons {
                             for lesson in lessons {
@@ -42,7 +42,7 @@ class DataManager: ObservableObject {
                                 fetchedLessons.append(TrackModel(id: lessonID, name: lessonName, duration: lessonDuration, image: lessonImage, url: lessonURL, number: lessonNumber))
                             }
                         }
-                        self.courses.append(CourseModel(name: name, image: image, tracks: fetchedLessons, color: "smollDoggo"))
+                        self.courses.append(CourseModel(name: name, image: image, tracks: fetchedLessons, color: color))
                     }
                 }
             }

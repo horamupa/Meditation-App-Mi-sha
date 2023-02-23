@@ -57,7 +57,7 @@ class PlayerViewModel: ObservableObject {
             userProgress.updateProgress(model: model)
             userProgress.savePreference()
             userProgress.userProfile.userTotalTime += audioManager.getStreamPlayerTime() ?? 0
-            userProgress.userProfile.userTotalDays += 1
+            userProgress.totalDaysChek()
             userProgress.dateChecker()
         }
     }
