@@ -47,7 +47,6 @@ struct HonorView: View {
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 10)
             }
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarLeading) {
@@ -105,8 +104,8 @@ extension HonorView {
     }
     
     private var medalView: some View {
-        VStack(spacing: 20) {
-            HStack(spacing: 40) {
+        VStack(spacing: 16) {
+            HStack(spacing: 24) {
                 VStack(spacing: 10) {
                     Text("Медитировали")
                         .font(.labGrotesque(.regular, size: 18))
@@ -123,12 +122,12 @@ extension HonorView {
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                     }
-                    .frame(width: 100, height: 100)
+                    .frame(width: 80, height: 80)
                     .cornerRadius(0)
                     .background {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(Color.theme.orange)
-                            .frame(width: 112, height: 112)
+                            .frame(width: 92, height: 92)
                     }
                     .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
                 }
@@ -149,12 +148,12 @@ extension HonorView {
                                     .font(.labGrotesque(.regular, size: 24))
                             }
                     }
-                    .frame(width: 100, height: 100)
+                    .frame(width: 80, height: 80)
                     .cornerRadius(0)
                     .background {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(Color.theme.orange)
-                            .frame(width: 112, height: 112)
+                            .frame(width: 92, height: 92)
                     }
                     .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
                 }
@@ -177,12 +176,12 @@ extension HonorView {
                                 .font(.labGrotesque(.regular, size: 24))
                         }
                 }
-                .frame(width: 100, height: 100)
+                .frame(width: 80, height: 80)
                 .cornerRadius(0)
                 .background {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(Color.theme.orange)
-                        .frame(width: 112, height: 112)
+                        .frame(width: 92, height: 92)
                 }
                 .shadow(color: Color("Color1").opacity(0.9), radius: 5, y: 3)
             }
@@ -198,7 +197,7 @@ extension HonorView {
                 Text("Невероятный герой")
             }
         }
-        .padding(.vertical, 15)
+        .padding(.vertical, 16)
     }
     
     private var linksView: some View {
