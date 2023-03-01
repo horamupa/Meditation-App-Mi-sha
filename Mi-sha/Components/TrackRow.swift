@@ -45,11 +45,13 @@ struct TrackRow: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                     Spacer()
-                    Text(DateComponentsFormatter.abbreviated.string(from: track.duration) ?? track.duration.formatted() + "s")
-                        .font(.caption)
-                        .lineLimit(1)
-                        .padding(.trailing, 16)
-                        
+                    HStack(spacing: 4) {
+                        Text(DateComponentsFormatter.positional.string(from: track.duration) ?? track.duration.formatted() + "s")
+                            .lineLimit(1)
+                        Text("мин")
+                            .padding(.trailing, 16)
+                    }
+                    .font(.caption)
 //                    Image(systemName: "heart")
 //                        .foregroundColor(Color.theme.purple)
 //                        .frame(width: 30, height: 30)

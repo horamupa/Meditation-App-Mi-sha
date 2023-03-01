@@ -129,6 +129,7 @@ extension HomeView {
                                     .padding(15)
                                     .frame(maxWidth: .infinity)
                                     .background(.regularMaterial.opacity(0.9))
+                                    .environment(\.colorScheme, .light)
                             }
                             .cornerRadius(15)
                         }

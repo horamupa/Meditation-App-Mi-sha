@@ -46,6 +46,7 @@ struct HomeNextCourseView: View {
                         .padding(.vertical, 4)
                         .background(.regularMaterial.opacity(0.9))
                         .cornerRadius(0)
+                        .environment(\.colorScheme, .light)
                         .shadow(color: Color.theme.orange.opacity(0.4), radius: 2)
                         
                         

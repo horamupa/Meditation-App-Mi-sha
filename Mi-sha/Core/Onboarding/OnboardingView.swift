@@ -85,8 +85,8 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Истории, про тебя. Изучите человека который живёт внутри вашей головы.  которые разворачиваются прямо в твоей голове и ты в них главный персонаж. Вы ещё никогда не были так близко к себе."
-                + "Приветствуем тебя на сериале про тебя. Все истории разворачиваются прямо у тебя в голове. Помогая  Это сериал про тебя. Ты главный герой истории. И все события разворачиваются прямо в твоём сознании.")
+            Text("Это увлекательное путешествие по просторам сознания с девочкой Mi и её собакой Sha.")
+//                .font(.callout)
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
@@ -114,7 +114,7 @@ extension OnboardingView {
                     .blur(radius: 10)
                     
             }
-            Text("Ясно")
+            Text("Зачем?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
@@ -124,7 +124,7 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Просто сядь, запусти медитацию и я проведу тебя по захватывающему сюжету про самого тебя")
+            Text("Медитация поможет снизить уровень тревожности, депрессии и стресса, а также улучшит настроение, самооценку и качество сна.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
@@ -152,7 +152,7 @@ extension OnboardingView {
                     .blur(radius: 10)
                     
             }
-            Text("Понятно")
+            Text("А как?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
@@ -162,7 +162,7 @@ extension OnboardingView {
                         .offset(y: 5)
                         .foregroundColor(.black.opacity(0.7))
                 }
-            Text("Я буду сопровождать тебя в каждом моменте, подсказывая что делать, а ты просто наслаждайся")
+            Text("Просто выбери удобное место, запусти медитацию, а я буду сопровождать тебя в каждом моменте, подсказывая что делать.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.top, 10)
@@ -176,13 +176,14 @@ extension OnboardingView {
     private var bottomButton: some View {
         Text(onboardingState == 2 ? "Приступим" : "Дальше")
             .font(.headline)
-            .foregroundColor(.black)
+//            .foregroundColor(.black)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .background()
             .cornerRadius(25)
             .padding()
             .animation(nil)
+            .environment(\.colorScheme, .light)
             .onTapGesture {
                 nextOnboardingStep()
             }
