@@ -55,10 +55,10 @@ class PlayerViewModel: ObservableObject {
     func checkProgress() {
         if audioManager.getStreamPlayerTime() ?? 0 > 420 {
             userProgress.updateProgress(model: model)
-            userProgress.savePreference()
             userProgress.userProfile.userTotalTime += audioManager.getStreamPlayerTime() ?? 0
             userProgress.totalDaysChek()
             userProgress.dateChecker()
+            userProgress.savePreference()
         }
     }
     

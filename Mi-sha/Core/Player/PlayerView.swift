@@ -35,7 +35,7 @@ struct PlayerView: View {
             
             VStack(spacing: 32) {
                 dissmissButton
-                    .padding()
+                    .padding(.horizontal, 10)
                 Spacer()
                 LogoView()
                     .scaleEffect(0.5)

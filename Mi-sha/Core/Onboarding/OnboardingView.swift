@@ -60,31 +60,11 @@ extension OnboardingView {
     private var welcomeSection: some View {
         VStack(spacing: 40) {
             Spacer()
-            ZStack(alignment: .bottomLeading) {
-                Circle()
-                    .frame(width: 150, height: 150)
-                    .foregroundColor(Color(#colorLiteral(red: 0.9559542537, green: 0.5613597035, blue: 0.4460546374, alpha: 1)))
-                Circle()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)))
-            }
-            .background {
-                Circle()
-                    .frame(width: 200, height: 200)
-                    .foregroundColor(.white.opacity(0.2))
-                    .blur(radius: 10)
-                    
-            }
+            logoView
             Text("Привет!")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
-                .overlay(alignment: .bottom) {
-                    Capsule(style: .continuous)
-                        .frame(height: 3)
-                        .offset(y: 5)
-                        .foregroundColor(.black.opacity(0.7))
-                }
             Text("Это увлекательное путешествие по просторам сознания с девочкой Mi и её собакой Sha.")
 //                .font(.callout)
                 .font(.labGrotesque(.regular, size: 18))
@@ -99,31 +79,11 @@ extension OnboardingView {
     private var welcomeSection1: some View {
         VStack(spacing: 40) {
             Spacer()
-            ZStack(alignment: .bottomLeading) {
-                Circle()
-                    .frame(width: 150, height: 150)
-                    .foregroundColor(Color(#colorLiteral(red: 0.9559542537, green: 0.5613597035, blue: 0.4460546374, alpha: 1)))
-                Circle()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)))
-            }
-            .background {
-                Circle()
-                    .frame(width: 200, height: 200)
-                    .foregroundColor(.white.opacity(0.2))
-                    .blur(radius: 10)
-                    
-            }
+            logoView
             Text("Зачем?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
-                .overlay(alignment: .bottom) {
-                    Capsule(style: .continuous)
-                        .frame(height: 3)
-                        .offset(y: 5)
-                        .foregroundColor(.black.opacity(0.7))
-                }
             Text("Медитация поможет снизить уровень тревожности, депрессии и стресса, а также улучшит настроение, самооценку и качество сна.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
@@ -137,31 +97,11 @@ extension OnboardingView {
     private var welcomeSection2: some View {
         VStack(spacing: 40) {
             Spacer()
-            ZStack(alignment: .bottomLeading) {
-                Circle()
-                    .frame(width: 150, height: 150)
-                    .foregroundColor(Color(#colorLiteral(red: 0.9559542537, green: 0.5613597035, blue: 0.4460546374, alpha: 1)))
-                Circle()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)))
-            }
-            .background {
-                Circle()
-                    .frame(width: 200, height: 200)
-                    .foregroundColor(.white.opacity(0.2))
-                    .blur(radius: 10)
-                    
-            }
+            logoView
             Text("А как?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
-                .overlay(alignment: .bottom) {
-                    Capsule(style: .continuous)
-                        .frame(height: 3)
-                        .offset(y: 5)
-                        .foregroundColor(.black.opacity(0.7))
-                }
             Text("Просто выбери удобное место, запусти медитацию, а я буду сопровождать тебя в каждом моменте, подсказывая что делать.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
@@ -187,6 +127,24 @@ extension OnboardingView {
             .onTapGesture {
                 nextOnboardingStep()
             }
+    }
+    
+    private var logoView: some View {
+        ZStack(alignment: .bottomLeading) {
+            Circle()
+                .frame(width: 150, height: 150)
+                .foregroundColor(Color(#colorLiteral(red: 0.9559542537, green: 0.5613597035, blue: 0.4460546374, alpha: 1)))
+            Circle()
+                .frame(width: 100, height: 100)
+                .foregroundColor(Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)))
+        }
+        .background {
+            Circle()
+                .frame(width: 200, height: 200)
+                .foregroundColor(.white.opacity(0.2))
+                .blur(radius: 10)
+                
+        }
     }
 }
 

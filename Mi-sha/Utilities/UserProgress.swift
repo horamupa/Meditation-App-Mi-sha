@@ -113,13 +113,17 @@ class UserProgress: ObservableObject {
     }
     
     func dateChecker() {
-
+        
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(identifier: "UTC")!
-        if calendar.isDateInYesterday(self.userProfile.userLastSeen) {
+        if self.userProfile.userBestStreak == 0 {
             self.userProfile.userBestStreak += 1
+        } else {
+            if calendar.isDateInYesterday(self.userProfile.userLastSeen) {
+                self.userProfile.userBestStreak += 1
+            }
+            self.userProfile.userLastSeen = Date.now
         }
-        self.userProfile.userLastSeen = Date.now
         saveUserProfile()
         setUserProfile()
     }
@@ -127,9 +131,15 @@ class UserProgress: ObservableObject {
     func totalDaysChek() {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(identifier: "UTC")!
-        if calendar.isDateInToday(self.userProfile.userLastSeen) {
-            return
-        } else { userProfile.userTotalDays += 1 }
+        if userProfile.userTotalDays == 0 {
+            userProfile.userTotalDays += 1
+        } else {
+            if calendar.isDateInToday(self.userProfile.userLastSeen) {
+                return
+            } else { userProfile.userTotalDays += 1 }
+        }
+        saveUserProfile()
+        setUserProfile()
     }
     
 }

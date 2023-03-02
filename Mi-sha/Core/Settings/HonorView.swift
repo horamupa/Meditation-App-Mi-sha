@@ -11,62 +11,56 @@ struct HonorView: View {
     
     @StateObject var vm = SettingsViewModel()
     
-//    @State var userName = "UserName"
+    //    @State var userName = "UserName"
     
     
-    var defaultURL = URL(string: "https://www.google.com")!
-    var secondURL = URL(string: "https://www.youtube.com")!
+    var termsOfService = URL(string: "https://docs.google.com/document/d/1-miKyQGkgExJxXlUCgyV2TYlnP08ZNaTL6eNIuG1IyA/edit")!
+    var privacyPolicy = URL(string: "https://docs.google.com/document/d/1MRWyqS8OReXp9xsZfwc1rppwqKqYH054Yd7pCcCGdNk/edit#heading=h.20y6fa5gdawh")!
     var coffeURL = URL(string: "https://www.buymeacoin.com")!
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-            ZStack {
-                Color.theme.main2
-                    .ignoresSafeArea()
-                VStack(spacing: 16) {
-                    VStack {
-                        userProfile
-                            .padding(.horizontal, 16)
-//                            .padding(.vertical, )
-//                            .frame(maxWidth: .infinity)
-                            .frame(height: 160)
-                            .cornerRadius(20)
-                        medalView
-    //                        .cornerRadius(0)
-                            .padding(.horizontal, 16)
-//                            .frame(maxWidth: .infinity)
-                            .cornerRadius(20)
-//                            .padding(.horizontal, 20)
-                        
-                    }
-                    .padding(16)
-                    .background(.regularMaterial)
-                    .cornerRadius(25)
-//                    .padding()
+        ZStack {
+            Color.theme.main2
+                .ignoresSafeArea()
+            VStack(spacing: 16) {
+                VStack {
+                    userProfile
+                        .frame(height: 160)
+                    medalView
                     
-                    VStack {
-                        linksView
-                    }
-                    Spacer()
+                        .padding(.horizontal, 16)
+                    
+                        .cornerRadius(20)
                 }
-                .padding(.horizontal, 32)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                    }
-
+                .padding(.horizontal, 16)
+                .background(.regularMaterial)
+                .environment(\.colorScheme, .light)
+                .cornerRadius(25)
+                
+                VStack {
+                    linksView
                 }
+                Spacer()
             }
-            .font(.labGrotesque(.regular, size: 16))
-            .navigationTitle("Зал славы")
-//            .navigationBarBackButtonHidden()
-            .navigationBarTitleDisplayMode(.inline)
-
+            .padding(.horizontal, 32)
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.black)
+                }
+                
+            }
+        }
+        .font(.labGrotesque(.regular, size: 16))
+        .navigationTitle("Зал славы")
+        .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
@@ -82,13 +76,11 @@ extension HonorView {
     
     private var userProfile: some View {
         HStack(spacing: 24) {
-            Spacer()
             Image(vm.userProfile.userImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 100, height: 100)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-            
                 .background {
                     RoundedRectangle(cornerRadius: 25)
                         .foregroundColor(Color.theme.orange.opacity(0.5))
@@ -107,23 +99,23 @@ extension HonorView {
     
     private var medalView: some View {
         VStack(alignment: .leading, spacing: 32) {
-
-                HStack(spacing: 16) {
-                    Text("Медитировали")
+            
+            HStack(spacing: 16) {
+                Text("Медитировали")
+                    .font(.labGrotesque(.regular, size: 20))
+                Spacer()
+                Text("\((Int(vm.userProfile.userTotalTime/60)).formatted()) мин")
+                    .font(.labGrotesque(.regular, size: 20))
+            }
+            
+            HStack(spacing: 16) {
+                Text("Практиковали")
+                    .font(.labGrotesque(.regular, size: 20))
+                Spacer()
+                VStack(spacing: 20) {
+                    Text("\(vm.userProfile.userTotalDays) дня")
                         .font(.labGrotesque(.regular, size: 20))
-                        Spacer()
-                            Text("\((Int(vm.userProfile.userTotalTime/60)).formatted()) мин")
-                                .font(.labGrotesque(.regular, size: 20))
                 }
-                
-                HStack(spacing: 16) {
-                    Text("Практиковали")
-                        .font(.labGrotesque(.regular, size: 20))
-                    Spacer()
-                            VStack(spacing: 20) {
-                                Text("\(vm.userProfile.userTotalDays) дня")
-                                    .font(.labGrotesque(.regular, size: 20))
-                    }
             }
             
             
@@ -139,15 +131,15 @@ extension HonorView {
             }
             
         }
-        .padding(16)
+        .padding(.bottom, 24)
         
     }
     
     private var linksView: some View {
         VStack(spacing: 10) {
-            Link("Buy me a coffe☕️", destination: coffeURL)
-            Link("Terms of service", destination: defaultURL)
-            Link("Privacy policy", destination: secondURL)
+//            Link("Buy me a coffe☕️", destination: coffeURL)
+            Link("Terms of service", destination: termsOfService)
+            Link("Privacy policy", destination: privacyPolicy)
         }
         .foregroundColor(.black)
     }
