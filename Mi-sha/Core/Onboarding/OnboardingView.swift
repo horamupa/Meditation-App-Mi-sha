@@ -20,10 +20,11 @@ struct OnboardingView: View {
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     var body: some View {
         ZStack {
-            RadialGradient(
-                gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1))]),
-                center: .topLeading, startRadius: 200, endRadius: 600)
-            .ignoresSafeArea()
+//            RadialGradient(
+//                gradient: Gradient(colors: [Color.theme.main, Color.theme.main2]),
+//                center: .topLeading, startRadius: 200, endRadius: 600)
+            Color.theme.gradient
+                .ignoresSafeArea()
             VStack {
                 switch onboardingState {
                 case 0:
@@ -58,55 +59,61 @@ struct OnboardingView_Previews: PreviewProvider {
 extension OnboardingView {
     
     private var welcomeSection: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: 36) {
             Spacer()
             logoView
+//            LogoView()
+//                .frame(width: 150, height: 150)
+//                .cornerRadius(10)
             Text("Привет!")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
-            Text("Это увлекательное путешествие по просторам сознания с девочкой Mi и её собакой Sha.")
+            Text("Медитативное путешествие по твоему сознанию. В компании девочки Ми и её собачки Ша.")
 //                .font(.callout)
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
-                .padding(.top, 10)
-                .padding(.horizontal, 40)
+                .padding(.horizontal, 36)
             Spacer()
             Spacer()
         }
         .multilineTextAlignment(.center)
     }
     private var welcomeSection1: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: 36) {
             Spacer()
-            logoView
+            LogoView()
+                .frame(width: 150, height: 150)
+                .cornerRadius(10)
             Text("Зачем?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
-            Text("Медитация поможет снизить уровень тревожности, депрессии и стресса, а также улучшит настроение, самооценку и качество сна.")
+            Text("Поможет снизить уровень тревожности и стресса. а также улучшит настроение, самооценку и качество сна.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
-                .padding(.top, 10)
-                .padding(.horizontal, 40)
+//                .padding(.top, 10)
+                .padding(.horizontal, 36)
             Spacer()
             Spacer()
         }
         .multilineTextAlignment(.center)
     }
     private var welcomeSection2: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: 36) {
             Spacer()
-            logoView
-            Text("А как?")
+            LogoView()
+                .frame(width: 150, height: 150)
+                .cornerRadius(10)
+            Text("Как?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
-            Text("Просто выбери удобное место, запусти медитацию, а я буду сопровождать тебя в каждом моменте, подсказывая что делать.")
+            Text("Просто выбери удобное место, запусти путешествие и мы проведем тебя.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
-                .padding(.top, 10)
-                .padding(.horizontal, 40)
+//                .padding(.top, 10)
+                .padding(.horizontal, 36)
             Spacer()
             Spacer()
         }
@@ -116,12 +123,13 @@ extension OnboardingView {
     private var bottomButton: some View {
         Text(onboardingState == 2 ? "Приступим" : "Дальше")
             .font(.headline)
-//            .foregroundColor(.black)
+//            .foregroundColor(Color.theme.smollDoggo)
             .frame(height: 55)
             .frame(maxWidth: .infinity)
             .background()
             .cornerRadius(25)
             .padding()
+            .padding(.horizontal, 16)
             .animation(nil)
             .environment(\.colorScheme, .light)
             .onTapGesture {

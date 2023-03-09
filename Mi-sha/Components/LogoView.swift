@@ -27,6 +27,16 @@ struct LogoView: View {
     }
 }
 
+struct LogoView1: View {
+    var body: some View {
+        ZStack {
+            Image("1024AppIicon")
+                .resizable()
+                .scaledToFit()
+        }
+    }
+}
+
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {
         LogoView()

@@ -11,6 +11,7 @@
 
 import SwiftUI
 import Firebase
+import AppTrackingTransparency
 
 struct HomeView: View {
     
@@ -43,12 +44,23 @@ struct HomeView: View {
         .sheet(isPresented: $isSettings, content: {
             HonorView()
         })
-//        .onAppear {
-////             Pre-Download Start
-//            if let url2 = vm.actualLesson()?.url {
-//                audioManager.preDownload(url: url2)
-//            }
-//        }
+        .onAppear {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                    
+                case .notDetermined:
+                    break
+                case .restricted:
+                    break
+                case .denied:
+                    print("denied")
+                case .authorized:
+                    print("allowed")
+                @unknown default:
+                    break
+                }
+            }
+        }
     }
 }
 

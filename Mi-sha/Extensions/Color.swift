@@ -26,4 +26,10 @@ class ThemeColors {
     let smollDoggo = Color(#colorLiteral(red: 0.8424865603, green: 0.8280478716, blue: 0.7804499269, alpha: 1))
     let mediumDoggo = Color(#colorLiteral(red: 0.7664349675, green: 0.8263677955, blue: 0.7951148152, alpha: 1))
     let bigDoggo = Color(#colorLiteral(red: 0.9380407929, green: 0.8396212459, blue: 0.7851215005, alpha: 1))
+    let gradient = RadialGradient(
+        gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1))]),
+        center: .topLeading, startRadius: 200, endRadius: 600)
 }
+
+
+
