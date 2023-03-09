@@ -62,15 +62,12 @@ extension OnboardingView {
         VStack(spacing: 36) {
             Spacer()
             logoView
-//            LogoView()
-//                .frame(width: 150, height: 150)
-//                .cornerRadius(10)
+
             Text("Привет!")
                 .font(.largeTitle)
                 .fontWeight(.medium)
                 .foregroundColor(.black.opacity(0.7))
             Text("Медитативное путешествие по твоему сознанию. В компании девочки Ми и её собачки Ша.")
-//                .font(.callout)
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
                 .padding(.horizontal, 36)
@@ -82,9 +79,7 @@ extension OnboardingView {
     private var welcomeSection1: some View {
         VStack(spacing: 36) {
             Spacer()
-            LogoView()
-                .frame(width: 150, height: 150)
-                .cornerRadius(10)
+            logoView
             Text("Зачем?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
@@ -102,9 +97,7 @@ extension OnboardingView {
     private var welcomeSection2: some View {
         VStack(spacing: 36) {
             Spacer()
-            LogoView()
-                .frame(width: 150, height: 150)
-                .cornerRadius(10)
+            logoView
             Text("Как?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
