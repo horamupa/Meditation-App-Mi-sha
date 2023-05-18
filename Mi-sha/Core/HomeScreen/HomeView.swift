@@ -33,7 +33,7 @@ struct HomeView: View {
                     .font(.labGrotesque(.regular, size: 20))
                 middleBlock
                 
-               Text("В нашем сериале:")
+               Text("Содержание:")
                     .font(.labGrotesque(.regular, size: 20))
                bottomBlock
             }
@@ -44,23 +44,6 @@ struct HomeView: View {
         .sheet(isPresented: $isSettings, content: {
             HonorView()
         })
-        .onAppear {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                switch status {
-                    
-                case .notDetermined:
-                    break
-                case .restricted:
-                    break
-                case .denied:
-                    print("denied")
-                case .authorized:
-                    print("allowed")
-                @unknown default:
-                    break
-                }
-            }
-        }
     }
 }
 
