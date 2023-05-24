@@ -26,6 +26,9 @@
 		8DC664092955B49500123DA2 /* CacheManagerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC664082955B49500123DA2 /* CacheManagerClass.swift */; };
 		8DC6640B2955B56600123DA2 /* UserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC6640A2955B56600123DA2 /* UserProgress.swift */; };
 		8DD5063E29659D58006D9F6E /* BagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD5063D29659D58006D9F6E /* BagesView.swift */; };
+		8DD6BBF42A1BB49800097098 /* AuthBoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6BBF32A1BB49800097098 /* AuthBoy.swift */; };
+		8DD6BBF72A1BB4C600097098 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6BBF62A1BB4C600097098 /* AuthView.swift */; };
+		8DD6BBF92A1BB4D000097098 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6BBF82A1BB4D000097098 /* AuthViewModel.swift */; };
 		8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */; };
 		8DEB19A029473A7A00BAF218 /* AVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEB199F29473A7A00BAF218 /* AVManager.swift */; };
 		8DEB19A22947419E00BAF218 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DEB19A12947419E00BAF218 /* 1.mp3 */; };
@@ -72,7 +75,7 @@
 		8D66C5E0299A464100270D77 /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		8D66C66F2941CF8C00B37756 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlButton.swift; sourceTree = "<group>"; };
-		8D8A7F482941BC960072A582 /* Mi-sha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi-sha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8A7F482941BC960072A582 /* Ми-Йöт.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ми-Йöт.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mi_shaApp.swift; sourceTree = "<group>"; };
 		8D8A7F4D2941BC960072A582 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D8A7F4F2941BC970072A582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +92,9 @@
 		8DC664082955B49500123DA2 /* CacheManagerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerClass.swift; sourceTree = "<group>"; };
 		8DC6640A2955B56600123DA2 /* UserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgress.swift; sourceTree = "<group>"; };
 		8DD5063D29659D58006D9F6E /* BagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagesView.swift; sourceTree = "<group>"; };
+		8DD6BBF32A1BB49800097098 /* AuthBoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBoy.swift; sourceTree = "<group>"; };
+		8DD6BBF62A1BB4C600097098 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		8DD6BBF82A1BB4D000097098 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		8DE5A352296EC926005DF5C8 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		8DEB199F29473A7A00BAF218 /* AVManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVManager.swift; sourceTree = "<group>"; };
 		8DEB19A12947419E00BAF218 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 1.mp3; path = Assets.xcassets/1.mp3; sourceTree = "<group>"; };
@@ -171,7 +177,7 @@
 		8D8A7F492941BC960072A582 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D8A7F482941BC960072A582 /* Mi-sha.app */,
+				8D8A7F482941BC960072A582 /* Ми-Йöт.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +254,15 @@
 			path = BagesView;
 			sourceTree = "<group>";
 		};
+		8DD6BBF52A1BB4B400097098 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8DD6BBF62A1BB4C600097098 /* AuthView.swift */,
+				8DD6BBF82A1BB4D000097098 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		8DEB199E29473A6700BAF218 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +274,7 @@
 				8DC664082955B49500123DA2 /* CacheManagerClass.swift */,
 				8DC6640A2955B56600123DA2 /* UserProgress.swift */,
 				8D93A34F296F08B700E8E3EB /* InjectionProtocols.swift */,
+				8DD6BBF32A1BB49800097098 /* AuthBoy.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -266,6 +282,7 @@
 		8DEB19A629477A7F00BAF218 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8DD6BBF52A1BB4B400097098 /* Auth */,
 				8DEB19AB29477AED00BAF218 /* HomeScreen */,
 				8DEB19F1294C8EEE00BAF218 /* ChapterView */,
 				8D66C66E2941CF8100B37756 /* Player */,
@@ -348,9 +365,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D8A7F472941BC960072A582 /* Mi-sha */ = {
+		8D8A7F472941BC960072A582 /* Ми-Йöт */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Mi-sha" */;
+			buildConfigurationList = 8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Ми-Йöт" */;
 			buildPhases = (
 				8D8A7F442941BC960072A582 /* Sources */,
 				8D8A7F452941BC960072A582 /* Frameworks */,
@@ -360,7 +377,7 @@
 			);
 			dependencies = (
 			);
-			name = "Mi-sha";
+			name = "Ми-Йöт";
 			packageProductDependencies = (
 				8DEB19FB294CD79500BAF218 /* FirebaseAnalytics */,
 				8DEB19FD294CD79500BAF218 /* FirebaseAnalyticsWithoutAdIdSupport */,
@@ -372,7 +389,7 @@
 				8DEB1A09294CD79500BAF218 /* FirebaseStorage */,
 			);
 			productName = "Mi-sha";
-			productReference = 8D8A7F482941BC960072A582 /* Mi-sha.app */;
+			productReference = 8D8A7F482941BC960072A582 /* Ми-Йöт.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -406,7 +423,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D8A7F472941BC960072A582 /* Mi-sha */,
+				8D8A7F472941BC960072A582 /* Ми-Йöт */,
 			);
 		};
 /* End PBXProject section */
@@ -444,11 +461,13 @@
 				8DC664072955B46700123DA2 /* FileManagerClass.swift in Sources */,
 				8D8A7F4C2941BC960072A582 /* Mi_shaApp.swift in Sources */,
 				8D66C6702941CF8C00B37756 /* PlayerView.swift in Sources */,
+				8DD6BBF42A1BB49800097098 /* AuthBoy.swift in Sources */,
 				8D4684872946164D00B751AC /* DateFormatter.swift in Sources */,
 				8D93A350296F08B700E8E3EB /* InjectionProtocols.swift in Sources */,
 				8DE5A353296EC926005DF5C8 /* PlayerViewModel.swift in Sources */,
 				8DEB19A5294760C200BAF218 /* Color.swift in Sources */,
 				8DEB19D9294B3DED00BAF218 /* Fonts.swift in Sources */,
+				8DD6BBF72A1BB4C600097098 /* AuthView.swift in Sources */,
 				8DEB1A13295077E600BAF218 /* AuthService.swift in Sources */,
 				8DEB1A11295077B300BAF218 /* MateLoginView.swift in Sources */,
 				8DC664052955B25100123DA2 /* OnboardingView.swift in Sources */,
@@ -473,6 +492,7 @@
 				8DFA30412959CAF200AB0170 /* CustomLoadingView.swift in Sources */,
 				8DC664092955B49500123DA2 /* CacheManagerClass.swift in Sources */,
 				8DEB1A1929508DFA00BAF218 /* DataManager.swift in Sources */,
+				8DD6BBF92A1BB4D000097098 /* AuthViewModel.swift in Sources */,
 				8DEB19F0294C8AEA00BAF218 /* HomeViewModel.swift in Sources */,
 				8D8A7F612941C1FD0072A582 /* PreviewProvider.swift in Sources */,
 				8DEB1A15295079FC00BAF218 /* Placeholder.swift in Sources */,
@@ -609,7 +629,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mi-sha/Info.plist";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Мы используем эту дату, что-бы медитировало больше людей подобных вам.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Мы используем ваш портрет, чтобы вдохновить медитацией больше людей похожих на вас.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -644,7 +664,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mi-sha/Info.plist";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Мы используем эту дату, что-бы медитировало больше людей подобных вам.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Мы используем ваш портрет, чтобы вдохновить медитацией больше людей похожих на вас.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -678,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Mi-sha" */ = {
+		8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Ми-Йöт" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D8A7F572941BC970072A582 /* Debug */,

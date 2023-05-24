@@ -15,6 +15,7 @@ struct OnboardingView: View {
      2 - Add age
      3 - Add gender
      */
+    @Binding var isShowOnboarding: Bool
     @State var onboardingState: Int = 0
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
@@ -23,7 +24,8 @@ struct OnboardingView: View {
 //            RadialGradient(
 //                gradient: Gradient(colors: [Color.theme.main, Color.theme.main2]),
 //                center: .topLeading, startRadius: 200, endRadius: 600)
-            Color.theme.gradient
+            Color("AppIconWhite")
+//            Color.theme.gradient
                 .ignoresSafeArea()
             VStack {
                 switch onboardingState {
@@ -43,6 +45,8 @@ struct OnboardingView: View {
                 Spacer()
                 bottomButton
             }
+            .padding(.top, 32)
+            .padding(.horizontal, 8)
             
         }
     }
@@ -50,7 +54,7 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(isShowOnboarding: .constant(false))
     }
 }
 
@@ -59,57 +63,75 @@ struct OnboardingView_Previews: PreviewProvider {
 extension OnboardingView {
     
     private var welcomeSection: some View {
-        VStack(spacing: 36) {
-            Spacer()
-            logoView
-
+        VStack(spacing: 8) {
+//            Spacer()
+//            logoView
+//
+//            Text("Привет!")
+//                .font(.largeTitle)
+//                .fontWeight(.medium)
+//                .foregroundColor(.black.opacity(0.7))
+//            Text("Медитативное путешествие по твоему сознанию. В компании девочки Ми и её собачки Ша.")
+//                .font(.labGrotesque(.regular, size: 18))
+//                .foregroundColor(.black)
+//                .padding(.horizontal, 36)
+//            Spacer()
+//            Spacer()
+//            Spacer()
             Text("Привет!")
                 .font(.largeTitle)
                 .fontWeight(.medium)
-                .foregroundColor(.black.opacity(0.7))
-            Text("Медитативное путешествие по твоему сознанию. В компании девочки Ми и её собачки Ша.")
+                .foregroundColor(.black)
+            Image("1024AppIicon")
+                .resizable()
+//                .scaleEffect(0.8)
+                .scaledToFit()
+            Text("Медитативное путешествие в компании девочки Ми и её собачки Ша.")
+//                .font(.labGrotesque(.regular, size: 18))
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
-                .padding(.horizontal, 36)
-            Spacer()
             Spacer()
         }
+        .padding(.horizontal, 16)
         .multilineTextAlignment(.center)
     }
     private var welcomeSection1: some View {
-        VStack(spacing: 36) {
-            Spacer()
-            logoView
+        VStack(spacing: 8) {
+//            Spacer()
             Text("Зачем?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
-                .foregroundColor(.black.opacity(0.7))
-            Text("Поможет снизить уровень тревожности и стресса. а также улучшит настроение, самооценку и качество сна.")
+                .foregroundColor(.black)
+            Image("1024AppIicon")
+                .resizable()
+//                .scaleEffect(0.8)
+                .scaledToFit()
+            Text("Поможет снизить уровень тревожности, улучшит настроение, самооценку и качество сна.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
 //                .padding(.top, 10)
-                .padding(.horizontal, 36)
             Spacer()
             Spacer()
         }
+        .padding(.horizontal, 16)
         .multilineTextAlignment(.center)
     }
     private var welcomeSection2: some View {
-        VStack(spacing: 36) {
-            Spacer()
-            logoView
+        VStack(spacing: 8) {
             Text("Как?")
                 .font(.largeTitle)
                 .fontWeight(.medium)
-                .foregroundColor(.black.opacity(0.7))
-            Text("Просто выбери удобное место, запусти путешествие и мы проведем тебя.")
+                .foregroundColor(.black)
+            Image("1024AppIicon")
+                .resizable()
+                .scaledToFit()
+            Text("Просто выбери удобное место, запусти и добро пожаловать в путешествие по твоему сознанию.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
-//                .padding(.top, 10)
-                .padding(.horizontal, 36)
             Spacer()
             Spacer()
         }
+        .padding(.horizontal, 16)
         .multilineTextAlignment(.center)
     }
     

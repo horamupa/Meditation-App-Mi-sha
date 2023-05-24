@@ -26,33 +26,32 @@ struct PlayerView: View {
     }
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             Color.theme.main2
                 .ignoresSafeArea()
-            Image("home1")
-                .resizable()
-                .scaledToFit()
             
             VStack(spacing: 32) {
-                dissmissButton
-                    .padding(.horizontal, 10)
                 Spacer()
-                LogoView()
-                    .scaleEffect(0.5)
-                    .offset(x: 100, y: -55)
-                    .opacity(0.8)
+                VStack {
+                    LogoView()
+                        .scaleEffect(0.5)
+                        .frame(width: 60, height: 60)
+                    .offset(x: 124)
+//                    Spacer()
+                    Image("home1")
+                        .resizable()
+                        .scaledToFit()
+                    trackName
+                }
                 Spacer()
-                Spacer()
-                Spacer()
-                trackName
-                Spacer()
-                playerControl
-                    .padding(.horizontal, 10)
+                
             }
-            .padding(.horizontal, 20)
+            playerControl
+            .padding(16)
         }
         .navigationTitle("")
-        .navigationBarHidden(true)
+        .foregroundColor(Color.theme.black)
+        .accentColor(Color.theme.black)
         .onAppear {
             vm.startOnAppear()
         }
@@ -72,8 +71,10 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(model: dev.track)
-            .environmentObject(dev.vm)
+        NavigationView {
+            PlayerView(model: dev.track)
+                .environmentObject(dev.vm)
+        }
     }
 }
 
@@ -95,12 +96,12 @@ extension PlayerView {
         .foregroundColor(Color.theme.black.opacity(0.7))
         .lineLimit(1)
         .minimumScaleFactor(0.5)
-        .overlay(alignment: .bottom) {
-            Capsule(style: .continuous)
-                .frame(height: 3)
-                .offset(y: 5)
-                .foregroundColor(Color.theme.black.opacity(0.7))
-        }
+//        .overlay(alignment: .bottom) {
+//            Capsule(style: .continuous)
+//                .frame(height: 3)
+//                .offset(y: 5)
+//                .foregroundColor(Color.theme.black.opacity(0.7))
+//        }
     }
     
     var playerButtons: some View {

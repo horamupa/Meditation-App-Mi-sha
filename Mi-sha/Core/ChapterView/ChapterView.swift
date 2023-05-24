@@ -13,24 +13,29 @@ struct ChapterView: View {
     
     var body: some View {
         ZStack {
-                VStack(alignment: .leading) {
-                    
+            Color.theme.white
+                .ignoresSafeArea()
+            
+                VStack(alignment: .leading, spacing: 0) {
                     upperBlock
                     
                     ScrollView {
                     VStack(alignment: .leading, spacing: 5) {
+            
                         ForEach(innerCourse.tracks.sorted()) { track in
                             TrackRow(track: track)
                         }
-                        
-                        Spacer()
+//                        Spacer()
                     }
                 }
-                    .padding(.horizontal, 10)
+                .padding(.horizontal, 10)
             }
             .listStyle(.plain)
+            
         }
         .ignoresSafeArea()
+        .foregroundColor(Color.theme.black)
+        .accentColor(Color.theme.black)
     }
 }
 

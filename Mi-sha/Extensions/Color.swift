@@ -15,7 +15,7 @@ extension Color {
 
 class ThemeColors {
     let black = Color(red: 24/255, green: 23/255, blue: 22/255)
-    let white = Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1))
+    let white = Color(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1))
     let green = Color(#colorLiteral(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 1))
     let yellow = Color(#colorLiteral(red: 0.8321695924, green: 0.985483706, blue: 0.4733308554, alpha: 1))
     let orange = Color(#colorLiteral(red: 0.9559542537, green: 0.5613597035, blue: 0.4460546374, alpha: 1))

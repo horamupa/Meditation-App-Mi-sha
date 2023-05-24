@@ -17,13 +17,13 @@ struct LogoView: View {
                 .frame(width: 100, height: 100)
                 .foregroundColor(Color(#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)))
         }
-        .background {
-            Circle()
-                .frame(width: 200, height: 200)
-                .foregroundColor(.white.opacity(0.2))
-                .blur(radius: 10)
-                
-        }
+//        .background {
+//            Circle()
+//                .frame(width: 200, height: 200)
+//                .foregroundColor(.white.opacity(0.2))
+//                .blur(radius: 5)
+//                
+//        }
     }
 }
 

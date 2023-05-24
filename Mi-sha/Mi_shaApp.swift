@@ -16,6 +16,7 @@ struct Mi_shaApp: App {
         FirebaseApp.configure()
     }
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+    @State var isShowOnboarding: Bool = true
     @StateObject var vm = HomeViewModel()
     @StateObject var audioManager = AVManager.shared
     @StateObject var userProgress = UserProgress.shared
@@ -23,8 +24,8 @@ struct Mi_shaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if !currentUserSignedIn { // Onbording or CustomLoadView
-                OnboardingView()
+            if !currentUserSignedIn && isShowOnboarding { // Onbording or CustomLoadView
+                OnboardingView(isShowOnboarding: $isShowOnboarding)
             } else {
                 NavigationView {
                     if vm.courses.count > 0 {
@@ -35,7 +36,9 @@ struct Mi_shaApp: App {
                         CustomLoadingView()
                     }
                 }
+                .accentColor(.black)
             }
+//            AuthView()
         }
     }
 }

@@ -63,17 +63,19 @@ class PlayerViewModel: ObservableObject {
     }
     
     func startOnAppear() {
-        let storage = Storage.storage().reference(forURL: model.url)
-         storage.downloadURL { url, error in
-             if let error = error {
-                 print("Error download from the firebase. \(error.localizedDescription)")
-//                 self.audioManager.startPlayer(name: "1")
-             } else {
-                 self.audioManager.initPlayer(url: self.model.url)
-//                 self.audioManager.startPlayerStream(url: self.model.url)
-                 print("player Success")
-
-             }
-         }
+        
+        if !self.audioManager.isPlaying {
+            let storage = Storage.storage().reference(forURL: model.url)
+            storage.downloadURL { url, error in
+                if let error = error {
+                    print("Error download from the firebase. \(error.localizedDescription)")
+                    //                 self.audioManager.startPlayer(name: "1")
+                } else {
+                    self.audioManager.initPlayer(url: self.model.url)
+                    //                 self.audioManager.startPlayerStream(url: self.model.url)
+                    print("player Success")
+                }
+            }
+        }
     }
 }

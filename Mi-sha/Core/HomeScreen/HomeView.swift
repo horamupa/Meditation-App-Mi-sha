@@ -26,16 +26,24 @@ struct HomeView: View {
         ZStack {
             Color.theme.white
                 .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 16) {
                 upperBlock
                 
-                Text("Свежая история:")
-                    .font(.labGrotesque(.regular, size: 20))
-                middleBlock
-                
-               Text("Содержание:")
-                    .font(.labGrotesque(.regular, size: 20))
-               bottomBlock
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Свежая история:")
+                        .font(.labGrotesque(.regular, size: 20))
+                    
+                    middleBlock
+                        .shadow(radius: 4, y: 4)
+                }
+              
+                Spacer()
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Содержание:")
+                        .font(.labGrotesque(.regular, size: 20))
+                    bottomBlock
+                        .shadow(radius: 4, y: 4)
+                }
             }
             .padding(16)
             .foregroundColor(Color.theme.black)
@@ -96,79 +104,40 @@ extension HomeView {
             }
         } label: {
             HomeNextCourseView(model: vm.actualLesson() ?? TrackModel.track)
-                .cornerRadius(15)
-//                .padding()
-                .shadow(radius: 2, y: 2)
         }
     }
     
     var bottomBlock: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHGrid(rows: chapterCell, spacing: 16) {
-                if !vm.courses.isEmpty {
-                    ForEach(vm.courses) { item in
-                        NavigationLink(destination: ChapterView(innerCourse: item)) {
-                            VStack(spacing: 0) {
-                                ZStack {
-//                                    Color("mediumDoggo")
+//            LazyHGrid(rows: chapterCell, spacing: 16) {
+                HStack(spacing: 16) {
+                    if !vm.courses.isEmpty {
+                        ForEach(vm.courses) { item in
+                            NavigationLink(destination: ChapterView(innerCourse: item)) {
+                                ZStack(alignment: .bottom) {
                                     Color("\(item.color)")
                                     Image(item.image)
                                         .resizable()
-    //                                    .fixedSize()
-                                    .scaledToFit()
+                                        .scaledToFill()
+                                        .offset(y: -50)
+                                    Text(item.name)
+                                        .font(.labGrotesque(.regular, size: 18))
+//                                        .minimumScaleFactor(0.5)
+//                                        .padding(8)
+                                        .frame(height: 50)
+                                        .frame(maxWidth: .infinity)
+                                        .background(.regularMaterial.opacity(0.9))
+                                        .environment(\.colorScheme, .light)
+                                        
                                 }
-//                                    .frame(maxWidth: UIScreen.main.bounds.width/2.3)
-                                Text(item.name)
-                                    .font(.labGrotesque(.regular, size: 16))
-                                    .minimumScaleFactor(0.5)
-                                    .padding(15)
-                                    .frame(maxWidth: .infinity)
-                                    .background(.regularMaterial.opacity(0.9))
-                                    .environment(\.colorScheme, .light)
+                                .cornerRadius(15)
                             }
-                            .cornerRadius(15)
                         }
                     }
                 }
-//                    else {
-//                    ZStack(alignment: .bottom) {
-//                        Image("home3")
-//                            .resizable()
-//                            .scaledToFill()
-//
-//                        Text("Сезон первый")
-//                            .font(.labGrotesque(.regular, size: 16))
-////                            .minimumScaleFactor(0.5)
-//                            .padding(15)
-//                            .frame(maxWidth: .infinity)
-//                            .background(.regularMaterial.opacity(0.9))
-//
-//                    }
-//
-//                    .cornerRadius(15)
-//
-//                    ZStack(alignment: .bottom) {
-//
-//                        Image("Doggo2")
-//                            .resizable()
-//                            .scaledToFill()
-//                            .frame(width: UIScreen.main.bounds.width / 2.5)
-//                        Text("Второй сезон")
-//                            .font(.labGrotesque(.regular, size: 16))
-//                            .padding(15)
-//                            .frame(maxWidth: .infinity)
-//                            .background(.regularMaterial.opacity(0.9))
-//
-//                    }
-//
-//                    .cornerRadius(15)
-//                }
-            }
-//            .frame(maxWidth: .infinity)
         }
-        .frame(maxHeight: .infinity)
-        .clipped()
-        .shadow(radius: 2, y: 2)
+//        .frame(maxHeight: .infinity)
+//        .clipped()
     }
         
         var halfScreen: CGFloat {
