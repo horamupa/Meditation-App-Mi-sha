@@ -26,6 +26,7 @@ struct HomeView: View {
         ZStack {
             Color.theme.white
                 .ignoresSafeArea()
+            
             VStack(alignment: .leading, spacing: 16) {
                 upperBlock
                 
@@ -36,7 +37,7 @@ struct HomeView: View {
                     middleBlock
                         .shadow(radius: 4, y: 4)
                 }
-              
+                
                 Spacer()
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Содержание:")
@@ -52,6 +53,18 @@ struct HomeView: View {
         .sheet(isPresented: $isSettings, content: {
             HonorView()
         })
+        .onAppear {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                    case .authorized:
+                        print("enable tracking")
+                    case .denied:
+                        print("disable tracking")
+                    default:
+                        print("disable tracking")
+                }
+            }
+        }
     }
 }
 
@@ -69,32 +82,29 @@ extension HomeView {
     
     var upperBlock: some View {
         HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text("Good")
-                    Text("Morning")
-                }
-                .foregroundColor(Color.theme.black)
-                .font(.labGrotesque(.bold, size: 40))
-                
+            VStack(alignment: .leading) {
+                Text("Good")
+                Text("Morning")
+            }
+            .foregroundColor(Color.theme.black)
+            .font(.labGrotesque(.bold, size: 40))
             
-                Spacer()
-                NavigationLink {
-                    HonorView()
-                } label: {
-                    ZStack(alignment: .bottomLeading) {
-                        Circle()
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(Color(#colorLiteral(red: 0.9607843137, green: 0.6274509804, blue: 0.4196078431, alpha: 1)))
-                        Circle()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(Color(#colorLiteral(red: 1, green: 0.7725490196, blue: 0.2666666667, alpha: 1)))
-                            .blur(radius: 1)
-                    }
-//                    Image(systemName: "text.justify.left")
-//                        .font(.system(size: 30, weight: .bold))
-//                        .frame(width: 50, height: 80, alignment: .topTrailing)
+            
+            Spacer()
+            NavigationLink {
+                HonorView()
+            } label: {
+                ZStack(alignment: .bottomLeading) {
+                    Circle()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(Color(#colorLiteral(red: 0.9607843137, green: 0.6274509804, blue: 0.4196078431, alpha: 1)))
+                    Circle()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(Color(#colorLiteral(red: 1, green: 0.7725490196, blue: 0.2666666667, alpha: 1)))
+                        .blur(radius: 1)
                 }
             }
+        }
     }
     
     var middleBlock: some View {
@@ -109,39 +119,36 @@ extension HomeView {
     
     var bottomBlock: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-//            LazyHGrid(rows: chapterCell, spacing: 16) {
-                HStack(spacing: 16) {
-                    if !vm.courses.isEmpty {
-                        ForEach(vm.courses) { item in
-                            NavigationLink(destination: ChapterView(innerCourse: item)) {
-                                ZStack(alignment: .bottom) {
-                                    Color("\(item.color)")
-                                    Image(item.image)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .offset(y: -50)
-                                    Text(item.name)
-                                        .font(.labGrotesque(.regular, size: 18))
-//                                        .minimumScaleFactor(0.5)
-//                                        .padding(8)
-                                        .frame(height: 50)
-                                        .frame(maxWidth: .infinity)
-                                        .background(.regularMaterial.opacity(0.9))
-                                        .environment(\.colorScheme, .light)
-                                        
-                                }
-                                .cornerRadius(15)
+            HStack(spacing: 16) {
+                if !vm.courses.isEmpty {
+                    
+                    ForEach(vm.courses) { item in
+                        NavigationLink(destination: ChapterView(innerCourse: item)) {
+                            
+                            ZStack(alignment: .bottom) {
+                                Color("\(item.color)")
+                                
+                                Image(item.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .offset(y: -50)
+                                
+                                Text(item.name)
+                                    .font(.labGrotesque(.regular, size: 18))
+                                    .frame(height: 50)
+                                    .frame(maxWidth: .infinity)
+                                    .background(.regularMaterial.opacity(0.9))
+                                    .environment(\.colorScheme, .light)
                             }
+                            .cornerRadius(15)
                         }
                     }
                 }
+            }
         }
-//        .frame(maxHeight: .infinity)
-//        .clipped()
     }
-        
-        var halfScreen: CGFloat {
-            UIScreen.main.bounds.width / 2
-        }
-        
+    
+    var halfScreen: CGFloat {
+        UIScreen.main.bounds.width / 2
+    }
 }

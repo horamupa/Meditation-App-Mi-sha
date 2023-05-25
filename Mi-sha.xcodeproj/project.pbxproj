@@ -75,7 +75,7 @@
 		8D66C5E0299A464100270D77 /* MediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayer.swift; sourceTree = "<group>"; };
 		8D66C66F2941CF8C00B37756 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		8D66C6712941D4AD00B37756 /* PlayerControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlButton.swift; sourceTree = "<group>"; };
-		8D8A7F482941BC960072A582 /* Ми-Йöт.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ми-Йöт.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8A7F482941BC960072A582 /* Mi-sha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi-sha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8A7F4B2941BC960072A582 /* Mi_shaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mi_shaApp.swift; sourceTree = "<group>"; };
 		8D8A7F4D2941BC960072A582 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8D8A7F4F2941BC970072A582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		8D8A7F492941BC960072A582 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D8A7F482941BC960072A582 /* Ми-Йöт.app */,
+				8D8A7F482941BC960072A582 /* Mi-sha.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -365,9 +365,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D8A7F472941BC960072A582 /* Ми-Йöт */ = {
+		8D8A7F472941BC960072A582 /* Mi-sha */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Ми-Йöт" */;
+			buildConfigurationList = 8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Mi-sha" */;
 			buildPhases = (
 				8D8A7F442941BC960072A582 /* Sources */,
 				8D8A7F452941BC960072A582 /* Frameworks */,
@@ -377,7 +377,7 @@
 			);
 			dependencies = (
 			);
-			name = "Ми-Йöт";
+			name = "Mi-sha";
 			packageProductDependencies = (
 				8DEB19FB294CD79500BAF218 /* FirebaseAnalytics */,
 				8DEB19FD294CD79500BAF218 /* FirebaseAnalyticsWithoutAdIdSupport */,
@@ -389,7 +389,7 @@
 				8DEB1A09294CD79500BAF218 /* FirebaseStorage */,
 			);
 			productName = "Mi-sha";
-			productReference = 8D8A7F482941BC960072A582 /* Ми-Йöт.app */;
+			productReference = 8D8A7F482941BC960072A582 /* Mi-sha.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -423,7 +423,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D8A7F472941BC960072A582 /* Ми-Йöт */,
+				8D8A7F472941BC960072A582 /* Mi-sha */,
 			);
 		};
 /* End PBXProject section */
@@ -629,7 +629,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mi-sha/Info.plist";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Мы используем ваш портрет, чтобы вдохновить медитацией больше людей похожих на вас.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Помогите найти больше похожих на вас людей и сделать мир чуть более осознанным";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -664,7 +664,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mi-sha/Info.plist";
-				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Мы используем ваш портрет, чтобы вдохновить медитацией больше людей похожих на вас.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Помогите найти больше похожих на вас людей и сделать мир чуть более осознанным";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -698,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Ми-Йöт" */ = {
+		8D8A7F562941BC970072A582 /* Build configuration list for PBXNativeTarget "Mi-sha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D8A7F572941BC970072A582 /* Debug */,

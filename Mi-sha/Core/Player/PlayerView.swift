@@ -96,12 +96,11 @@ extension PlayerView {
         .foregroundColor(Color.theme.black.opacity(0.7))
         .lineLimit(1)
         .minimumScaleFactor(0.5)
-//        .overlay(alignment: .bottom) {
-//            Capsule(style: .continuous)
-//                .frame(height: 3)
-//                .offset(y: 5)
-//                .foregroundColor(Color.theme.black.opacity(0.7))
-//        }
+        .overlay {
+            if !vm.audioManager.isPlayerInit {
+                    ProgressView()
+            }
+        }
     }
     
     var playerButtons: some View {
@@ -136,20 +135,6 @@ extension PlayerView {
         }
         .padding(.bottom, 10)
         .foregroundColor(Color.theme.black)
-        .overlay {
-            if vm.audioManager.isPlayerInit {
-//               EmptyView()
-            } else {
-                VStack {
-                    Text("Почти загрузили...")
-                        .font(.labGrotesque(.regular,size: 16))
-                    ZStack {
-                        ProgressView()
-                            .scaleEffect(2)
-                    }
-                }
-            }
-        }
     }
     
     var playerSlider: some View {
