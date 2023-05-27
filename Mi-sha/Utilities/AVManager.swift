@@ -16,6 +16,7 @@ class AVManager: ObservableObject {
     @Published var isLoop = false
     @Published var isDownloaded = false
     @Published var sliderProgress: Float = 0
+    @Published var lastAudioURL: String = ""
     var somethingBad = false
     static var shared = AVManager()
     var dataManager = DataManager.shared
@@ -148,6 +149,10 @@ class AVManager: ObservableObject {
     
     private func convertFloatToCMTime(_ percentage: Float) -> CMTime {
         return CMTime(seconds: duration * Double(percentage), preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+    }
+    
+    func setLastAudioURL(url: String) {
+        self.lastAudioURL = url
     }
     
 //    var observation = playerItem?.observe(\AVPlayerItem.status, changeHandler: { observedPlayerItem, change in

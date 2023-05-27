@@ -12,7 +12,7 @@ import FirebaseStorage
 import AVKit
 
 struct PlayerView: View {
-    
+
     @StateObject var vm: PlayerViewModel
     @ObservedObject var avp: AVManager = AVManager.shared
     @State private var isEditing: Bool = false
@@ -37,11 +37,17 @@ struct PlayerView: View {
                         .scaleEffect(0.5)
                         .frame(width: 60, height: 60)
                     .offset(x: 124)
-//                    Spacer()
+
                     Image("home1")
                         .resizable()
                         .scaledToFit()
+//                        .overlay {
+//                            if !vm.audioManager.isPlayerInit {
+//                                    ProgressView()
+//                            }
+//                        }
                     trackName
+                        .padding(.bottom, 32)
                 }
                 Spacer()
                 
@@ -50,6 +56,21 @@ struct PlayerView: View {
             .padding(16)
         }
         .navigationTitle("")
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                        Text("Назад")
+                    }
+                }
+                
+            }
+        }
         .foregroundColor(Color.theme.black)
         .accentColor(Color.theme.black)
         .onAppear {
@@ -62,7 +83,7 @@ struct PlayerView: View {
             guard
                 !isEditing
             else {
-                print("no audioplayer in manager")
+                print("no audioPlayer in manager")
                 return }
             vm.playerTime = vm.audioManager.getStreamPlayerTime() ?? 0.0
         }
@@ -96,11 +117,6 @@ extension PlayerView {
         .foregroundColor(Color.theme.black.opacity(0.7))
         .lineLimit(1)
         .minimumScaleFactor(0.5)
-        .overlay {
-            if !vm.audioManager.isPlayerInit {
-                    ProgressView()
-            }
-        }
     }
     
     var playerButtons: some View {

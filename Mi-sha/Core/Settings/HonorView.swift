@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HonorView: View {
-    
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var vm = SettingsViewModel()
     
     //    @State var userName = "UserName"
@@ -50,8 +50,11 @@ struct HonorView: View {
                 Button {
                     dismiss()
                 } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.black)
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                        Text("Назад")
+                    }
                 }
                 
             }

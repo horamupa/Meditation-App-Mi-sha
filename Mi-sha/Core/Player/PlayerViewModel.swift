@@ -18,6 +18,7 @@ class PlayerViewModel: ObservableObject {
     @Published var playerTime: Double = 0.0
     @Published var sliderProgress: Float = 0
     @Published var isPlaying: Bool = false
+    var lastURL: String = ""
     var acceptProgressUpdates = true
     var model: TrackModel
     var subscriptions = Set<AnyCancellable>()
@@ -63,8 +64,9 @@ class PlayerViewModel: ObservableObject {
     }
     
     func startOnAppear() {
-        
-        if !self.audioManager.isPlaying {
+        if audioManager.lastAudioURL != model.url {
+            audioManager.setLastAudioURL(url: model.url)
+//        if !self.audioManager.isPlaying {
             let storage = Storage.storage().reference(forURL: model.url)
             storage.downloadURL { url, error in
                 if let error = error {

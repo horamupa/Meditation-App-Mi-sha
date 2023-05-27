@@ -31,7 +31,7 @@ struct HomeView: View {
                 upperBlock
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Свежая история:")
+                    Text("Новая история:")
                         .font(.labGrotesque(.regular, size: 20))
                     
                     middleBlock

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChapterView: View {
-    
+    @Environment(\.dismiss) var dismiss
     var innerCourse: CourseModel
     
     var body: some View {
@@ -36,6 +36,20 @@ struct ChapterView: View {
         .ignoresSafeArea()
         .foregroundColor(Color.theme.black)
         .accentColor(Color.theme.black)
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.black)
+                        Text("Назад")
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -72,21 +72,8 @@ extension OnboardingView {
             Image("1024AppIicon")
                 .resizable()
                 .scaledToFit()
-                .overlay {
-                    ZStack {
-                        Rectangle()
-                            .stroke(lineWidth: 5)
-                            .foregroundColor(Color("AppIconWhite"))
-                            .blur(radius: 10)
-                        Rectangle()
-                            .stroke(lineWidth: 5)
-                            .foregroundColor(Color("AppIconWhite"))
-                            .blur(radius: 10)
-                    }
-                    .blur(radius: 10)
-                }
                 .cornerRadius(30)
-            Text("Медитативное путешествие в компании девочки Ми и её собачки Ша.")
+            Text("Это медитативное путешествие в компании девочки Ми и её собачки Ша.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
         }
@@ -103,7 +90,7 @@ extension OnboardingView {
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(30)
-            Text("Снизит фоновый уровень тревожности, поднимет самооценку и улучшит качество сна.")
+            Text("Снизить фоновую тревожность, поднять самооценку, улучшить качество сна.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
         }
@@ -120,7 +107,7 @@ extension OnboardingView {
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(30)
-            Text("Просто выбери удобное место, запусти аудио и отправляйся в путешествие по твоему сознанию.")
+            Text("Просто выбери удобное место, запусти аудио и в путь.")
                 .font(.labGrotesque(.regular, size: 18))
                 .foregroundColor(.black)
         }
@@ -129,7 +116,7 @@ extension OnboardingView {
     }
     
     private var bottomButton: some View {
-        Text(onboardingState == 2 ? "Приступим" : "Дальше")
+        Text(onboardingState == 2 ? "Дальше" : "Дальше")
             .font(.headline)
 //            .foregroundColor(Color.theme.smollDoggo)
             .frame(height: 55)
