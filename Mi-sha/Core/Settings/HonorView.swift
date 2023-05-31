@@ -14,8 +14,10 @@ struct HonorView: View {
     //    @State var userName = "UserName"
     
     
-    var termsOfService = URL(string: "https://docs.google.com/document/d/1-miKyQGkgExJxXlUCgyV2TYlnP08ZNaTL6eNIuG1IyA/edit")!
-    var privacyPolicy = URL(string: "https://docs.google.com/document/d/1MRWyqS8OReXp9xsZfwc1rppwqKqYH054Yd7pCcCGdNk/edit#heading=h.20y6fa5gdawh")!
+    var termsOfService = URL(string: "https://telegra.ph/Terms-of-Use-05-31-2")!
+    var privacyPolicy = URL(string: "https://telegra.ph/Privacy-Policy-05-31-39")!
+    var EULA = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+    
     var coffeURL = URL(string: "https://www.buymeacoin.com")!
     @Environment(\.dismiss) var dismiss
     
@@ -143,6 +145,7 @@ extension HonorView {
 //            Link("Buy me a coffe☕️", destination: coffeURL)
             Link("Terms of service", destination: termsOfService)
             Link("Privacy policy", destination: privacyPolicy)
+            Link("EULA", destination: EULA)
         }
         .foregroundColor(.black)
     }
