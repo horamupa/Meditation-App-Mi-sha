@@ -4,12 +4,12 @@
 Download this app at the [AppStore](https://apps.apple.com/ru/app/mi-sha/id1591916331?l=en)
 ## How was in build:
 - SwiftUI
-- MVVM Architecture, because it's most common in SwiftUI
-- AVKit Library for building the player
-- Combine for reactive approach
+- MVVM architecture, because it's most common in SwiftUI
+- AVKit AVKit library for building the player
+- Combine for a reactive approach
 - Storing and streaming audio files via Firebase
-- Always bring next actual meditation on the main screen
-- Save user progress & achivment
+- Always display the next actual meditation on the main screen
+- Save user progress & achievements
 - All artworks generated via Midjourney
 - Services/Managers
 
